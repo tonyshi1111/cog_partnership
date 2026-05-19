@@ -31,87 +31,94 @@
     That's the structural advantage. The partnerships in this pitch extend it into the surfaces engineers actually work in — ticketing, observability, security, CI, compliance — so the "agents handle the work below" promise lands in every workflow, not just the IDE.
   </p>
 
-  <div class="venn-wrap">
-    <div class="venn-heading">
-      <div class="venn-heading-eyebrow">The agent layer beneath every engineer must do three things at once</div>
-      <div class="venn-heading-title">— so the engineer can stop doing them and start thinking like an architect.</div>
+  <div class="wedge-block">
+    <div class="wedge-heading">
+      <div class="wedge-heading-eyebrow">Where each agent sits</div>
+      <div class="wedge-heading-title">Autonomy of work vs. who writes the check</div>
     </div>
-    <svg viewBox="0 0 800 680" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three-circle Venn diagram showing Cognition's position vs. nine competitors">
-      <!-- Three circles -->
-      <circle class="venn-circle-a" cx="290" cy="280" r="200"/>
-      <circle class="venn-circle-b" cx="510" cy="280" r="200"/>
-      <circle class="venn-circle-c" cx="400" cy="460" r="200"/>
 
-      <!-- Circle labels (outside circles) — framed from engineer's POV -->
-      <text class="venn-circle-label label-a" x="120" y="100" text-anchor="start">Pair with me</text>
-      <text class="venn-circle-label label-a" x="120" y="120" text-anchor="start">in my editor</text>
-      <text class="venn-circle-sub" x="120" y="142" text-anchor="start">Real-time help</text>
-      <text class="venn-circle-sub" x="120" y="158" text-anchor="start">as I write code</text>
+    <div class="wedge-chart" id="wedge-chart">
+      <!-- Quadrant background -->
+      <div class="wedge-quadrants">
+        <div class="quadrant ul">
+          <span class="quadrant-empty">no major player here</span>
+        </div>
+        <div class="quadrant ur"></div>
+        <div class="quadrant ll"></div>
+        <div class="quadrant lr"></div>
+      </div>
 
-      <text class="venn-circle-label label-b" x="680" y="100" text-anchor="end">Take this task,</text>
-      <text class="venn-circle-label label-b" x="680" y="120" text-anchor="end">report back</text>
-      <text class="venn-circle-sub" x="680" y="142" text-anchor="end">Long-horizon autonomous</text>
-      <text class="venn-circle-sub" x="680" y="158" text-anchor="end">work in the background</text>
+      <!-- Axis labels -->
+      <div class="wedge-axes">
+        <span class="ax-y-top">Async / agentic ↑</span>
+        <span class="ax-y-bot">Sync / inline ↓</span>
+        <span class="ax-x-left">← Individual dev / prosumer</span>
+        <span class="ax-x-right">Enterprise / services buyer →</span>
+      </div>
 
-      <text class="venn-circle-label label-c" x="400" y="660" text-anchor="middle">Run safely inside my company</text>
-      <text class="venn-circle-sub" x="400" y="678" text-anchor="middle">Audit trail · sandboxing · SSO · compliance</text>
+      <!-- SVG layer for the dashed bundle-play arrow Windsurf → Cognition -->
+      <svg class="wedge-arrow" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+            <polygon points="0 0, 6 3, 0 6" fill="#854F0B"/>
+          </marker>
+        </defs>
+        <path d="M 70 65 Q 73 45 70 28" stroke="#854F0B" stroke-width="0.6" fill="none" stroke-dasharray="1.5 1.5" marker-end="url(#arrowhead)" opacity="0.65"/>
+        <text x="74" y="48" font-size="2.6" fill="#854F0B" opacity="0.9" font-family="system-ui, sans-serif" font-style="italic">Bundle play</text>
+      </svg>
 
-      <!-- A only: Cursor, Replit -->
-      <g class="venn-dot" tabindex="0" data-name="Cursor" data-regions="Supervised IDE only" data-desc="Most-used daily IDE for engineers in 2026. Composer mode for multi-file edits + background agents (new). Consumer-grade enterprise primitives — audit-grade governance is bolt-on.">
-        <circle cx="170" cy="210" r="7"/>
-        <text x="185" y="214">Cursor</text>
-      </g>
-      <g class="venn-dot" tabindex="0" data-name="Replit Agent" data-regions="Supervised IDE only" data-desc="Browser-native full-stack agent. Prosumer + small-team focus. No enterprise audit trail or sandboxed execution by default.">
-        <circle cx="190" cy="280" r="7"/>
-        <text x="205" y="284">Replit Agent</text>
-      </g>
+      <!-- Cards -->
+      <button class="wedge-card hero" data-co="cognition" style="--fill:#FAECE7; --text:#993C1D; --stroke:#993C1D;" tabindex="0" aria-expanded="false">
+        <span class="card-name">Cognition / Devin</span>
+        <span class="card-desc">"Ticket in, PR out"</span>
+        <ul class="card-bullets">
+          <li>Customers: Goldman, Infosys, Dell, Cisco</li>
+          <li>Cognizant + Infosys services partnerships</li>
+        </ul>
+        <span class="card-wedge">Wedge: async work + services channel</span>
+      </button>
 
-      <!-- B only: OpenHands, Manus -->
-      <g class="venn-dot" tabindex="0" data-name="OpenHands" data-regions="Async autonomous only" data-desc="Open-source. $18.8M Series A. Adopted by AMD, Apple, Google, Amazon, Netflix, NVIDIA. Enterprise primitives are DIY (self-hosted control trade-off).">
-        <circle cx="640" cy="210" r="7"/>
-        <text x="625" y="214" text-anchor="end">OpenHands</text>
-      </g>
-      <g class="venn-dot" tabindex="0" data-name="Manus AI" data-regions="Async autonomous only" data-desc="General-purpose autonomous agent for analyst-style workflows. Less code-specialized. Public API shipped 2026; broader autonomy beyond coding.">
-        <circle cx="615" cy="280" r="7"/>
-        <text x="600" y="284" text-anchor="end">Manus AI</text>
-      </g>
+      <button class="wedge-card" data-co="windsurf" style="--fill:#FAEEDA; --text:#854F0B; --stroke:#854F0B;" tabindex="0" aria-expanded="false">
+        <span class="card-name">Windsurf</span>
+        <span class="card-desc">IDE Cognition acquired</span>
+        <ul class="card-bullets"><li>Bridges Cognition into the sync side</li></ul>
+        <span class="card-wedge">Wedge: buys distribution + ARR</span>
+      </button>
 
-      <!-- A ∩ C: GitHub Copilot, Claude Code -->
-      <g class="venn-dot" tabindex="0" data-name="GitHub Copilot Workspace" data-regions="Supervised IDE · Enterprise" data-desc="GitHub-native incumbent. Microsoft enterprise procurement bundles. SOC 2, FedRAMP. Supervised execution only — no async cloud agent surface.">
-        <circle cx="290" cy="410" r="7"/>
-        <text x="305" y="414">GitHub Copilot</text>
-      </g>
-      <g class="venn-dot" tabindex="0" data-name="Claude Code (Anthropic)" data-regions="Supervised IDE · Enterprise" data-desc="Senior / platform engineer favorite. CLI + IDE. Available on all 3 hyperscalers (Bedrock, Vertex, Azure Foundry). $100M Partner Network. No persistent async cloud agent.">
-        <circle cx="335" cy="455" r="7"/>
-        <text x="350" y="459">Claude Code</text>
-      </g>
+      <button class="wedge-card" data-co="cursor" style="--fill:#EEEDFE; --text:#3C3489; --stroke:#3C3489;" tabindex="0" aria-expanded="false">
+        <span class="card-name">Cursor</span>
+        <span class="card-desc">Forked VS Code</span>
+        <ul class="card-bullets"><li>Bottoms-up viral</li></ul>
+        <span class="card-wedge">Wedge: $20/mo prosumer</span>
+      </button>
 
-      <!-- B ∩ C: OpenAI Codex, Devin (Cognition) -->
-      <g class="venn-dot" tabindex="0" data-name="OpenAI Codex" data-regions="Async autonomous · Enterprise" data-desc="GPT-5.5-powered cloud sandbox per task. 400K context window. SCIM, EKM, RBAC, audit logs. No IDE pair-programming surface.">
-        <circle cx="510" cy="410" r="7"/>
-        <text x="495" y="414" text-anchor="end">OpenAI Codex</text>
-      </g>
-      <g class="venn-dot" tabindex="0" data-name="Devin (Cognition)" data-regions="Async autonomous · Enterprise" data-desc="Cognition's autonomous cloud agent. Audit trail, sandboxed execution, cost telemetry. Million-LOC migrations documented. Devin alone has no IDE pair-programming.">
-        <circle cx="555" cy="455" r="7"/>
-        <text x="540" y="459" text-anchor="end">Devin</text>
-      </g>
+      <button class="wedge-card" data-co="claude" style="--fill:#E1F5EE; --text:#0F6E56; --stroke:#0F6E56;" tabindex="0" aria-expanded="false">
+        <span class="card-name">Claude Code</span>
+        <span class="card-desc">Terminal native</span>
+        <ul class="card-bullets"><li>Anthropic model-layer play</li></ul>
+        <span class="card-wedge">Wedge: hedge + wedge</span>
+      </button>
 
-      <!-- A ∩ C: Windsurf (Cognition) — split-positioned to show portfolio coverage -->
-      <g class="venn-dot" tabindex="0" data-name="Windsurf (Cognition)" data-regions="Supervised IDE · Enterprise" data-desc="Cognition's supervised IDE pair. Cascade for multi-file edits. Acquired by Cognition 2025. Windsurf alone has no async cloud execution.">
-        <circle cx="265" cy="500" r="7"/>
-        <text x="280" y="504">Windsurf</text>
-      </g>
+      <button class="wedge-card" data-co="replit" style="--fill:#FBEAF0; --text:#72243E; --stroke:#72243E;" tabindex="0" aria-expanded="false">
+        <span class="card-name">Replit</span>
+        <span class="card-desc">Zero-setup browser</span>
+        <ul class="card-bullets"><li>PMs, founders, students</li></ul>
+        <span class="card-wedge">Wedge: non-devs</span>
+      </button>
 
-      <!-- A ∩ B ∩ C: Cognition portfolio (Windsurf + Devin combined) -->
-      <g class="venn-dot cognition" tabindex="0" data-name="Cognition portfolio (Windsurf + Devin)" data-regions="ALL THREE — Supervised IDE · Async · Enterprise" data-desc="The only vendor in the triple intersection. Windsurf covers IDE + Enterprise. Devin covers Async + Enterprise. Combined, the portfolio covers all three capabilities — uniquely.">
-        <circle cx="400" cy="380" r="12"/>
-        <text x="400" y="362" text-anchor="middle" font-weight="700">Cognition portfolio</text>
-        <text x="400" y="406" text-anchor="middle" font-size="11" font-style="italic">Windsurf + Devin</text>
-      </g>
-    </svg>
-    <div class="venn-tooltip" id="venn-tooltip"></div>
-    <p class="venn-caption">
-      Each circle is one thing the agent layer has to do for engineers to operate one level up. Cursor and Replit live in the editor only. OpenHands and Manus run in the background only. Copilot and Claude IDE bring enterprise governance to the editor. Codex brings it to async. <span class="accent">Only Cognition — through Windsurf <em>and</em> Devin together — covers all three.</span> That's the structural reason engineers using Cognition can think like architects: the agent layer beneath them is complete, not partial. Hover any name to see what they're missing.
+      <button class="wedge-card" data-co="manus" style="--fill:#E6F1FB; --text:#0C447C; --stroke:#0C447C;" tabindex="0" aria-expanded="false">
+        <span class="card-name">Manus</span>
+        <span class="card-desc">Horizontal agent</span>
+        <ul class="card-bullets"><li>Not coding-first</li></ul>
+        <span class="card-wedge">Wedge: knowledge worker</span>
+      </button>
+    </div>
+
+    <!-- Expanded reasoning panel (one open at a time) -->
+    <div class="wedge-expand" id="wedge-expand" hidden></div>
+
+    <p class="wedge-caption">
+      Same pitch, different doors. <span class="accent">The defensible wedge is the upper-right quadrant — the door the others structurally can't reach.</span> Click any card to see why each company sits where it does.
     </p>
   </div>
 
