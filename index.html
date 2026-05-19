@@ -20,63 +20,105 @@
 
 <main>
 
-<!-- ============= 1. HERO — "This is Cognition" ============= -->
+<!-- ============= 1. HERO — Three capabilities. One portfolio. ============= -->
 <section id="hero">
   <span class="kicker">Self-proposed pitch · For Ron Miasnik &amp; Cognition leadership · 2026-05-18</span>
-  <h1>Cognition is the only AI coding vendor with both surfaces.</h1>
+  <h1>Three capabilities define enterprise AI coding.<br>Only Cognition has all three.</h1>
   <p class="lede">
-    Cursor and Copilot pair-program inside the IDE. Devin executes async work in the cloud. Cognition owns <em>both</em> — Windsurf supervises the IDE; Devin runs the long-horizon autonomous loops. Nobody else can credibly do that. That's where partnerships should be built around.
+    Supervised IDE pairing. Async cloud execution. Enterprise-grade governance. Every competitor sits in one or two circles. Cognition is the only vendor in the triple intersection — because Windsurf and Devin <em>together</em> cover what no single product does.
   </p>
 
   <div class="venn-wrap">
-    <svg viewBox="0 0 760 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Venn diagram showing Cognition's sweet spot">
-      <!-- Left circle: Supervised IDE -->
-      <circle class="venn-circle-a" cx="290" cy="220" r="180"/>
-      <!-- Right circle: Async autonomous -->
-      <circle class="venn-circle-b" cx="470" cy="220" r="180"/>
+    <svg viewBox="0 0 800 680" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three-circle Venn diagram showing Cognition's position vs. nine competitors">
+      <!-- Three circles -->
+      <circle class="venn-circle-a" cx="290" cy="280" r="200"/>
+      <circle class="venn-circle-b" cx="510" cy="280" r="200"/>
+      <circle class="venn-circle-c" cx="400" cy="460" r="200"/>
 
-      <!-- Circle A label (top) -->
-      <text class="venn-label" x="200" y="65" text-anchor="middle">Supervised IDE pairing</text>
-      <text class="venn-label-sub" x="200" y="85" text-anchor="middle">Engineer at the keyboard, agent suggests</text>
+      <!-- Circle labels (outside circles) -->
+      <text class="venn-circle-label label-a" x="120" y="105" text-anchor="start">Supervised IDE</text>
+      <text class="venn-circle-label label-a" x="120" y="125" text-anchor="start">pairing</text>
+      <text class="venn-circle-sub" x="120" y="145" text-anchor="start">Engineer at keyboard,</text>
+      <text class="venn-circle-sub" x="120" y="161" text-anchor="start">agent suggests live</text>
 
-      <!-- Circle B label (top) -->
-      <text class="venn-label" x="560" y="65" text-anchor="middle">Async autonomous execution</text>
-      <text class="venn-label-sub" x="560" y="85" text-anchor="middle">Agent runs for hours, returns merged PR</text>
+      <text class="venn-circle-label label-b" x="680" y="105" text-anchor="end">Async autonomous</text>
+      <text class="venn-circle-label label-b" x="680" y="125" text-anchor="end">execution</text>
+      <text class="venn-circle-sub" x="680" y="145" text-anchor="end">Agent runs for hours,</text>
+      <text class="venn-circle-sub" x="680" y="161" text-anchor="end">returns merged PR</text>
 
-      <!-- Circle A members (left, non-overlap) -->
-      <text class="venn-label" x="155" y="225" text-anchor="middle" font-size="14">Cursor</text>
-      <text class="venn-label" x="155" y="247" text-anchor="middle" font-size="14">Copilot</text>
-      <text class="venn-label" x="155" y="269" text-anchor="middle" font-size="14">Claude IDE</text>
+      <text class="venn-circle-label label-c" x="400" y="660" text-anchor="middle">Enterprise-grade primitives</text>
+      <text class="venn-circle-sub" x="400" y="678" text-anchor="middle">Audit trail · sandboxing · SSO · compliance</text>
 
-      <!-- Circle B members (right, non-overlap) -->
-      <text class="venn-label" x="605" y="225" text-anchor="middle" font-size="14">OpenHands</text>
-      <text class="venn-label" x="605" y="247" text-anchor="middle" font-size="14">Codex async</text>
-      <text class="venn-label" x="605" y="269" text-anchor="middle" font-size="14">Manus</text>
+      <!-- A only: Cursor, Replit -->
+      <g class="venn-dot" tabindex="0" data-name="Cursor" data-regions="Supervised IDE only" data-desc="Most-used daily IDE for engineers in 2026. Composer mode for multi-file edits + background agents (new). Consumer-grade enterprise primitives — audit-grade governance is bolt-on.">
+        <circle cx="170" cy="210" r="7"/>
+        <text x="185" y="214">Cursor</text>
+      </g>
+      <g class="venn-dot" tabindex="0" data-name="Replit Agent" data-regions="Supervised IDE only" data-desc="Browser-native full-stack agent. Prosumer + small-team focus. No enterprise audit trail or sandboxed execution by default.">
+        <circle cx="190" cy="280" r="7"/>
+        <text x="205" y="284">Replit Agent</text>
+      </g>
 
-      <!-- Sweet spot (center) -->
-      <text class="venn-sweet" x="380" y="200" text-anchor="middle">Cognition's sweet spot</text>
-      <text class="venn-sweet-name" x="380" y="230" text-anchor="middle">Windsurf + Devin</text>
-      <text class="venn-label-sub" x="380" y="252" text-anchor="middle">Both surfaces · one portfolio</text>
+      <!-- B only: OpenHands, Manus -->
+      <g class="venn-dot" tabindex="0" data-name="OpenHands" data-regions="Async autonomous only" data-desc="Open-source. $18.8M Series A. Adopted by AMD, Apple, Google, Amazon, Netflix, NVIDIA. Enterprise primitives are DIY (self-hosted control trade-off).">
+        <circle cx="640" cy="210" r="7"/>
+        <text x="625" y="214" text-anchor="end">OpenHands</text>
+      </g>
+      <g class="venn-dot" tabindex="0" data-name="Manus AI" data-regions="Async autonomous only" data-desc="General-purpose autonomous agent for analyst-style workflows. Less code-specialized. Public API shipped 2026; broader autonomy beyond coding.">
+        <circle cx="615" cy="280" r="7"/>
+        <text x="600" y="284" text-anchor="end">Manus AI</text>
+      </g>
 
-      <!-- Bottom caption -->
-      <text class="venn-label-sub" x="380" y="410" text-anchor="middle" font-size="13" font-style="italic">The only integrated dual-surface story in the agent stack.</text>
+      <!-- A ∩ C: GitHub Copilot, Claude Code -->
+      <g class="venn-dot" tabindex="0" data-name="GitHub Copilot Workspace" data-regions="Supervised IDE · Enterprise" data-desc="GitHub-native incumbent. Microsoft enterprise procurement bundles. SOC 2, FedRAMP. Supervised execution only — no async cloud agent surface.">
+        <circle cx="290" cy="410" r="7"/>
+        <text x="305" y="414">GitHub Copilot</text>
+      </g>
+      <g class="venn-dot" tabindex="0" data-name="Claude Code (Anthropic)" data-regions="Supervised IDE · Enterprise" data-desc="Senior / platform engineer favorite. CLI + IDE. Available on all 3 hyperscalers (Bedrock, Vertex, Azure Foundry). $100M Partner Network. No persistent async cloud agent.">
+        <circle cx="335" cy="455" r="7"/>
+        <text x="350" y="459">Claude Code</text>
+      </g>
+
+      <!-- B ∩ C: OpenAI Codex, Devin (Cognition) -->
+      <g class="venn-dot" tabindex="0" data-name="OpenAI Codex" data-regions="Async autonomous · Enterprise" data-desc="GPT-5.5-powered cloud sandbox per task. 400K context window. SCIM, EKM, RBAC, audit logs. No IDE pair-programming surface.">
+        <circle cx="510" cy="410" r="7"/>
+        <text x="495" y="414" text-anchor="end">OpenAI Codex</text>
+      </g>
+      <g class="venn-dot" tabindex="0" data-name="Devin (Cognition)" data-regions="Async autonomous · Enterprise" data-desc="Cognition's autonomous cloud agent. Audit trail, sandboxed execution, cost telemetry. Million-LOC migrations documented. Devin alone has no IDE pair-programming.">
+        <circle cx="555" cy="455" r="7"/>
+        <text x="540" y="459" text-anchor="end">Devin</text>
+      </g>
+
+      <!-- A ∩ C: Windsurf (Cognition) — split-positioned to show portfolio coverage -->
+      <g class="venn-dot" tabindex="0" data-name="Windsurf (Cognition)" data-regions="Supervised IDE · Enterprise" data-desc="Cognition's supervised IDE pair. Cascade for multi-file edits. Acquired by Cognition 2025. Windsurf alone has no async cloud execution.">
+        <circle cx="265" cy="500" r="7"/>
+        <text x="280" y="504">Windsurf</text>
+      </g>
+
+      <!-- A ∩ B ∩ C: Cognition portfolio (Windsurf + Devin combined) -->
+      <g class="venn-dot cognition" tabindex="0" data-name="Cognition portfolio (Windsurf + Devin)" data-regions="ALL THREE — Supervised IDE · Async · Enterprise" data-desc="The only vendor in the triple intersection. Windsurf covers IDE + Enterprise. Devin covers Async + Enterprise. Combined, the portfolio covers all three capabilities — uniquely.">
+        <circle cx="400" cy="380" r="12"/>
+        <text x="400" y="362" text-anchor="middle" font-weight="700">Cognition portfolio</text>
+        <text x="400" y="406" text-anchor="middle" font-size="11" font-style="italic">Windsurf + Devin</text>
+      </g>
     </svg>
+    <div class="venn-tooltip" id="venn-tooltip"></div>
     <p class="venn-caption">
-      Claude Code wins terminal &amp; senior engineers. Cursor wins daily-driver IDE. But neither has an audit-grade async cloud agent. And no async agent has a polished IDE pair. Cognition's portfolio is the intersection.
+      Hover any name to see what they have — and what they're missing. <span class="accent">Only Cognition sits in the triple intersection</span>, because Windsurf and Devin combined cover all three capabilities. No single competitor product does.
     </p>
   </div>
 
   <div class="bridge">
-    I combed through <strong>12 Tegus expert interviews on Cognition</strong> (April–July 2025) plus the conversation you and I had on May 17, and I identified <strong>14 partnership archetypes</strong> — software vendors whose products integrate with Devin or trigger Devin runs. This is what the role I'm proposing would own. Distinct from the SI/channel partner team (Cognizant, Infosys, Synechron — already covered) and from direct sales.
+    I combed through <strong>12 Tegus expert interviews on Cognition</strong> (April–July 2025) plus our May 17 conversation, and identified <strong>14 partnership archetypes</strong> — software vendors whose products integrate with Devin or Windsurf, or trigger Devin runs. That's the function I'd own. Distinct from the SI / channel team (Cognizant, Infosys, Synechron — covered) and from direct sales.
   </div>
 </section>
 
 <!-- ============= 2. THE 14 ARCHETYPES ============= -->
 <section id="archetypes" class="section-spacer">
   <span class="kicker">Section 2 · Field of play</span>
-  <h2 class="so-what">14 archetypes. <span class="accent">Two are quick wins. Three more are strategic bets.</span></h2>
+  <h2 class="so-what">14 archetypes. <span class="accent">2 quick wins. 3 strategic bets. 9 supporting plays.</span></h2>
   <p class="so-what-sub">
-    Click any card to jump to its full deep-dive below. Highlighted = top-2 quick wins (composite ≥ 8.0).
+    Each card is a software vendor segment where Cognition's portfolio combination wins. Top-2 quick wins highlighted (composite ≥ 8.0). Click any card to jump to its full thesis below.
   </p>
 
   <div class="archetype-grid">
@@ -171,9 +213,9 @@
 <!-- ============= 3. PRIORITIZATION ============= -->
 <section id="prioritization" class="section-spacer">
   <span class="kicker">Section 3 · Prioritization</span>
-  <h2 class="so-what">Two quick wins. Three strategic bets. <span class="accent">The math is in the chart.</span></h2>
+  <h2 class="so-what">Start with ITSM and Observability. <span class="accent">Modernization is the largest prize.</span></h2>
   <p class="so-what-sub">
-    Each archetype scored on three orthogonal axes — <strong>synergy</strong> (how natively Cognition plugs in), <strong>ease</strong> (existing relationships, eng lift, partner accessibility), and <strong>market</strong> (TAM × deal size × number of credible targets). Bubble position = synergy × ease; bubble size = market opportunity. Top-right bubbles with the largest size are where to start.
+    Three axes, scored 1–10 across all 14 archetypes. <strong>Synergy</strong> = product fit. <strong>Ease</strong> = existing relationships and deal velocity. <strong>Market</strong> = TAM × flagship deal size × credible-target count. Bubble position = synergy × ease. Bubble size = market. Click any bubble to jump to that archetype's profile.
   </p>
 
   <div class="prio-chart">
@@ -208,64 +250,63 @@
       <text class="quad-label" x="90" y="85" text-anchor="start">Filler · low synergy + easy</text>
       <text class="quad-label" x="90" y="535" text-anchor="start">Pass · low synergy + hard</text>
 
-      <!-- Bubble radii = 4 + mkt*4.5 → mkt 4=22, mkt 5=26.5, mkt 6=31, mkt 7=35.5, mkt 8=40, mkt 9=44.5 -->
-      <!-- Coords: cx = 80 + (syn/10)*740 ; cy = 540 - (ease/10)*480 -->
-
-      <!-- ITSM (9,9,8) - top right - top tier -->
-      <circle class="bubble top" cx="746" cy="108" r="40"/>
-      <text class="bubble-label top" x="746" y="113" text-anchor="middle">ITSM (1)</text>
-
-      <!-- Observability (9,7,8) - top tier -->
-      <circle class="bubble top" cx="746" cy="204" r="40"/>
-      <text class="bubble-label top" x="746" y="209" text-anchor="middle">Observability (2)</text>
-
-      <!-- Workflow (8,8,7) - mid -->
-      <circle class="bubble mid" cx="672" cy="156" r="35.5"/>
-      <text class="bubble-label" x="672" y="161" text-anchor="middle">Workflow (3t)</text>
-
-      <!-- Security (9,6,8) - mid -->
-      <circle class="bubble mid" cx="746" cy="300" r="40"/>
-      <text class="bubble-label" x="746" y="305" text-anchor="middle">Security (3t)</text>
-
-      <!-- Hyperscalers (7,7,9) - mid - LARGE -->
-      <circle class="bubble mid" cx="598" cy="204" r="44.5"/>
-      <text class="bubble-label" x="598" y="209" text-anchor="middle">Hyperscalers (3t)</text>
-
-      <!-- Data (7,7,8) - mid -->
-      <circle class="bubble mid" cx="510" cy="245" r="40"/>
-      <text class="bubble-label" x="510" y="250" text-anchor="middle">Data (6t)</text>
-
-      <!-- CI/CD (8,7,7) - mid -->
-      <circle class="bubble mid" cx="672" cy="248" r="35.5"/>
-      <text class="bubble-label" x="672" y="253" text-anchor="middle">CI/CD (6t)</text>
-
-      <!-- GRC (8,8,6) - mid -->
-      <circle class="bubble mid" cx="708" cy="140" r="31"/>
-      <text class="bubble-label" x="708" y="190" text-anchor="middle">GRC (6t)</text>
-
-      <!-- Modernization (8,4,9) - LARGE bottom -->
-      <circle class="bubble mid" cx="672" cy="396" r="44.5"/>
-      <text class="bubble-label" x="672" y="401" text-anchor="middle">Modernization (9t)</text>
-
-      <!-- Dev Infra (8,7,6) - mid -->
-      <circle class="bubble mid" cx="620" cy="178" r="31"/>
-      <text class="bubble-label" x="620" y="138" text-anchor="middle">Dev Infra (9t)</text>
-
-      <!-- Design (7,7,6) - low -->
-      <circle class="bubble low" cx="552" cy="170" r="31"/>
-      <text class="bubble-label" x="552" y="130" text-anchor="middle">Design (11)</text>
-
-      <!-- Test (7,6,5) - low -->
-      <circle class="bubble low" cx="524" cy="300" r="26.5"/>
-      <text class="bubble-label" x="524" y="305" text-anchor="middle">Test (12t)</text>
-
-      <!-- Verticals (6,5,7) - low -->
-      <circle class="bubble low" cx="450" cy="348" r="35.5"/>
-      <text class="bubble-label" x="450" y="353" text-anchor="middle">Verticals (12t)</text>
-
-      <!-- Code Quality (4,6,4) - low -->
-      <circle class="bubble low" cx="228" cy="300" r="22"/>
-      <text class="bubble-label" x="228" y="305" text-anchor="middle">Code Q (14)</text>
+      <!-- Click any bubble to jump to that archetype's profile -->
+      <g class="bubble-group" data-arch="itsm" tabindex="0" role="button" aria-label="ITSM archetype">
+        <circle class="bubble top" cx="746" cy="108" r="40"/>
+        <text class="bubble-label top" x="746" y="113" text-anchor="middle">ITSM (1)</text>
+      </g>
+      <g class="bubble-group" data-arch="observability" tabindex="0" role="button" aria-label="Observability archetype">
+        <circle class="bubble top" cx="746" cy="204" r="40"/>
+        <text class="bubble-label top" x="746" y="209" text-anchor="middle">Observability (2)</text>
+      </g>
+      <g class="bubble-group" data-arch="workflow" tabindex="0" role="button" aria-label="Workflow archetype">
+        <circle class="bubble mid" cx="672" cy="156" r="35.5"/>
+        <text class="bubble-label" x="672" y="161" text-anchor="middle">Workflow (3t)</text>
+      </g>
+      <g class="bubble-group" data-arch="security" tabindex="0" role="button" aria-label="Security archetype">
+        <circle class="bubble mid" cx="746" cy="300" r="40"/>
+        <text class="bubble-label" x="746" y="305" text-anchor="middle">Security (3t)</text>
+      </g>
+      <g class="bubble-group" data-arch="cloud" tabindex="0" role="button" aria-label="Hyperscalers archetype">
+        <circle class="bubble mid" cx="598" cy="204" r="44.5"/>
+        <text class="bubble-label" x="598" y="209" text-anchor="middle">Hyperscalers (3t)</text>
+      </g>
+      <g class="bubble-group" data-arch="data" tabindex="0" role="button" aria-label="Data Platforms archetype">
+        <circle class="bubble mid" cx="510" cy="245" r="40"/>
+        <text class="bubble-label" x="510" y="250" text-anchor="middle">Data (6t)</text>
+      </g>
+      <g class="bubble-group" data-arch="cicd" tabindex="0" role="button" aria-label="CI/CD archetype">
+        <circle class="bubble mid" cx="672" cy="248" r="35.5"/>
+        <text class="bubble-label" x="672" y="253" text-anchor="middle">CI/CD (6t)</text>
+      </g>
+      <g class="bubble-group" data-arch="grc" tabindex="0" role="button" aria-label="GRC archetype">
+        <circle class="bubble mid" cx="708" cy="140" r="31"/>
+        <text class="bubble-label" x="708" y="190" text-anchor="middle">GRC (6t)</text>
+      </g>
+      <g class="bubble-group" data-arch="modernization" tabindex="0" role="button" aria-label="Modernization archetype">
+        <circle class="bubble mid" cx="672" cy="396" r="44.5"/>
+        <text class="bubble-label" x="672" y="401" text-anchor="middle">Modernization (9t)</text>
+      </g>
+      <g class="bubble-group" data-arch="devinfra" tabindex="0" role="button" aria-label="Dev Infra archetype">
+        <circle class="bubble mid" cx="620" cy="178" r="31"/>
+        <text class="bubble-label" x="620" y="138" text-anchor="middle">Dev Infra (9t)</text>
+      </g>
+      <g class="bubble-group" data-arch="design" tabindex="0" role="button" aria-label="Design-to-code archetype">
+        <circle class="bubble low" cx="552" cy="170" r="31"/>
+        <text class="bubble-label" x="552" y="130" text-anchor="middle">Design (11)</text>
+      </g>
+      <g class="bubble-group" data-arch="testqa" tabindex="0" role="button" aria-label="Test/QA archetype">
+        <circle class="bubble low" cx="524" cy="300" r="26.5"/>
+        <text class="bubble-label" x="524" y="305" text-anchor="middle">Test (12t)</text>
+      </g>
+      <g class="bubble-group" data-arch="verticals" tabindex="0" role="button" aria-label="Verticals archetype">
+        <circle class="bubble low" cx="450" cy="348" r="35.5"/>
+        <text class="bubble-label" x="450" y="353" text-anchor="middle">Verticals (12t)</text>
+      </g>
+      <g class="bubble-group" data-arch="codequality" tabindex="0" role="button" aria-label="Code Quality archetype">
+        <circle class="bubble low" cx="228" cy="300" r="22"/>
+        <text class="bubble-label" x="228" y="305" text-anchor="middle">Code Q (14)</text>
+      </g>
 
       <!-- Legend -->
       <g transform="translate(120, 80)">
@@ -303,10 +344,10 @@
 
 <!-- ============= 4. DEEP-DIVE EXPLORER ============= -->
 <section id="deep-dive" class="section-spacer">
-  <span class="kicker">Section 4 · Deep-dive · pick an archetype, swap aspects</span>
-  <h2 class="so-what">One archetype at a time. <span class="accent">Four tabs.</span> Click chips to swap, tabs to compare.</h2>
+  <span class="kicker">Section 4 · Archetype explorer</span>
+  <h2 class="so-what">Compare 14 archetypes across 4 aspects. <span class="accent">One click per dimension.</span></h2>
   <p class="so-what-sub">
-    Instead of 14 sections each with all aspects, this is one section with 14 archetype filters and 4 aspect tabs — click a chip to swap which archetype you're reading; click a tab to switch what you're looking at (Profile, Target Partners, the 2×2 quadrant, or Value Prop &amp; Deal Shape).
+    Click a chip to swap the archetype. Click a tab to swap the aspect — Profile, Target Partners, 2×2 Quadrant, or Value Prop &amp; Deal Shape. Defaults to ITSM (rank 1) + Profile.
   </p>
 
   <div class="archetype-explorer">
@@ -347,22 +388,22 @@
 
       <div class="aspect-panel" data-tab="partners">
         <div class="partners">
-          <div class="partner">
+          <div class="partner" data-domain="servicenow.com">
             <div class="partner-priority">Highest priority — foot-in-door already exists</div>
             <div class="partner-name">ServiceNow</div>
             <p class="partner-detail">ServiceNow Build Agent (GA Knowledge 2026, May 6) integrates with <strong>Windsurf</strong> + Cursor + Claude + Copilot — but not Devin.<a class="citation-ref" data-cite="servicenow-build-agent-2026"></a> Windsurf relationship is the lever. Formal Partner Program: Registered → Elite + Access tier, MDF (100% reimbursement), SIF funding.<a class="citation-ref" data-cite="servicenow-partner-program-jan-2026"></a></p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="atlassian.com">
             <div class="partner-priority">High priority — clear gap</div>
             <div class="partner-name">Atlassian Jira Service Management</div>
             <p class="partner-detail">"Agents in Jira" GA May 2026 with Figma, Canva, Replit, Lovable — <strong>no coding agents</strong>.<a class="citation-ref" data-cite="atlassian-agents-in-jira-may-2026"></a> Greenfield. Atlassian owns Bitbucket (GitHub-alternative coverage Cognition lacks).</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="freshworks.com">
             <div class="partner-priority">Mid priority — SMB / mid-market</div>
             <div class="partner-name">Freshservice (Freshworks)</div>
             <p class="partner-detail">Smaller scale but moves faster than ServiceNow; good for early flagship case study.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="zendesk.com">
             <div class="partner-priority">Tertiary — dev-ticketing entry</div>
             <div class="partner-name">Zendesk</div>
             <p class="partner-detail">More customer-service than IT-internal, but dev-ticketing (bug → engineering) is a credible Devin entry point.</p>
@@ -425,27 +466,27 @@
 
       <div class="aspect-panel" data-tab="partners">
         <div class="partners">
-          <div class="partner">
+          <div class="partner" data-domain="pagerduty.com">
             <div class="partner-priority">Highest priority — biggest open gap</div>
             <div class="partner-name">PagerDuty</div>
             <p class="partner-detail">Announced 30+ AI partners on March 12, 2026; strategic with Anthropic, Cursor, LangChain.<a class="citation-ref" data-cite="pagerduty-ai-ecosystem-march-2026"></a> Claude Code has an official PagerDuty plugin; Cursor has MCP plugin. <strong>Devin has neither.</strong></p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="sentry.io">
             <div class="partner-priority">High priority — upstream trigger surface</div>
             <div class="partner-name">Sentry</div>
             <p class="partner-detail">Sentry MCP supports Claude, Cursor, Copilot. "Sentry for AI" plugin teaches agents how to use Sentry.<a class="citation-ref" data-cite="sentry-mcp-2026"></a> <strong>Devin not listed.</strong></p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="incident.io">
             <div class="partner-priority">High priority — Tegus-named</div>
             <div class="partner-name">incident.io</div>
             <p class="partner-detail">Named by Ramp's senior engineer in Tegus interviews as a Devin-relevant data source.<a class="citation-ref" data-cite="tegus-alphasense-cognition-interviews"></a> Modern incident-response platform; faster deal cycle than legacy vendors.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="splunk.com">
             <div class="partner-priority">High priority — enterprise scale</div>
             <div class="partner-name">Splunk</div>
             <p class="partner-detail">Q1 2026 launched AI Troubleshooting Agent + unified MCP server.<a class="citation-ref" data-cite="splunk-ai-troubleshooting-q1-2026"></a> Large-enterprise compliance-grade customers.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="datadoghq.com">
             <div class="partner-priority">Lower priority — deepen existing</div>
             <div class="partner-name">Datadog</div>
             <p class="partner-detail">Devin already in Datadog AI Agent Directory.<a class="citation-ref" data-cite="datadog-ai-agent-directory"></a> Angle = featured-agent status + joint case studies, not entry.</p>
@@ -506,22 +547,22 @@
 
       <div class="aspect-panel" data-tab="partners">
         <div class="partners">
-          <div class="partner">
+          <div class="partner" data-domain="atlassian.com">
             <div class="partner-priority">High priority — clear gap</div>
             <div class="partner-name">Atlassian Jira / JSM</div>
             <p class="partner-detail">"Agents in Jira" GA May 2026 lists Figma, Canva, Replit, Lovable — <strong>no coding agents</strong>.<a class="citation-ref" data-cite="atlassian-agents-in-jira-may-2026"></a> Greenfield. Atlassian owns Bitbucket (GitHub-alternative coverage Cognition lacks).</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="notion.so">
             <div class="partner-priority">High priority — clean gap</div>
             <div class="partner-name">Notion</div>
             <p class="partner-detail">Notion Developer Platform GA May 13, 2026 lists Claude, Cursor, Codex, Decagon as partner agents.<a class="citation-ref" data-cite="notion-developer-platform-may-2026"></a> <strong>Devin absent.</strong> Notion Workers (sandboxed code runtime) is a meaningful new surface.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="slack.com">
             <div class="partner-priority">Deepening — named relationship exists</div>
             <div class="partner-name">Slack (Salesforce)</div>
             <p class="partner-detail">Cognition Labs explicitly named as one of Slack Marketplace's "leading innovators."<a class="citation-ref" data-cite="slack-marketplace-cognition-leading-innovator"></a> Slackbot agent GA Jan 2026.<a class="citation-ref" data-cite="slackbot-ai-agent-jan-2026"></a> Push toward featured-agent placement + Dreamforce co-presence + broader Salesforce ecosystem partnership (Agentforce).</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="linear.app">
             <div class="partner-priority">Deepening</div>
             <div class="partner-name">Linear</div>
             <p class="partner-detail">Linear MCP shipped; "Deeplink to AI coding tools" feature exists.<a class="citation-ref" data-cite="linear-ai-coding-tools-feb-2026"></a> YC-adjacent investor/customer overlap makes warm-intro paths cheap.</p>
@@ -582,27 +623,27 @@
 
       <div class="aspect-panel" data-tab="partners">
         <div class="partners">
-          <div class="partner">
+          <div class="partner" data-domain="wiz.io">
             <div class="partner-priority">Highest priority — active partner-acquisition mode</div>
             <div class="partner-name">Wiz</div>
             <p class="partner-detail">Google-owned ($32B acquisition). Wiz Integration Network (WIN) launched MCP; "Wiz Skills" embeds Security Graph into coding agents; inline AI security hooks scan AI-generated code.<a class="citation-ref" data-cite="wiz-win-mcp-2026"></a> <strong>Devin not yet named.</strong></p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="sonarsource.com">
             <div class="partner-priority">High priority — Ron-mentioned, open</div>
             <div class="partner-name">SonarQube</div>
             <p class="partner-detail">MCP server shipped, no announced AI coding agent partnership. Ron champion will accelerate internal buy-in.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="semgrep.dev">
             <div class="partner-priority">High priority — modern AppSec brand</div>
             <div class="partner-name">Semgrep</div>
             <p class="partner-detail">MCP shipped, strong DevSecOps developer brand, open. Modern AppSec focus on agent integrations.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="veracode.com">
             <div class="partner-priority">Strategic incumbent gap</div>
             <div class="partner-name">Veracode</div>
             <p class="partner-detail">Fortune 500 customer base <strong>without</strong> an MCP server yet. Joint Cognition-Veracode partnership where Cognition helps ship the MCP could bring Veracode into the agent era.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="snyk.io">
             <div class="partner-priority">Skip — locked</div>
             <div class="partner-name">Snyk, Chainguard</div>
             <p class="partner-detail">Snyk locked to Copilot + Claude. Chainguard locked to Cursor. Don't pursue.</p>
@@ -665,17 +706,17 @@
 
       <div class="aspect-panel" data-tab="partners">
         <div class="partners">
-          <div class="partner">
+          <div class="partner" data-domain="aws.amazon.com">
             <div class="partner-priority">Highest priority — clearest gap</div>
             <div class="partner-name">AWS</div>
             <p class="partner-detail">AWS Agent Plugins (Feb 2026) supports Cursor, Claude, Codex — <strong>Devin not in Agent Plugins</strong> but already on AWS Marketplace.<a class="citation-ref" data-cite="aws-agent-plugins-feb-2026"></a> Get Devin admitted to Agent Plugins; re:Invent 2026 (Dec) is the launch moment.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="cloud.google.com">
             <div class="partner-priority">High priority — formal program</div>
             <div class="partner-name">Google Cloud</div>
             <p class="partner-detail">Vertex AI → Gemini Enterprise Agent Platform at Next 2026. AI Agent Ecosystem Program names Box, Workday, Salesforce, ServiceNow as partner agents.<a class="citation-ref" data-cite="gcp-gemini-agent-platform-2026"></a> <strong>No coding agent yet.</strong></p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="azure.microsoft.com">
             <div class="partner-priority">Already deep — amplify</div>
             <div class="partner-name">Microsoft Azure</div>
             <p class="partner-detail">Existing relationship anchored by Visma customer story.<a class="citation-ref" data-cite="microsoft-cognition-azure-customer-story"></a> Amplify: more case studies, deeper Marketplace push.</p>
@@ -736,17 +777,17 @@
 
       <div class="aspect-panel" data-tab="partners">
         <div class="partners">
-          <div class="partner">
+          <div class="partner" data-domain="snowflake.com">
             <div class="partner-priority">Highest priority — active monetization</div>
             <div class="partner-name">Snowflake</div>
             <p class="partner-detail">Cortex Code expanded April 2026 with Claude Code plugin + VS Code extension + MCP connectors. <strong>Devin not integrated.</strong> Standalone Cortex Code subscription launched.<a class="citation-ref" data-cite="snowflake-cortex-code-feb-2026"></a></p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="databricks.com">
             <div class="partner-priority">High priority — formal partner program</div>
             <div class="partner-name">Databricks</div>
             <p class="partner-detail">Unity AI Gateway (beta) supports Cursor, Gemini CLI, Codex CLI — <strong>Devin absent</strong>.<a class="citation-ref" data-cite="databricks-coding-agent-integration-2026"></a> Brickbuilder Partner Network just launched.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="mongodb.com">
             <div class="partner-priority">Mid priority</div>
             <div class="partner-name">MongoDB, dbt Labs, Confluent</div>
             <p class="partner-detail">MongoDB strong dev audience. dbt for SQL/dbt model work. Confluent narrower use case.</p>
@@ -805,22 +846,22 @@
 
       <div class="aspect-panel" data-tab="partners">
         <div class="partners">
-          <div class="partner">
+          <div class="partner" data-domain="circleci.com">
             <div class="partner-priority">Highest priority — foot-in-door</div>
             <div class="partner-name">CircleCI</div>
             <p class="partner-detail">MCP integration supports Cursor, Claude Desktop, Windsurf (Cognition-owned) — <strong>Devin not listed</strong>.<a class="citation-ref" data-cite="circleci-mcp-2026"></a> Chunk AI agent for autonomous validation. Formal partner program with marketplace.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="buildkite.com">
             <div class="partner-priority">High priority — Anthropic-friendly</div>
             <div class="partner-name">Buildkite</div>
             <p class="partner-detail">LLM Proxy with managed Anthropic (Claude Sonnet/Opus/Haiku).<a class="citation-ref" data-cite="buildkite-llm-proxy-2026"></a> Self-hosted CI for large enterprises; deep audit/compliance customers.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="cloudbees.com">
             <div class="partner-priority">Strategic legacy</div>
             <div class="partner-name">Jenkins (CloudBees)</div>
             <p class="partner-detail">Massive installed base. AI agent integrations less developed; Cognition partnership could bring Jenkins forward.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="github.com">
             <div class="partner-priority">Excluded</div>
             <div class="partner-name">GitHub Actions, GitLab CI</div>
             <p class="partner-detail">GitHub Actions = Microsoft, Copilot home turf. GitLab CI covered in Dev Infra archetype.</p>
@@ -881,17 +922,17 @@
 
       <div class="aspect-panel" data-tab="partners">
         <div class="partners">
-          <div class="partner">
+          <div class="partner" data-domain="vanta.com">
             <div class="partner-priority">Highest priority — category leader, no lock-up</div>
             <div class="partner-name">Vanta</div>
             <p class="partner-detail">Vanta AI Agent 2.0 (Jan 2026); 15,000 customers; 400+ integrations; <strong>Vanta MCP is the most complete open-source compliance MCP</strong>.<a class="citation-ref" data-cite="vanta-ai-agent-jan-2026"></a> Category leader (~$200M revenue).</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="drata.com">
             <div class="partner-priority">High priority — different customer profile</div>
             <div class="partner-name">Drata</div>
             <p class="partner-detail">~$100M revenue, deep control customization, hosted MCP server. Wins highly customized enterprise compliance.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="secureframe.com">
             <div class="partner-priority">Mid priority</div>
             <div class="partner-name">Secureframe, AuditBoard, Hyperproof</div>
             <p class="partner-detail">Secureframe: MCP shipped, smaller but agile. AuditBoard: enterprise-focused. Hyperproof: newer platform, faster close.</p>
@@ -950,22 +991,22 @@
 
       <div class="aspect-panel" data-tab="partners">
         <div class="partners">
-          <div class="partner">
+          <div class="partner" data-domain="sap.com">
             <div class="partner-priority">Strategic but narrow lane</div>
             <div class="partner-name">SAP</div>
             <p class="partner-detail">SAP-Anthropic crowds out Devin from Joule / new-development lane. Lane for Cognition: migration-TO-SAP from legacy. €100M partner fund + Integration Certification Program still exist.<a class="citation-ref" data-cite="sap-100m-partner-fund-2026"></a></p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="oracle.com">
             <div class="partner-priority">High priority — more open</div>
             <div class="partner-name">Oracle</div>
             <p class="partner-detail">Oracle AI Agent Marketplace with 50+ role-based agents. Less locked than SAP. Migration-from-Oracle (Forms / PL-SQL → modern web) + migration-to-Fusion Cloud.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="ibm.com">
             <div class="partner-priority">High priority — Devin's strongest documented lane</div>
             <div class="partner-name">IBM (mainframe / COBOL / Z)</div>
             <p class="partner-detail">Cognition COBOL blog explicitly targets this; Fortune 500 case studies cite mainframe work.<a class="citation-ref" data-cite="cognition-cobol-modernization-blog"></a> IBM's watsonx Code Assistant for Z is narrower. Devin as IBM-recommended migration agent for AS400/COBOL.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="mulesoft.com">
             <div class="partner-priority">Mid priority</div>
             <div class="partner-name">MuleSoft (Salesforce), Workday</div>
             <p class="partner-detail">MuleSoft: API/integration migration. Workday: Anthropic relationship exists — navigate carefully.</p>
@@ -1024,22 +1065,22 @@
 
       <div class="aspect-panel" data-tab="partners">
         <div class="partners">
-          <div class="partner">
+          <div class="partner" data-domain="vercel.com">
             <div class="partner-priority">Highest priority — most agent-friendly</div>
             <div class="partner-name">Vercel</div>
             <p class="partner-detail">AI SDK 6 with Agent abstraction; "Zero" programming language for AI agents.<a class="citation-ref" data-cite="vercel-zero-may-2026"></a> 30% deployments agent-initiated (Claude Code 75%).<a class="citation-ref" data-cite="vercel-ai-sdk-6-2026"></a> Publicly welcomes all agents.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="gitlab.com">
             <div class="partner-priority">High priority — existing relationship</div>
             <div class="partner-name">GitLab</div>
             <p class="partner-detail">Devin already has GitLab integration shipped. GitLab Duo is their own AI. Deepen — featured-agent status, joint enterprise case studies, Premium/Ultimate bundling.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="cloudflare.com">
             <div class="partner-priority">High priority — sophisticated AI buyer</div>
             <div class="partner-name">Cloudflare</div>
             <p class="partner-detail">Internal OpenCode + GitLab CI for code review demonstrates sophisticated agentic adoption.<a class="citation-ref" data-cite="cloudflare-ai-code-review-2026"></a> Workers as Devin deploy target; AI Gateway for LLM calls.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="github.com">
             <div class="partner-priority">Excluded</div>
             <div class="partner-name">GitHub</div>
             <p class="partner-detail">Copilot home turf, Microsoft-owned. No partnership realistic.</p>
@@ -1098,17 +1139,17 @@
 
       <div class="aspect-panel" data-tab="partners">
         <div class="partners">
-          <div class="partner">
+          <div class="partner" data-domain="figma.com">
             <div class="partner-priority">Highest priority — existing relationship</div>
             <div class="partner-name">Figma</div>
             <p class="partner-detail">Devin-Figma MCP promoted publicly by Cognition.<a class="citation-ref" data-cite="figma-devin-integration"></a> Figma Make is the design-execution surface; deeper co-built features (Devin-native Figma Make export) is next-level partnership. Figma Config 2026 is the conference moment.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="storybook.js.org">
             <div class="partner-priority">High priority</div>
             <div class="partner-name">Storybook</div>
             <p class="partner-detail">Component documentation + design system standard for engineering teams. Devin pulling Storybook stories as test/component context is a clean async use case.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="framer.com">
             <div class="partner-priority">Mid / opportunistic</div>
             <div class="partner-name">Framer, Penpot</div>
             <p class="partner-detail">Framer: no-code/low-code design-and-publish. Penpot: open-source Figma alternative for OSS-friendly enterprises.</p>
@@ -1167,17 +1208,17 @@
 
       <div class="aspect-panel" data-tab="partners">
         <div class="partners">
-          <div class="partner">
+          <div class="partner" data-domain="browserstack.com">
             <div class="partner-priority">Highest priority</div>
             <div class="partner-name">BrowserStack</div>
             <p class="partner-detail">Largest cross-browser/device cloud testing platform; deep enterprise customer base. Devin generates BrowserStack-runnable test suites + analyzes failures + auto-patches.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="playwright.dev">
             <div class="partner-priority">Mid priority — despite Microsoft ownership</div>
             <div class="partner-name">Playwright (Microsoft)</div>
             <p class="partner-detail">Open-source test framework with massive dev adoption. Microsoft Marketplace listing or community-level.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="saucelabs.com">
             <div class="partner-priority">Mid / opportunistic</div>
             <div class="partner-name">Sauce Labs, Mabl, Applitools</div>
             <p class="partner-detail">Sauce: enterprise-focused. Mabl: AI-native positioning. Applitools: visual regression, AI-first.</p>
@@ -1236,22 +1277,22 @@
 
       <div class="aspect-panel" data-tab="partners">
         <div class="partners">
-          <div class="partner">
+          <div class="partner" data-domain="workday.com">
             <div class="partner-priority">Highest priority within verticals</div>
             <div class="partner-name">Workday (ERP / HCM)</div>
             <p class="partner-detail">Agent Partner Network launched Q4 2025, fully supported Jan 2026, with compliance focus + Google BigQuery integration.<a class="citation-ref" data-cite="workday-agent-partner-network-q4-2025"></a> Active partner-acquisition mode. Cleanest deal shape.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="plaid.com">
             <div class="partner-priority">High priority — FSI</div>
             <div class="partner-name">Plaid (FSI)</div>
             <p class="partner-detail">Strong developer audience; recently blogged about AI coding adoption (Plaid uses Devin). Plaid for FSI = Cognition's natural vertical fit. Also: Stripe, Mastercard developer platform.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="epic.com">
             <div class="partner-priority">High priority — long cycle</div>
             <div class="partner-name">Epic (Healthcare)</div>
             <p class="partner-detail">Dominant EHR; high-barrier vertical; reference customer would be transformative. Long sales cycle. Also: Veeva, Redox.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="palantir.com">
             <div class="partner-priority">Strategic but slow</div>
             <div class="partner-name">Palantir AIP (Gov/Defense)</div>
             <p class="partner-detail">AIP Assist has application integrations; ecosystem partnership viable but procurement-heavy. Also: Govini, Anduril.</p>
@@ -1310,17 +1351,17 @@
 
       <div class="aspect-panel" data-tab="partners">
         <div class="partners">
-          <div class="partner">
+          <div class="partner" data-domain="coderabbit.ai">
             <div class="partner-priority">Largest in category</div>
             <div class="partner-name">CodeRabbit</div>
             <p class="partner-detail">$60M Series B; shipped Issue Planner (Feb 2026); supports GitHub / GitLab / Azure DevOps / Bitbucket (broader Git-platform reach than Devin); pulls context via MCP.<a class="citation-ref" data-cite="coderabbit-review-2026"></a></p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="greptile.com">
             <div class="partner-priority">YC-backed, codebase Q&amp;A</div>
             <div class="partner-name">Greptile</div>
             <p class="partner-detail">v4 shipped Q1 2026 (74% increase in addressed comments). Co-marketing viable.</p>
           </div>
-          <div class="partner">
+          <div class="partner" data-domain="codacy.com">
             <div class="partner-priority">Lower priority</div>
             <div class="partner-name">Codacy, Mintlify</div>
             <p class="partner-detail">Codacy: established code quality / static analysis. Mintlify: docs-generation focus.</p>
@@ -1372,9 +1413,9 @@
 <!-- ============= 5. PIPELINE ============= -->
 <section id="pipeline" class="section-spacer">
   <span class="kicker">Section 5 · Operating model</span>
-  <h2 class="so-what">Two flows. <span class="accent">One handoff.</span> Click any step to expand.</h2>
+  <h2 class="so-what">The "murky middle" resolves at the handoff. <span class="accent">Partnership owns the relationship; sales owns the revenue.</span></h2>
   <p class="so-what-sub">
-    The "murky middle" Ron flagged dissolves once you draw the line: partnership owns the partner relationship; sales owns the customer revenue. Click any step in the flow below to see triggers, exit criteria, and SLAs. Toggle between inbound (partner approaches us) and outbound (we pursue partner).
+    Inbound and outbound flows, 11 steps each. The handoff between them — partnership intros partner BD to sales rep — is where "who owns what" becomes unambiguous. Click any step to expand triggers, SLAs, and exit criteria. Toggle between flows below.
   </p>
 
   <div class="pipeline-toggle" role="tablist" aria-label="Inbound or outbound">
@@ -1529,10 +1570,10 @@
 
 <!-- ============= 6. COMPETITIVE EDGE ============= -->
 <section id="competitive" class="section-spacer">
-  <span class="kicker">Section 6 · So what</span>
-  <h2 class="so-what">Cognition is the only vendor with <span class="accent">audit-grade async cloud + supervised IDE</span> under one portfolio.</h2>
+  <span class="kicker">Section 6 · Competitive edge</span>
+  <h2 class="so-what">Cursor wins daily IDE. Claude wins senior engineers. Copilot wins GitHub. <span class="accent">Cognition wins the intersection.</span></h2>
   <p class="so-what-sub">
-    Cursor wins daily-driver IDE. Claude Code wins senior / platform engineers. Copilot wins GitHub-native incumbency. <strong>None of them has an audit-grade async cloud agent.</strong> And no async agent has a polished IDE pair. That's Cognition's defensible territory — and that's why the partnerships in Section 4 work.
+    Three competitors. Three sweet spots. Cognition's combination of all three capabilities — supervised IDE, async autonomous execution, enterprise governance — is uniquely defensible. The Section 4 partnerships are designed to lock it in.
   </p>
 
   <h3 style="margin-top: 2rem;">Where each competitor lives</h3>
@@ -1574,9 +1615,9 @@
 <!-- ============= SOURCES ============= -->
 <section id="sources" class="section-spacer">
   <span class="kicker">Sources</span>
-  <h2 class="so-what">Every claim cites a source dated Feb 2026+ except four foundational facts.</h2>
+  <h2 class="so-what">Every factual claim cites a source dated Feb 2026 or later.</h2>
   <p class="so-what-sub">
-    Past-3-months rule: the agentic coding space moves fast enough that anything older than a quarter is routinely stale. Foundational exceptions: Cognition's Windsurf acquisition (2025), the COBOL modernization blog, the Microsoft / Visma case study, and the Tegus / AlphaSense expert interviews (April–July 2025).
+    Past-3-months rule reflects the pace of the agentic-coding space. Four foundational exceptions: Cognition's Windsurf acquisition (2025), the Cognition COBOL modernization blog, the Microsoft / Visma customer story, and the Tegus / AlphaSense expert interviews (April–July 2025).
   </p>
   <div class="citations-footer" data-citations-footer></div>
 </section>

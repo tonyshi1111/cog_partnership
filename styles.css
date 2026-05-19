@@ -200,47 +200,119 @@ section#hero .lede {
   margin: 0 0 2.5rem;
 }
 
-/* Venn diagram */
+/* Venn diagram — 3 circles, interactive */
 .venn-wrap {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 2rem 0 3rem;
-  padding: 1.5rem;
+  padding: 1.5rem 1rem 2rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 6px;
 }
-.venn-wrap svg { display: block; width: 100%; max-width: 680px; height: auto; }
+.venn-wrap svg { display: block; width: 100%; max-width: 760px; height: auto; }
 .venn-caption {
   font-size: 0.95rem;
   color: var(--text-muted);
   text-align: center;
-  margin-top: 1rem;
-  max-width: 540px;
+  margin-top: 0.5rem;
+  max-width: 620px;
+  line-height: 1.5;
 }
-.venn-circle-a { fill: var(--secondary); fill-opacity: 0.16; stroke: var(--secondary); stroke-width: 2; }
-.venn-circle-b { fill: var(--accent); fill-opacity: 0.18; stroke: var(--accent); stroke-width: 2; }
-.venn-label {
-  font-family: var(--font-sans);
-  font-size: 16px;
-  fill: var(--text);
-  font-weight: 600;
+.venn-caption .accent { color: var(--accent-strong); font-weight: 600; }
+
+.venn-circle-a { fill: #2c5d80; fill-opacity: 0.12; stroke: #2c5d80; stroke-width: 2; }
+.venn-circle-b { fill: var(--accent); fill-opacity: 0.14; stroke: var(--accent); stroke-width: 2; }
+.venn-circle-c { fill: #4a7c5a; fill-opacity: 0.14; stroke: #4a7c5a; stroke-width: 2; }
+
+.venn-circle-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
-.venn-label-sub {
+.venn-circle-label.label-a { fill: #2c5d80; }
+.venn-circle-label.label-b { fill: var(--accent-strong); }
+.venn-circle-label.label-c { fill: #2f6f3e; }
+.venn-circle-sub {
   font-family: var(--font-sans);
   font-size: 12px;
   fill: var(--text-muted);
+  font-style: italic;
 }
-.venn-sweet {
+
+.venn-dot {
+  cursor: pointer;
+  transition: transform 0.15s, filter 0.15s;
+}
+.venn-dot circle {
+  fill: var(--text);
+  stroke: white;
+  stroke-width: 2;
+  transition: r 0.15s, fill 0.15s;
+}
+.venn-dot text {
   font-family: var(--font-sans);
-  font-size: 14px;
-  fill: var(--accent-strong);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: 12px;
+  fill: var(--text);
+  font-weight: 500;
+  pointer-events: none;
 }
-.venn-sweet-name { font-size: 18px; fill: var(--text); font-weight: 700; }
+.venn-dot:hover circle, .venn-dot:focus circle { fill: var(--accent); }
+.venn-dot:hover, .venn-dot:focus { outline: none; }
+.venn-dot.cognition circle {
+  fill: var(--accent);
+  stroke: var(--accent-strong);
+  stroke-width: 3;
+  r: 12;
+}
+.venn-dot.cognition text {
+  font-weight: 700;
+  fill: var(--accent-strong);
+  font-size: 13px;
+}
+.venn-dot.cognition:hover circle, .venn-dot.cognition:focus circle {
+  fill: var(--accent-strong);
+}
+
+.venn-tooltip {
+  position: absolute;
+  z-index: 100;
+  background: var(--text);
+  color: white;
+  padding: 0.7rem 0.95rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  max-width: 280px;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+  line-height: 1.45;
+  transition: opacity 0.12s;
+  opacity: 0;
+}
+.venn-tooltip.visible { opacity: 1; }
+.venn-tooltip strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: white;
+}
+.venn-tooltip .regions {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: rgba(255, 217, 184, 0.92);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+.venn-tooltip .desc {
+  color: rgba(255,255,255,0.92);
+  font-size: 0.85rem;
+}
 
 /* Bridge / pull-quote */
 .bridge {
@@ -340,7 +412,14 @@ section#hero .lede {
 .prio-chart .bubble.top { fill: var(--accent); fill-opacity: 0.45; stroke: var(--accent-strong); stroke-width: 2; }
 .prio-chart .bubble.mid { fill: var(--secondary); fill-opacity: 0.25; stroke: var(--secondary); stroke-width: 1.5; }
 .prio-chart .bubble.low { fill: var(--text-faint); fill-opacity: 0.15; stroke: var(--text-faint); }
-.prio-chart .bubble:hover { fill-opacity: 0.65; }
+.prio-chart .bubble-group {
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.prio-chart .bubble-group:hover .bubble,
+.prio-chart .bubble-group:focus .bubble { fill-opacity: 0.65; stroke-width: 2.5; }
+.prio-chart .bubble-group:focus { outline: none; }
+.prio-chart .bubble-group:focus .bubble { filter: drop-shadow(0 0 6px var(--accent-strong)); }
 .prio-chart .bubble-label { font-family: var(--font-sans); font-size: 11px; fill: var(--text); pointer-events: none; }
 .prio-chart .bubble-label.top { font-weight: 700; fill: var(--accent-strong); font-size: 12px; }
 .prio-chart .legend { font-family: var(--font-mono); font-size: 10px; fill: var(--text-muted); }
@@ -462,13 +541,43 @@ section#hero .lede {
   margin-bottom: 1rem;
 }
 
-/* Named partners */
+/* Named partners — 2-column grid: logo on left, content on right */
 .partners { margin: 1rem 0; }
 .partner {
-  padding: 0.85rem 0;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 1.1rem;
+  padding: 0.95rem 0;
   border-bottom: 1px solid var(--border);
+  align-items: start;
 }
 .partner:last-child { border-bottom: none; }
+.partner-logo-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 6px;
+  background: white;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 6px;
+  flex-shrink: 0;
+}
+.partner-logo-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.partner-logo-wrap.fallback {
+  background: var(--bg-subtle);
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.partner-content { min-width: 0; }
 .partner-name { font-weight: 600; font-size: 1rem; margin-bottom: 0.2rem; }
 .partner-priority {
   font-family: var(--font-mono);
@@ -479,6 +588,10 @@ section#hero .lede {
   margin-bottom: 0.3rem;
 }
 .partner-detail { font-size: 0.92rem; color: var(--text-muted); margin: 0; }
+@media (max-width: 720px) {
+  .partner { grid-template-columns: 48px 1fr; gap: 0.85rem; }
+  .partner-logo-wrap { width: 42px; height: 42px; padding: 4px; }
+}
 
 /* Quadrant inside deep-dive */
 .quadrant {
