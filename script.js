@@ -372,73 +372,7 @@
     });
   }
 
-  // ============ COMPETITIVE WEDGE 2×2 ============
-  const WEDGE_PANELS = {
-    cognition: {
-      title: 'Cognition / Devin',
-      body: "Real wedge isn't autonomy — that's commoditizing. It's three things compounding: <strong>(1) Enterprise distribution lead</strong> — Goldman, Infosys, Cognizant — that takes years to build. <strong>(2) Async UX is harder than sync</strong> — auditing 6 hours of agent work is a different muscle than autocomplete. <strong>(3) Services channel</strong> — embedding into Infosys/Cognizant means selling to CIOs at Fortune 500s, not engineers. <em>Risk:</em> if the model layer commoditizes async reliability, premium collapses to relationships only."
-    },
-    windsurf: {
-      title: 'Windsurf',
-      body: "Acquired by Cognition. They bought ARR and IDE distribution, not technology. Lets Cognition sell a bundle: sync (Windsurf) for the engineer's keyboard, async (Devin) for the engineer's backlog."
-    },
-    cursor: {
-      title: 'Cursor',
-      body: "Won the IDE wedge with a VS Code fork + best-in-class inline UX. Bottoms-up motion: devs expense it, teams adopt it. Structurally hard to move up into enterprise async — wrong pricing model, wrong buyer."
-    },
-    claude: {
-      title: 'Claude Code',
-      body: "Anthropic's reference implementation of agentic coding on their own model. Terminal-native, dev-friendly. The real strategic play: capture value at the model layer regardless of which UI wins — Cursor, Cognition, and others all pay Anthropic for inference underneath."
-    },
-    replit: {
-      title: 'Replit',
-      body: "Different user entirely. PMs, designers, founders, students who can't get a dev environment running. Browser-only. Devin assumes you have a GitHub and a Jira; Replit assumes you have nothing."
-    },
-    manus: {
-      title: 'Manus',
-      body: "Horizontal computer-use agent that happens to code. Closer to OpenAI Operator than Devin. Knowledge worker buyer, not engineer buyer."
-    }
-  };
-
-  function setupWedgeChart() {
-    const chart = document.getElementById('wedge-chart');
-    const expand = document.getElementById('wedge-expand');
-    if (!chart || !expand) return;
-    const cards = chart.querySelectorAll('.wedge-card[data-co]');
-
-    function openCard(card) {
-      const co = card.dataset.co;
-      const panel = WEDGE_PANELS[co];
-      if (!panel) return;
-      cards.forEach((c) => c.setAttribute('aria-expanded', c === card ? 'true' : 'false'));
-      expand.innerHTML = `
-        <div class="panel-name" style="color: var(--accent-strong);">${escapeHtml(co.toUpperCase())}</div>
-        <div class="panel-title">${escapeHtml(panel.title)}</div>
-        <div class="panel-body">${panel.body}</div>
-      `;
-      expand.hidden = false;
-    }
-
-    function closeAll() {
-      cards.forEach((c) => c.setAttribute('aria-expanded', 'false'));
-      expand.hidden = true;
-      expand.innerHTML = '';
-    }
-
-    cards.forEach((card) => {
-      card.addEventListener('click', (e) => {
-        e.preventDefault();
-        const isOpen = card.getAttribute('aria-expanded') === 'true';
-        if (isOpen) closeAll(); else openCard(card);
-      });
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          card.click();
-        }
-      });
-    });
-  }
+  // Wedge chart is now hover-only via CSS — no JS interactivity needed.
 
   document.addEventListener('DOMContentLoaded', () => {
     loadCitations();
@@ -447,7 +381,6 @@
     setupArchetypeGridJump();
     setupBubbleClicks();
     setupVennTooltip();
-    setupWedgeChart();
     setupPartnerLogos();
     setupPipelineToggle();
     setupFlowExpand();
