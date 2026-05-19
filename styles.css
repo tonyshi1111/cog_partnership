@@ -212,7 +212,28 @@ section#hero .lede {
   border: 1px solid var(--border);
   border-radius: 6px;
 }
-.venn-wrap svg { display: block; width: 100%; max-width: 760px; height: auto; }
+.venn-wrap svg { display: block; width: 100%; max-width: 760px; height: auto; margin-top: 0.5rem; }
+.venn-heading {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 1rem;
+}
+.venn-heading-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+.venn-heading-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
 .venn-caption {
   font-size: 0.95rem;
   color: var(--text-muted);
