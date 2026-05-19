@@ -1,13 +1,16 @@
-// Single-page scroll site for Cognition Partnership Strategy
-// - Resolves [data-cite="id"] into numbered footnotes from citations.json
-// - Scroll-spy: highlights active TOC entries based on viewport
-// - Toggle: collapse/expand subsection lists in the right sidebar
-// - Mobile: open/close right sidebar via top-nav button
+// Presentation-style site for Cognition Partnership Strategy
+// - Citation footnote resolver
+// - Archetype chip selector + aspect tab switcher (deep-dive section)
+// - Pipeline inbound/outbound toggle + click-to-expand flow steps
+// - Archetype grid cards jump to deep-dive and select archetype
+// - Scroll-spy active section highlighting in TOC
+// - Mobile sidebar slide-in
 
 (function () {
   let citationData = null;
   const citationUseOrder = [];
 
+  // ============ CITATIONS ============
   async function loadCitations() {
     try {
       const res = await fetch('assets/citations.json');
@@ -50,9 +53,6 @@
       li.innerHTML = `<a href="${c.url}" target="_blank" rel="noopener">${escapeHtml(c.title)}</a> — ${escapeHtml(c.publisher)} (${escapeHtml(c.date)})`;
       list.appendChild(li);
     });
-    const heading = document.createElement('h3');
-    heading.textContent = 'Sources';
-    container.appendChild(heading);
     container.appendChild(list);
   }
 
@@ -62,63 +62,106 @@
     })[c]);
   }
 
-  // Build map: section id -> TOC link element
-  function buildTocMap() {
-    const map = new Map();
-    document.querySelectorAll('aside.toc a[href^="#"]').forEach((a) => {
-      const id = a.getAttribute('href').slice(1);
-      map.set(id, a);
+  // ============ ARCHETYPE SELECTOR + TABS ============
+  function setupArchetypeExplorer() {
+    const explorer = document.querySelector('.archetype-explorer');
+    if (!explorer) return;
+
+    const chips = explorer.querySelectorAll('.archetype-chip');
+    const contents = explorer.querySelectorAll('.archetype-content');
+    const tabs = explorer.querySelectorAll('.aspect-tab');
+
+    function selectArchetype(arch) {
+      chips.forEach((c) => c.classList.toggle('active', c.dataset.arch === arch));
+      contents.forEach((c) => c.classList.toggle('active', c.dataset.arch === arch));
+    }
+
+    function selectTab(tab) {
+      tabs.forEach((t) => t.classList.toggle('active', t.dataset.tab === tab));
+      // Within EVERY archetype content block, activate the matching panel
+      explorer.querySelectorAll('.aspect-panel').forEach((p) => {
+        p.classList.toggle('active', p.dataset.tab === tab);
+      });
+    }
+
+    chips.forEach((chip) => {
+      chip.addEventListener('click', (e) => {
+        e.preventDefault();
+        selectArchetype(chip.dataset.arch);
+      });
     });
-    return map;
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        selectTab(tab.dataset.tab);
+      });
+    });
+
+    // Expose for external triggers (archetype-grid card clicks)
+    window.__selectArchetype = selectArchetype;
   }
 
-  // Scroll-spy: highlight the topmost section currently in view
+  function setupArchetypeGridJump() {
+    document.querySelectorAll('.archetype-card[data-jump]').forEach((card) => {
+      card.addEventListener('click', (e) => {
+        const arch = card.dataset.jump;
+        if (window.__selectArchetype) {
+          setTimeout(() => window.__selectArchetype(arch), 50);
+        }
+        // Native href jumps to #deep-dive; archetype selection happens after smooth-scroll starts
+      });
+    });
+  }
+
+  // ============ PIPELINE TOGGLE + EXPAND ============
+  function setupPipelineToggle() {
+    const toggle = document.querySelector('.pipeline-toggle');
+    if (!toggle) return;
+    const buttons = toggle.querySelectorAll('button');
+    const flows = document.querySelectorAll('.flow[data-flow]');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.flow;
+        buttons.forEach((b) => b.classList.toggle('active', b === btn));
+        flows.forEach((f) => f.classList.toggle('active', f.dataset.flow === target));
+      });
+    });
+  }
+
+  function setupFlowExpand() {
+    document.querySelectorAll('.flow > li').forEach((step) => {
+      step.addEventListener('click', () => {
+        step.classList.toggle('expanded');
+      });
+    });
+  }
+
+  // ============ SCROLL-SPY ============
   function setupScrollSpy() {
-    const tocMap = buildTocMap();
+    const tocLinks = document.querySelectorAll('aside.toc a[href^="#"]');
+    const tocMap = new Map();
+    tocLinks.forEach((a) => tocMap.set(a.getAttribute('href').slice(1), a));
     if (tocMap.size === 0) return;
 
-    const sections = Array.from(document.querySelectorAll('section[id]'));
-    if (sections.length === 0) return;
-
+    const sections = Array.from(document.querySelectorAll('section[id]')).filter((s) => tocMap.has(s.id));
     let currentActive = null;
 
     function update() {
       const navHeight = document.querySelector('nav.site')?.offsetHeight || 56;
-      const probeY = navHeight + 60;
+      const probeY = navHeight + 80;
       let active = null;
       for (const sec of sections) {
         const rect = sec.getBoundingClientRect();
-        if (rect.top <= probeY) {
-          active = sec;
-        } else {
-          break;
-        }
+        if (rect.top <= probeY) active = sec;
+        else break;
       }
       if (active && active !== currentActive) {
         currentActive = active;
-        // Clear prior actives
         document.querySelectorAll('aside.toc a.active').forEach((a) => a.classList.remove('active'));
-        // Highlight this section and its ancestors (so parent + child both active)
-        let node = active;
-        while (node) {
-          if (node.id && tocMap.has(node.id)) {
-            tocMap.get(node.id).classList.add('active');
-          }
-          node = node.parentElement?.closest('section[id]') || null;
-        }
-        // Auto-expand the parent group if collapsed
         const link = tocMap.get(active.id);
-        if (link) {
-          const parentSection = link.closest('.toc-section');
-          if (parentSection) {
-            const subitems = parentSection.querySelector('.toc-subitems');
-            const toggleBtn = parentSection.querySelector('.toc-toggle-btn');
-            if (subitems && subitems.hasAttribute('hidden')) {
-              subitems.removeAttribute('hidden');
-              if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
-            }
-          }
-        }
+        if (link) link.classList.add('active');
       }
     }
 
@@ -126,36 +169,13 @@
     let ticking = false;
     window.addEventListener('scroll', () => {
       if (!ticking) {
-        window.requestAnimationFrame(() => {
-          update();
-          ticking = false;
-        });
+        window.requestAnimationFrame(() => { update(); ticking = false; });
         ticking = true;
       }
     }, { passive: true });
   }
 
-  // TOC subsection toggles
-  function setupTocToggles() {
-    document.querySelectorAll('aside.toc .toc-toggle-btn').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const subitems = btn.closest('.toc-section')?.querySelector('.toc-subitems');
-        if (!subitems) return;
-        const isHidden = subitems.hasAttribute('hidden');
-        if (isHidden) {
-          subitems.removeAttribute('hidden');
-          btn.setAttribute('aria-expanded', 'true');
-        } else {
-          subitems.setAttribute('hidden', '');
-          btn.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
-  }
-
-  // Mobile: open/close right sidebar
+  // ============ MOBILE SIDEBAR ============
   function setupMobileToc() {
     const toggle = document.querySelector('nav.site .toc-toggle');
     const aside = document.querySelector('aside.toc');
@@ -164,7 +184,6 @@
       aside.classList.toggle('open');
       toggle.setAttribute('aria-expanded', aside.classList.contains('open') ? 'true' : 'false');
     });
-    // Close on outside click (mobile)
     document.addEventListener('click', (e) => {
       if (window.innerWidth > 960) return;
       if (!aside.contains(e.target) && !toggle.contains(e.target) && aside.classList.contains('open')) {
@@ -172,7 +191,6 @@
         toggle.setAttribute('aria-expanded', 'false');
       }
     });
-    // Close after a nav link is clicked on mobile
     aside.addEventListener('click', (e) => {
       if (window.innerWidth > 960) return;
       const link = e.target.closest('a[href^="#"]');
@@ -185,7 +203,10 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     loadCitations();
-    setupTocToggles();
+    setupArchetypeExplorer();
+    setupArchetypeGridJump();
+    setupPipelineToggle();
+    setupFlowExpand();
     setupScrollSpy();
     setupMobileToc();
   });
