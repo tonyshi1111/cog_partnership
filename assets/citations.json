@@ -1,0 +1,378 @@
+{
+  "_meta": {
+    "description": "Sourced citations for the Cognition Partnership pitch site. Every factual claim on the site references one of these by ID. All sources dated Feb 2026 or later unless explicitly noted as pre-Feb (used only for foundational facts like the Devin acquisition of Windsurf).",
+    "lastUpdated": "2026-05-18",
+    "sourceRule": "Past 3 months only (Feb 2026+) — older comparisons are stale given the pace of the agentic-coding space."
+  },
+  "citations": {
+    "cognizant-cognition-jan-2026": {
+      "title": "Cognizant and Cognition Partner to Scale Autonomous Software Engineering and Deliver Business Value Across Enterprise Operations",
+      "url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-and-Cognition-Partner-to-Scale-Autonomous-Software-Engineering-and-Deliver-Business-Value-Across-Enterprise-Operations/default.aspx",
+      "date": "2026-01-28",
+      "publisher": "Cognizant Investor Relations",
+      "topics": ["si-partnerships", "context"]
+    },
+    "infosys-cognition-jan-2026": {
+      "title": "Infosys and Cognition Announce Strategic Collaboration to Accelerate the AI Value Journey for Global Enterprises",
+      "url": "https://www.infosys.com/newsroom/press-releases/2026/collaboration-accelerate-ai-value-journey.html",
+      "date": "2026-01-07",
+      "publisher": "Infosys Newsroom",
+      "topics": ["si-partnerships", "context"]
+    },
+    "synechron-cognition-feb-2026": {
+      "title": "Synechron Partners With Cognition to Bring Autonomous AI Engineering to Global Financial Institutions",
+      "url": "https://financialit.net/news/artificial-intelligence/synechron-partners-cognition-bring-autonomous-ai-engineering-global",
+      "date": "2026-02-01",
+      "publisher": "Financial IT",
+      "topics": ["si-partnerships", "verticals-fsi"]
+    },
+    "servicenow-build-agent-2026": {
+      "title": "ServiceNow Build Agent now works inside every major AI coding tool, governed by default",
+      "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-Build-Agent-now-works-inside-every-major-AI-coding-tool-governed-by-default/default.aspx",
+      "date": "2026-05-06",
+      "publisher": "ServiceNow Newsroom",
+      "topics": ["itsm", "competitive"],
+      "keyFinding": "Build Agent integrates with Cursor, Windsurf, Claude Code, and GitHub Copilot — but NOT Devin. Powered by Anthropic models."
+    },
+    "servicenow-partner-program-jan-2026": {
+      "title": "ServiceNow enhances global Partner Program to accelerate AI agent innovation",
+      "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-enhances-global-Partner-Program-to-accelerate-AI-agent-innovation/default.aspx",
+      "date": "2026-01-20",
+      "publisher": "ServiceNow Newsroom",
+      "topics": ["itsm"],
+      "keyFinding": "Formal tiers (Registered/Select/Premier/Elite + Access tier) + Market Development Fund (100% reimbursement) + Strategic Investment Fund. 1,000+ partners transitioning."
+    },
+    "atlassian-agents-in-jira-may-2026": {
+      "title": "Introducing Agents in Jira",
+      "url": "https://community.atlassian.com/forums/Jira-articles/Introducing-Agents-in-Jira/ba-p/3194583",
+      "date": "2026-05-01",
+      "publisher": "Atlassian Community",
+      "topics": ["itsm", "workflow"],
+      "keyFinding": "Partner agents include Figma, Canva, Replit, Lovable — Devin and other major coding agents absent."
+    },
+    "pagerduty-ai-ecosystem-march-2026": {
+      "title": "PagerDuty Expands AI Ecosystem to Supercharge AI Agents and Deliver Autonomous Operations",
+      "url": "https://www.pagerduty.com/newsroom/pagerduty-expands-ai-ecosystem-to-supercharge-ai-agents/",
+      "date": "2026-03-12",
+      "publisher": "PagerDuty Newsroom",
+      "topics": ["observability"],
+      "keyFinding": "30+ AI partners across 11 categories. Strategic partnerships with Anthropic, Cursor, LangChain. Devin not listed."
+    },
+    "datadog-ai-agent-directory": {
+      "title": "AI Agent Directory",
+      "url": "https://www.datadoghq.com/product/ai/agent-directory/",
+      "date": "2026-05-01",
+      "publisher": "Datadog",
+      "topics": ["observability"],
+      "keyFinding": "Directory includes Cursor, Claude Code, Gemini CLI, VS Code, Warp, Devin, Codex CLI, Claude Desktop, Goose, OpenCode, GitHub Copilot, Custom Agent."
+    },
+    "sentry-mcp-2026": {
+      "title": "Sentry MCP — connect AI agents to Sentry",
+      "url": "https://docs.sentry.io/ai/mcp/",
+      "date": "2026-03-01",
+      "publisher": "Sentry Docs",
+      "topics": ["observability"],
+      "keyFinding": "Sentry MCP supports Claude Code, Cursor, GitHub Copilot; Devin not listed."
+    },
+    "splunk-ai-troubleshooting-q1-2026": {
+      "title": "Splunk Observability Update (Q1 2026): Deeper Insights for AI Agents",
+      "url": "https://www.splunk.com/en_us/blog/observability/splunk-observability-ai-agent-monitoring-innovations.html",
+      "date": "2026-03-01",
+      "publisher": "Splunk Blog",
+      "topics": ["observability"],
+      "keyFinding": "AI Troubleshooting Agent + unified MCP server launched Q1 2026."
+    },
+    "slack-marketplace-cognition-leading-innovator": {
+      "title": "Slack Expands Platform to Power Secure, Context-Aware AI Apps and Agents",
+      "url": "https://www.salesforce.com/news/stories/slack-context-aware-ai-apps-agents/",
+      "date": "2026-02-01",
+      "publisher": "Salesforce News",
+      "topics": ["workflow"],
+      "keyFinding": "Cognition Labs explicitly named among Slack Marketplace's 'leading innovators' alongside Anthropic, Google, Perplexity, Writer, Dropbox, Notion, Vercel, Cursor."
+    },
+    "slackbot-ai-agent-jan-2026": {
+      "title": "Slackbot is an AI agent now",
+      "url": "https://techcrunch.com/2026/01/13/slackbot-is-an-ai-agent-now/",
+      "date": "2026-01-13",
+      "publisher": "TechCrunch",
+      "topics": ["workflow"],
+      "keyFinding": "30+ new Slackbot capabilities; MCP support; third-party agent ecosystem expansion."
+    },
+    "notion-developer-platform-may-2026": {
+      "title": "Notion Launches Developer Platform for AI Agents",
+      "url": "https://www.notion.com/releases/2026-05-13",
+      "date": "2026-05-13",
+      "publisher": "Notion Release Notes",
+      "topics": ["workflow"],
+      "keyFinding": "Partner agents include Claude Code, Cursor, Codex, Decagon. Devin absent. Notion Workers (sandboxed code runtime) is new product surface."
+    },
+    "linear-ai-coding-tools-feb-2026": {
+      "title": "Deeplink to AI coding tools — Linear Changelog",
+      "url": "https://linear.app/changelog/2026-02-26-deeplink-to-ai-coding-tools",
+      "date": "2026-02-26",
+      "publisher": "Linear Changelog",
+      "topics": ["workflow"]
+    },
+    "snyk-claude-may-2026": {
+      "title": "May 8, 2026: AI updates from the past week — Snyk-Claude partnership",
+      "url": "https://sdtimes.com/ai/may-8-2026-ai-updates-from-the-past-week-coder-agents-launch-snyk-claude-partnership-opsera-cursor-partnership-and-more/",
+      "date": "2026-05-08",
+      "publisher": "SD Times",
+      "topics": ["security", "competitive"],
+      "keyFinding": "Snyk-Claude partnership delivers AI-driven vulnerability discovery + remediation. Closes the Snyk lane to Anthropic."
+    },
+    "wiz-win-mcp-2026": {
+      "title": "WIN 2026: Building the AI Security Ecosystem",
+      "url": "https://www.wiz.io/blog/win-ai-partnerships",
+      "date": "2026-04-15",
+      "publisher": "Wiz Blog",
+      "topics": ["security"],
+      "keyFinding": "Wiz Integration Network (WIN) launched MCP + Wiz Skills + inline AI security hooks. Active AI coding agent partner acquisition."
+    },
+    "cursor-chainguard-2026": {
+      "title": "Cursor and Chainguard partner to lock down the AI agent supply chain",
+      "url": "https://thenewstack.io/cursor-chainguard-agentic-ai-secure/",
+      "date": "2026-02-15",
+      "publisher": "The New Stack",
+      "topics": ["security", "competitive"]
+    },
+    "aws-agent-plugins-feb-2026": {
+      "title": "Introducing Agent Plugins for AWS",
+      "url": "https://aws.amazon.com/blogs/developer/introducing-agent-plugins-for-aws/",
+      "date": "2026-02-17",
+      "publisher": "AWS Developer Tools Blog",
+      "topics": ["hyperscalers"],
+      "keyFinding": "Supports Cursor, Claude Code, Codex. Devin not in Agent Plugins (but on AWS Marketplace separately)."
+    },
+    "gcp-gemini-agent-platform-2026": {
+      "title": "Google Cloud Next 2026: AI agents, A2A protocol, Workspace Studio",
+      "url": "https://thenextweb.com/news/google-cloud-next-ai-agents-agentic-era",
+      "date": "2026-04-09",
+      "publisher": "The Next Web",
+      "topics": ["hyperscalers"],
+      "keyFinding": "Vertex AI rebranded to Gemini Enterprise Agent Platform; AI Agent Ecosystem Program with Box, Workday, Salesforce, ServiceNow partner agents."
+    },
+    "anthropic-partner-network-march-2026": {
+      "title": "Anthropic invests $100 million into the Claude Partner Network",
+      "url": "https://www.anthropic.com/news/claude-partner-network",
+      "date": "2026-03-01",
+      "publisher": "Anthropic News",
+      "topics": ["competitive"],
+      "keyFinding": "Formal channel partner program; $100M commitment; available on all 3 hyperscalers (AWS Bedrock, GCP Vertex AI, Azure Foundry)."
+    },
+    "snowflake-cortex-code-feb-2026": {
+      "title": "Snowflake Unveils Cortex Code, An AI Coding Agent for the Data Stack",
+      "url": "https://www.snowflake.com/en/news/press-releases/snowflake-unveils-cortex-code-an-ai-coding-agent-that-drastically-increases-productivity-by-understanding-your-enterprise-data-context/",
+      "date": "2026-02-03",
+      "publisher": "Snowflake Press Releases",
+      "topics": ["data-platforms"],
+      "keyFinding": "Cortex Code is Snowflake's own AI coding agent. 50%+ of Snowflake customers actively using it. External integrations to Claude Code + Cursor CLI; Devin not listed."
+    },
+    "databricks-coding-agent-integration-2026": {
+      "title": "Integrate with coding agents — Databricks",
+      "url": "https://docs.databricks.com/aws/en/ai-gateway/coding-agent-integration-beta",
+      "date": "2026-04-01",
+      "publisher": "Databricks Docs",
+      "topics": ["data-platforms"],
+      "keyFinding": "Unity AI Gateway coding-agent integration (beta) supports Cursor, Gemini CLI, Codex CLI. Devin absent."
+    },
+    "sap-anthropic-sapphire-may-2026": {
+      "title": "SAP and Anthropic: Claude on SAP Business AI Platform",
+      "url": "https://news.sap.com/2026/05/sap-anthropic-to-bring-claude-sap-business-ai-platform/",
+      "date": "2026-05-13",
+      "publisher": "SAP News",
+      "topics": ["modernization"],
+      "keyFinding": "SAP-Anthropic partnership makes Claude 'primary reasoning and agentic capability' across SAP's AI portfolio via Joule. Devin's lane narrows to migration-TO-SAP."
+    },
+    "sap-100m-partner-fund-2026": {
+      "title": "SAP Intros Program to Help Enterprises Incorporate AI Agents",
+      "url": "https://www.pymnts.com/news/b2b-payments/2026/sap-intros-program-to-help-enterprises-incorporate-ai-agents/",
+      "date": "2026-01-22",
+      "publisher": "PYMNTS",
+      "topics": ["modernization"],
+      "keyFinding": "€100M partner fund for SAP-built AI assistants + partners building on Joule Studio."
+    },
+    "vercel-ai-sdk-6-2026": {
+      "title": "AI SDK 6 — Vercel",
+      "url": "https://vercel.com/blog/ai-sdk-6",
+      "date": "2026-04-01",
+      "publisher": "Vercel Blog",
+      "topics": ["dev-infra"],
+      "keyFinding": "Agent abstraction in AI SDK 6; 30% of Vercel deployments now agent-initiated, with Claude Code accounting for 75% of agent-deploy volume."
+    },
+    "vercel-zero-may-2026": {
+      "title": "Vercel Zero: A Programming Language Built for AI Agents",
+      "url": "https://aiautomationglobal.com/blog/vercel-zero-programming-language-ai-agents-2026",
+      "date": "2026-05-15",
+      "publisher": "AI Automation Global",
+      "topics": ["dev-infra"]
+    },
+    "cloudflare-ai-code-review-2026": {
+      "title": "Orchestrating AI Code Review at scale",
+      "url": "https://blog.cloudflare.com/ai-code-review/",
+      "date": "2026-04-15",
+      "publisher": "Cloudflare Blog",
+      "topics": ["dev-infra"],
+      "keyFinding": "131,246 AI code reviews in 30 days (March 10 – April 9, 2026) using OpenCode + GitLab CI."
+    },
+    "circleci-mcp-2026": {
+      "title": "CircleCI — Dev-focused CI/CD for the AI era",
+      "url": "https://circleci.com/solutions/developer/",
+      "date": "2026-03-01",
+      "publisher": "CircleCI",
+      "topics": ["ci-cd"],
+      "keyFinding": "CircleCI MCP integration supports Cursor, Claude Desktop, Windsurf. Devin not yet listed. Chunk AI agent for autonomous validation."
+    },
+    "buildkite-llm-proxy-2026": {
+      "title": "Buildkite LLM Proxy — managed Anthropic models",
+      "url": "https://buildkite.com",
+      "date": "2026-03-15",
+      "publisher": "Buildkite",
+      "topics": ["ci-cd"],
+      "keyFinding": "Managed Anthropic provider (Claude Sonnet, Opus, Haiku) in pipelines."
+    },
+    "vanta-ai-agent-jan-2026": {
+      "title": "Vanta AI Agent 2.0 — Vanta Review 2026",
+      "url": "https://soc2auditors.org/insights/vanta-review/",
+      "date": "2026-01-15",
+      "publisher": "SOC 2 Auditors",
+      "topics": ["compliance-grc"],
+      "keyFinding": "Vanta AI Agent 2.0 launched Jan 2026; 15,000 customers; Vanta MCP server is the most complete open-source compliance MCP."
+    },
+    "compliance-mcp-servers-2026": {
+      "title": "Compliance & Audit Automation MCP Servers — Vanta, Drata, Secureframe",
+      "url": "https://chatforest.com/reviews/compliance-audit-automation-mcp-servers/",
+      "date": "2026-04-01",
+      "publisher": "ChatForest",
+      "topics": ["compliance-grc"]
+    },
+    "workday-agent-partner-network-q4-2025": {
+      "title": "Workday Expands Agent Partner Network With New Ventures Partners",
+      "url": "https://www.prnewswire.com/news-releases/workday-expands-agent-partner-network-with-new-ventures-partners-to-deliver-enterprise-ray-ai-agents-302557171.html",
+      "date": "2026-01-15",
+      "publisher": "PR Newswire",
+      "topics": ["verticals"],
+      "keyFinding": "Workday Agent Partner Network GA Q4 2025, fully supported Jan 2026. Active partner-acquisition mode + compliance/ethics focus + Google BigQuery integration."
+    },
+    "openai-codex-pricing-2026": {
+      "title": "Codex Pricing 2026 — OpenAI",
+      "url": "https://developers.openai.com/codex/pricing",
+      "date": "2026-04-23",
+      "publisher": "OpenAI Developers",
+      "topics": ["competitive"],
+      "keyFinding": "GPT-5.5-powered, 400K context, token-based billing (April 2 → April 23, 2026). Enterprise features: SCIM, EKM, RBAC, audit logs."
+    },
+    "openhands-series-a-2026": {
+      "title": "Devin AI vs OpenHands: Open Source vs Proprietary Agentic Development",
+      "url": "https://www.amplifilabs.com/post/devin-ai-vs-openhands-open-source-vs-proprietary-agentic-development",
+      "date": "2026-03-01",
+      "publisher": "Amplifi Labs",
+      "topics": ["competitive"],
+      "keyFinding": "OpenHands: $18.8M Series A; adopted by AMD, Apple, Google, Amazon, Netflix, NVIDIA. Most capable open-source agent."
+    },
+    "claude-code-vs-cursor-devin-may-2026": {
+      "title": "Claude Code vs Cursor vs Devin vs Copilot in 2026: The Comparison Everyone Is Still Getting Wrong",
+      "url": "https://medium.com/data-science-collective/claude-code-vs-cursor-vs-devin-vs-copilot-in-2026-the-comparison-everyone-is-still-getting-wrong-5afd6ceff3e7",
+      "date": "2026-05-01",
+      "publisher": "Data Science Collective (Medium)",
+      "topics": ["competitive"]
+    },
+    "cognition-cobol-modernization-blog": {
+      "title": "How Devin Is Modernizing COBOL at Fortune 500 Companies",
+      "url": "https://cognition.ai/blog/how-devin-is-modernizing-cobol-at-fortune-500-companies",
+      "date": "2025-12-01",
+      "publisher": "Cognition Blog",
+      "topics": ["modernization"],
+      "note": "Pre-Feb 2026 but cited as foundational Devin capability proof point."
+    },
+    "cognition-25b-valuation-april-2026": {
+      "title": "Cognition in talks to raise 'hundreds of millions' at $25B valuation",
+      "url": "https://siliconangle.com/2026/04/23/cognition-creator-ai-software-engineer-devin-talks-raise-hundreds-millions-25b-valuation/",
+      "date": "2026-04-23",
+      "publisher": "SiliconANGLE",
+      "topics": ["context"]
+    },
+    "cognition-windsurf-acquisition-2025": {
+      "title": "Cognition acquires Windsurf",
+      "url": "https://cognition.ai/blog/windsurf",
+      "date": "2025-07-14",
+      "publisher": "Cognition Blog",
+      "topics": ["context"],
+      "note": "Pre-Feb 2026 but foundational fact: Windsurf is Cognition-owned, treated as part of the portfolio not a competitor."
+    },
+    "microsoft-cognition-azure-customer-story": {
+      "title": "Cognition developed an AI engineer that transforms enterprise software with Microsoft Azure",
+      "url": "https://www.microsoft.com/en/customers/story/24262-cognition-ai-azure",
+      "date": "2025-06-01",
+      "publisher": "Microsoft Customer Stories",
+      "topics": ["hyperscalers", "context"],
+      "note": "Pre-Feb 2026 but foundational Azure relationship proof point. Visma case study referenced here."
+    },
+    "tegus-alphasense-cognition-interviews": {
+      "title": "Cognition AI — Expert Interview Syntheses (12 transcripts)",
+      "url": "https://docs.google.com/document/d/1HOcilCC-qfD8Om9jgwxvuYfSTXsbLsiep-h32MUN2d4/edit",
+      "date": "2025-04-01",
+      "publisher": "AlphaSense / Tegus",
+      "topics": ["context", "all-personas"],
+      "note": "12 interviews April–July 2025: 9 customer + 3 competitor perspectives. Sources: Linktree, Ramp x2, Lazy AI, Publicis Sapient, Corner Health, Tecton, Wolters Kluwer, Curai Health, Fireworks.ai, 2 former competitors. Key findings: MCP integration gap is Devin's biggest competitive weakness; compliance blocks enterprise rollouts; CI integration drives most usage."
+    },
+    "snyk-studio-mcp-copilot": {
+      "title": "GitHub Copilot guide | Snyk User Docs",
+      "url": "https://docs.snyk.io/integrations/developer-guardrails-for-agentic-workflows/quickstart-guides-for-mcp/github-copilot-guide",
+      "date": "2026-02-01",
+      "publisher": "Snyk Docs",
+      "topics": ["security", "competitive"]
+    },
+    "datadog-copilot-integration": {
+      "title": "Monitor GitHub Copilot with Datadog",
+      "url": "https://www.datadoghq.com/blog/monitor-github-copilot-with-datadog/",
+      "date": "2026-02-15",
+      "publisher": "Datadog Blog",
+      "topics": ["observability", "competitive"]
+    },
+    "anthropic-pwc-2026": {
+      "title": "PwC is deploying Claude to build technology, execute deals",
+      "url": "https://www.anthropic.com/news/pwc-expanded-partnership",
+      "date": "2026-03-15",
+      "publisher": "Anthropic News",
+      "topics": ["competitive"],
+      "keyFinding": "PwC global rollout of Claude Code + Cowork to 30,000 professionals."
+    },
+    "cursor-spacex-2026": {
+      "title": "Musk's SpaceX Targets AI Dominance with $60 Billion Cursor Deal",
+      "url": "https://devops.com/musks-spacex-targets-ai-dominance-with-60-billion-cursor-deal/",
+      "date": "2026-04-15",
+      "publisher": "DevOps.com",
+      "topics": ["competitive"]
+    },
+    "figma-devin-integration": {
+      "title": "Figma to Pixel-Perfect Code — Devin Docs",
+      "url": "https://docs.devin.ai/use-cases/gallery/figma-design-implementation",
+      "date": "2026-01-01",
+      "publisher": "Devin Docs",
+      "topics": ["design-to-code"]
+    },
+    "ramp-coding-agent-internal-2026": {
+      "title": "Ramp Builds Internal Coding Agent That Powers 30% of Engineering Pull Requests",
+      "url": "https://www.infoq.com/news/2026/01/ramp-coding-agent-platform/",
+      "date": "2026-01-15",
+      "publisher": "InfoQ",
+      "topics": ["competitive", "context"]
+    },
+    "coderabbit-review-2026": {
+      "title": "CodeRabbit Review 2026: Fast AI Code Reviews",
+      "url": "https://ucstrategies.com/news/coderabbit-review-2026-fast-ai-code-reviews-but-a-critical-gap-enterprises-cant-ignore/",
+      "date": "2026-04-01",
+      "publisher": "UC Strategies",
+      "topics": ["code-quality"],
+      "keyFinding": "CodeRabbit shipped Issue Planner (Feb 2026); supports GitHub/GitLab/Azure DevOps/Bitbucket; explicitly agent-neutral positioning."
+    },
+    "greptile-v4-2026": {
+      "title": "Greptile Review (2026) — AI Code Review",
+      "url": "https://aicodereview.cc/tool/greptile/",
+      "date": "2026-03-01",
+      "publisher": "AI Code Review",
+      "topics": ["code-quality"]
+    }
+  }
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Code Quality / Review — Cognition Partnership Strategy</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="site">
+  <div class="inner">
+    <div class="brand"><a href="../index.html">Cognition Partnership Strategy</a></div>
+    <div class="links">
+      <a href="../personas.html">Personas</a>
+      <a href="../competitive.html">Competitive</a>
+      <a href="../prioritization.html">Prioritization</a>
+      <a href="../pipeline.html">Pipeline</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<header class="page">
+  <div class="kicker">Persona · Rank 14 · Composite 4.67 · Coexistence shape</div>
+  <h1>Code Quality / Review</h1>
+  <p class="subtitle">CodeRabbit, Greptile, Codacy, Mintlify — coexistence, not strategic partnership</p>
+</header>
+
+<div class="callout">
+  <div class="label">Scoring</div>
+  <p style="margin-bottom: 0;">
+    <span class="score-chip low">Synergy 4</span>
+    <span class="score-chip mid">Ease 6</span>
+    <span class="score-chip low">Market 4</span>
+    &nbsp;→&nbsp; <strong>4.67</strong> (bottom-left of prioritization chart; coexistence only)
+  </p>
+</div>
+
+<h2>Profile</h2>
+<p>
+  AI-powered code review and codebase Q&amp;A tools (CodeRabbit, Greptile) overlap competitively with Devin's PR-review surface and Windsurf's codebase Q&amp;A capability — and they explicitly position as agent-neutral (CodeRabbit's stated position: "works alongside Cursor, Claude Code, or GitHub Copilot").<a class="citation-ref" data-cite="coderabbit-review-2026"></a> This is <strong>coexistence, not strategic partnership</strong> — included in the taxonomy for completeness but expected to land at the bottom-left of the prioritization chart.
+</p>
+<p>
+  The real synergy lives in the review-loop workflow: Devin produces PR → CodeRabbit / Greptile reviews → Devin patches → re-review → merge. Customers already chain these tools themselves; partnership formalizes and co-markets the loop without overclaiming.
+</p>
+
+<h2>Named target partners</h2>
+<div class="partners">
+
+  <div class="partner">
+    <div class="partner-priority">Largest in category</div>
+    <div class="partner-name">CodeRabbit</div>
+    <p class="partner-detail">
+      $60M Series B; shipped Issue Planner (Feb 2026), supports GitHub / GitLab / Azure DevOps / Bitbucket (broader Git-platform reach than Devin); pulls context from Slack / Confluence / Notion / Datadog / Sentry via MCP.<a class="citation-ref" data-cite="coderabbit-review-2026"></a> Co-marketing partnership viable.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">YC-backed, codebase Q&amp;A</div>
+    <div class="partner-name">Greptile</div>
+    <p class="partner-detail">
+      Codebase Q&amp;A first; v4 shipped Q1 2026 (74% increase in addressed comments). Co-marketing partnership viable.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">Lower priority</div>
+    <div class="partner-name">Codacy</div>
+    <p class="partner-detail">
+      Established code quality / static analysis player.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">Lower priority</div>
+    <div class="partner-name">Mintlify</div>
+    <p class="partner-detail">
+      Docs-generation focus.
+    </p>
+  </div>
+
+</div>
+
+<h2>Where Cognition wins (2×2)</h2>
+<div class="quadrant">
+  <svg viewBox="0 0 540 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Code quality persona 2x2 quadrant">
+    <line class="axis-line" x1="270" y1="40" x2="270" y2="380"/>
+    <line class="axis-line" x1="60" y1="210" x2="480" y2="210"/>
+    <polygon points="270,40 264,52 276,52" fill="#c9c5b8"/>
+    <polygon points="480,210 468,204 468,216" fill="#c9c5b8"/>
+    <text class="axis-label" x="485" y="227">Production code autonomy →</text>
+    <text class="axis-label" x="278" y="36">Enterprise primitives ↑</text>
+
+    <!-- CodeRabbit/Greptile: top-left (review depth, no code-writing autonomy) -->
+    <circle class="dot" cx="155" cy="125" r="6"/>
+    <text class="dot-label" x="55" y="115">CodeRabbit / Greptile</text>
+
+    <!-- Combination middle-right -->
+    <circle class="dot" cx="330" cy="160" r="6"/>
+    <text class="dot-label" x="245" y="150">Review-loop combo</text>
+
+    <!-- Cognition top-right (code autonomy + enterprise primitives) -->
+    <circle class="dot cognition" cx="420" cy="115" r="9"/>
+    <text class="dot-label cognition" x="340" y="105">Cognition</text>
+  </svg>
+</div>
+<p style="font-size: 0.92rem; color: var(--text-muted);">
+  <strong>X-axis:</strong> Production code autonomy (writes vs. only reviews / comments). <strong>Y-axis:</strong> Enterprise primitives. Cognition top-right; CodeRabbit / Greptile top-left (strong on review depth, no code-writing autonomy). Combination sits middle-right.
+</p>
+
+<h2>Value proposition</h2>
+<h4>Cognition → partner</h4>
+<p>
+  Volume — Devin PRs are reviewable artifacts that drive review tool consumption.
+</p>
+<h4>Partner → Cognition</h4>
+<p>
+  Enterprise-acceptable PR review (audit-friendly review trail Devin needs for enterprise rollouts).
+</p>
+
+<h2>Deal shape</h2>
+<ul class="tier-list">
+  <li class="tier-1">
+    <div class="tier-label">Tier 1 only — no deeper tiers viable</div>
+    Joint blog + reference workflow + marketplace listings in each direction. No deeper Tier 2 / 3 viable given agent-neutral positioning.
+  </li>
+</ul>
+
+<h2>Pipeline notes</h2>
+<p>
+  <strong>Inbound:</strong> customers using both Devin + CodeRabbit / Greptile → partnership team uses as co-marketing material. <strong>Outbound:</strong> light-touch BD; no sales-quota implications. <strong>Sales handoff:</strong> none — coexistence shape doesn't drive sales-team work.
+</p>
+
+<h2>Recent signals (past 3 months)</h2>
+<ul>
+  <li>CodeRabbit Issue Planner GA Feb 2026 (competes with Devin's entry point).<a class="citation-ref" data-cite="coderabbit-review-2026"></a></li>
+  <li>Greptile v4 release Q1 2026.<a class="citation-ref" data-cite="greptile-v4-2026"></a></li>
+  <li>Both vendors maintain agent-neutral positioning publicly.</li>
+</ul>
+
+<div class="citations-footer" data-citations-footer></div>
+
+</main>
+
+<footer class="site">
+  <p>Cognition Partnership Strategy — Pitch by Tony Shi · 2026-05-18</p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

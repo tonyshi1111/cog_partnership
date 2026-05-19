@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Dev Infra — Cognition Partnership Strategy</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="site">
+  <div class="inner">
+    <div class="brand"><a href="../index.html">Cognition Partnership Strategy</a></div>
+    <div class="links">
+      <a href="../personas.html">Personas</a>
+      <a href="../competitive.html">Competitive</a>
+      <a href="../prioritization.html">Prioritization</a>
+      <a href="../pipeline.html">Pipeline</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<header class="page">
+  <div class="kicker">Persona · Rank 9 (tie) · Composite 7.0</div>
+  <h1>Dev Infra</h1>
+  <p class="subtitle">Vercel, GitLab, Cloudflare, Netlify, Render, Railway — GitHub explicitly excluded</p>
+</header>
+
+<div class="callout">
+  <div class="label">Scoring</div>
+  <p style="margin-bottom: 0;">
+    <span class="score-chip high">Synergy 8</span>
+    <span class="score-chip mid">Ease 7</span>
+    <span class="score-chip mid">Market 6</span>
+    &nbsp;→&nbsp; <strong>7.0</strong> (agent-friendliest partner category)
+  </p>
+</div>
+
+<h2>Profile</h2>
+<p>
+  Modern dev infrastructure — source control alternatives to GitHub, deployment platforms, edge runtime, build / CI — is the second-most natural integration surface for coding agents after workflow tools. The defining 2026 dynamic: <strong>dev infra companies are themselves becoming sophisticated agentic-coding adopters</strong>. Cloudflare ran 131,246 AI code reviews in 30 days (March–April 2026) using OpenCode + GitLab CI.<a class="citation-ref" data-cite="cloudflare-ai-code-review-2026"></a> Vercel sees 30% of all deployments now agent-initiated, with Claude Code at 75% of that volume.<a class="citation-ref" data-cite="vercel-ai-sdk-6-2026"></a>
+</p>
+<p>
+  The partnership opportunity is twofold: (a) get Devin embedded as the agent of choice for <em>their</em> dev infra workflows, and (b) leverage their AI-agent infrastructure (Vercel AI SDK, Cloudflare Workers, Agent Builder) as deployment targets for Devin's output.
+</p>
+
+<h2>Named target partners</h2>
+<div class="partners">
+
+  <div class="partner">
+    <div class="partner-priority">Highest priority — most agent-friendly</div>
+    <div class="partner-name">Vercel</div>
+    <p class="partner-detail">
+      AI SDK 6 with Agent abstraction; "Zero" programming language for AI agents; 30% of Vercel deployments agent-initiated (Claude Code 75% of that volume — gap for Devin in deploy-volume mindshare).<a class="citation-ref" data-cite="vercel-ai-sdk-6-2026"></a><a class="citation-ref" data-cite="vercel-zero-may-2026"></a> Vercel publicly welcomes all agents. Partnership angle: featured-agent positioning + Vercel AI SDK as Devin's TypeScript runtime + co-built reference apps.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">High priority — existing relationship</div>
+    <div class="partner-name">GitLab</div>
+    <p class="partner-detail">
+      Cognition Devin already has GitLab integration shipped. GitLab also has GitLab Duo (their own AI offering). Partnership angle: deepen — featured-agent status, joint enterprise case studies, GitLab Premium / Ultimate bundling. Cloudflare's enterprise AI code review system runs on GitLab CI — proof point that GitLab is the platform of choice for serious AI engineering at scale.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">High priority — sophisticated AI buyer</div>
+    <div class="partner-name">Cloudflare</div>
+    <p class="partner-detail">
+      Cloudflare's internal use of OpenCode + GitLab CI for code review demonstrates they're a sophisticated agentic-coding adopter.<a class="citation-ref" data-cite="cloudflare-ai-code-review-2026"></a> Cloudflare Workers as Devin deployment target; Cloudflare AI Gateway for Devin's underlying LLM calls. Partnership angle: technical depth + joint reference architecture + Cloudflare's developer-platform reach.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">Mid priority</div>
+    <div class="partner-name">Netlify</div>
+    <p class="partner-detail">
+      Frontend deployment, smaller than Vercel but similar shape.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">Opportunistic</div>
+    <div class="partner-name">Render, Railway, Fly.io</div>
+    <p class="partner-detail">
+      Modern PaaS, agent-friendly, smaller scale but quick to partner.
+    </p>
+  </div>
+
+</div>
+
+<div class="callout">
+  <div class="label">Explicitly excluded</div>
+  <p style="margin-bottom: 0;">
+    <strong>GitHub</strong> — Copilot's home turf, owned by Microsoft. No partnership realistic.
+  </p>
+</div>
+
+<h2>Where Cognition wins (2×2)</h2>
+<div class="quadrant">
+  <svg viewBox="0 0 540 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dev infra persona 2x2 quadrant">
+    <line class="axis-line" x1="270" y1="40" x2="270" y2="380"/>
+    <line class="axis-line" x1="60" y1="210" x2="480" y2="210"/>
+    <polygon points="270,40 264,52 276,52" fill="#c9c5b8"/>
+    <polygon points="480,210 468,204 468,216" fill="#c9c5b8"/>
+    <text class="axis-label" x="485" y="227">Native agent-friendliness →</text>
+    <text class="axis-label" x="278" y="36">Enterprise deployment ↑</text>
+
+    <!-- Claude Code today: dominates Vercel deploy volume -->
+    <circle class="dot" cx="395" cy="195" r="6"/>
+    <text class="dot-label" x="320" y="195">Claude Code (today)</text>
+
+    <!-- Cursor: less enterprise -->
+    <circle class="dot" cx="350" cy="310" r="6"/>
+    <text class="dot-label" x="270" y="320">Cursor</text>
+
+    <!-- Cognition top-right via Vercel + Cloudflare combo -->
+    <circle class="dot cognition" cx="420" cy="115" r="9"/>
+    <text class="dot-label cognition" x="220" y="105">Cognition (Vercel + Cloudflare combo)</text>
+  </svg>
+</div>
+<p style="font-size: 0.92rem; color: var(--text-muted);">
+  <strong>X-axis:</strong> Native agent-friendliness of the platform (AI SDK depth, agent-optimized runtime). <strong>Y-axis:</strong> Enterprise deployment readiness. Claude Code dominates Vercel deploy volume currently — Cognition's role is catching up via deeper Vercel partnership + Cloudflare Workers as differentiated deployment target.
+</p>
+
+<h2>Value proposition</h2>
+<h4>Cognition → dev infra</h4>
+<p>
+  Increases agent-initiated deployment volume (more billable runtime). Differentiates the platform as agent-ready for enterprise. Drives consumption of platform-specific AI infrastructure (AI SDK, AI Gateway, Workers).
+</p>
+<h4>Partner → Cognition</h4>
+<p>
+  Deployment surface + co-marketing reach to modern dev audience + technical-credibility halo (Vercel and Cloudflare are taste-maker brands for AI-native engineers).
+</p>
+
+<h2>Deal shape</h2>
+<ul class="tier-list">
+  <li class="tier-1">
+    <div class="tier-label">Tier 1 — Marketplace + docs</div>
+    Marketplace listings + integration documentation + joint blog post.
+  </li>
+  <li class="tier-2">
+    <div class="tier-label">Tier 2 — Featured-agent status</div>
+    "Vercel's recommended autonomous agent for production deploys" + co-built reference application + co-presented launch.
+  </li>
+  <li class="tier-3">
+    <div class="tier-label">Tier 3 — Strategic co-engineered deployment</div>
+    Cognition AI SDK integration with platform's native agent abstractions; co-engineered deployment workflow (e.g., Devin → Cloudflare Workers as first-class flow); revenue share on platform consumption driven by Devin.
+  </li>
+</ul>
+
+<h2>Pipeline notes</h2>
+<h4>Inbound</h4>
+<p>
+  Existing Devin users on Vercel / Cloudflare / GitLab → identify where agent-driven deployment volume is meaningful → use as proof point for partnership-level relationship.
+</p>
+<h4>Outbound</h4>
+<p>
+  Target Vercel first (most agent-friendly + clearest deploy-volume gap to close vs. Claude Code's 75% share). Cloudflare second (sophisticated buyer, technical reference value). GitLab third (deepen).
+</p>
+<h4>Sales handoff</h4>
+<p>
+  Dev infra partnerships often translate to mid-market customer wins more than large-enterprise. Partnership team owns the dev-infra-vendor relationship + featured-agent status; sales reps own customer revenue when platform sources lead.
+</p>
+
+<h2>Recent signals (past 3 months)</h2>
+<ul>
+  <li>Vercel AI SDK 6 with Agent abstraction; 30% of deployments agent-initiated (Claude Code 75%).<a class="citation-ref" data-cite="vercel-ai-sdk-6-2026"></a></li>
+  <li>Vercel "Zero" experimental programming language for AI agents (May 15, 2026).<a class="citation-ref" data-cite="vercel-zero-may-2026"></a></li>
+  <li>Cloudflare internal AI code review system: 131,246 reviews in 30 days (March 10 – April 9, 2026).<a class="citation-ref" data-cite="cloudflare-ai-code-review-2026"></a></li>
+  <li>GitLab Duo positioning expands; agent ecosystem play vs. GitHub Copilot.</li>
+</ul>
+
+<div class="citations-footer" data-citations-footer></div>
+
+</main>
+
+<footer class="site">
+  <p>Cognition Partnership Strategy — Pitch by Tony Shi · 2026-05-18</p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

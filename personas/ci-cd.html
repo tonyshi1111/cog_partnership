@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>CI/CD Platforms — Cognition Partnership Strategy</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="site">
+  <div class="inner">
+    <div class="brand"><a href="../index.html">Cognition Partnership Strategy</a></div>
+    <div class="links">
+      <a href="../personas.html">Personas</a>
+      <a href="../competitive.html">Competitive</a>
+      <a href="../prioritization.html">Prioritization</a>
+      <a href="../pipeline.html">Pipeline</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<header class="page">
+  <div class="kicker">Persona · Rank 6 (tie) · Composite 7.33</div>
+  <h1>CI/CD Platforms</h1>
+  <p class="subtitle">CircleCI, Buildkite, Buffer CI, Jenkins — GitHub Actions excluded</p>
+</header>
+
+<div class="callout">
+  <div class="label">Scoring</div>
+  <p style="margin-bottom: 0;">
+    <span class="score-chip high">Synergy 8</span>
+    <span class="score-chip mid">Ease 7</span>
+    <span class="score-chip mid">Market 7</span>
+    &nbsp;→&nbsp; <strong>7.33</strong> (Tegus-driven addition; "drives the most usage")
+  </p>
+</div>
+
+<h2>Profile</h2>
+<p>
+  CI pipelines are the most natural async trigger surface for Devin per the Tegus expert consensus — Ramp's senior engineer explicitly identified CI integration as the workload that "drives the most usage" of Devin.<a class="citation-ref" data-cite="tegus-alphasense-cognition-interviews"></a> The canonical loop: build / test fails → CI emits webhook → Devin investigates → Devin produces fix PR → CI re-runs → merge.
+</p>
+<p>
+  CI/CD platforms historically focused on orchestration; in 2026 they are repositioning as the infrastructure layer for AI-powered development (Buildkite's LLM Proxy hosting Anthropic Claude<a class="citation-ref" data-cite="buildkite-llm-proxy-2026"></a>; CircleCI's Chunk AI agent for autonomous validation + MCP integration<a class="citation-ref" data-cite="circleci-mcp-2026"></a>). Cognition has a foot in the door already: <strong>CircleCI's MCP integration list includes Windsurf</strong> — extending to Devin is the obvious next step.
+</p>
+
+<h2>Named target partners</h2>
+<div class="partners">
+
+  <div class="partner">
+    <div class="partner-priority">Highest priority — foot-in-door</div>
+    <div class="partner-name">CircleCI</div>
+    <p class="partner-detail">
+      CircleCI MCP integration supports Cursor, Claude Desktop, Windsurf (Cognition-owned) — <strong>Devin not yet listed</strong>.<a class="citation-ref" data-cite="circleci-mcp-2026"></a> Chunk AI agent inside CircleCI pipelines for autonomous validation. CircleCI has formal partner program with marketplace listings. The Windsurf relationship is the lever — pitch is extending to Devin as the async / cloud surface for long-running CI investigations.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">High priority — Anthropic-friendly</div>
+    <div class="partner-name">Buildkite</div>
+    <p class="partner-detail">
+      LLM Proxy with managed Anthropic model provider (Claude Sonnet, Opus, Haiku).<a class="citation-ref" data-cite="buildkite-llm-proxy-2026"></a> Self-hosted CI for large enterprises; deep audit / compliance customer base aligns with Devin's strength. Devin partnership = featured-agent in their AI-powered pipeline narrative.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">Mid priority</div>
+    <div class="partner-name">Buffer CI</div>
+    <p class="partner-detail">
+      Newer CI platform with strong AI-native positioning; faster deal cycle.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">Strategic legacy play</div>
+    <div class="partner-name">Jenkins (CloudBees)</div>
+    <p class="partner-detail">
+      Massive installed base (millions of deployments). AI agent integrations less developed; Cognition partnership could be the bet that brings Jenkins forward into the agent era. Similar shape to Veracode play in Security.
+    </p>
+  </div>
+
+</div>
+
+<div class="callout">
+  <div class="label">Explicitly excluded</div>
+  <p style="margin-bottom: 0;">
+    <strong>GitHub Actions</strong> — Microsoft-owned, Copilot home turf. <strong>GitLab CI</strong> — covered in Dev Infra persona since GitLab is the broader platform.
+  </p>
+</div>
+
+<h2>Where Cognition wins (2×2)</h2>
+<div class="quadrant">
+  <svg viewBox="0 0 540 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CI/CD persona 2x2 quadrant">
+    <line class="axis-line" x1="270" y1="40" x2="270" y2="380"/>
+    <line class="axis-line" x1="60" y1="210" x2="480" y2="210"/>
+    <polygon points="270,40 264,52 276,52" fill="#c9c5b8"/>
+    <polygon points="480,210 468,204 468,216" fill="#c9c5b8"/>
+    <text class="axis-label" x="485" y="227">Async remediation →</text>
+    <text class="axis-label" x="278" y="36">Enterprise primitives ↑</text>
+
+    <!-- Buildkite + Anthropic: lacks autonomous code-writing -->
+    <circle class="dot" cx="195" cy="130" r="6"/>
+    <text class="dot-label" x="50" y="120">Buildkite + Anthropic</text>
+
+    <!-- CircleCI alone -->
+    <circle class="dot" cx="215" cy="245" r="6"/>
+    <text class="dot-label" x="135" y="248">CircleCI alone</text>
+
+    <!-- Jenkins -->
+    <circle class="dot" cx="140" cy="335" r="6"/>
+    <text class="dot-label" x="55" y="340">Jenkins</text>
+
+    <!-- Cognition + CircleCI top-right -->
+    <circle class="dot cognition" cx="415" cy="120" r="9"/>
+    <text class="dot-label cognition" x="260" y="110">Cognition + CircleCI</text>
+  </svg>
+</div>
+<p style="font-size: 0.92rem; color: var(--text-muted);">
+  <strong>X-axis:</strong> Async investigation + remediation capability (CI fails → agent investigates → agent submits PR, end-to-end). <strong>Y-axis:</strong> Enterprise primitives (audit, compliance, sandboxed execution, on-prem option). Cognition portfolio top-right. CircleCI + Devin combo uniquely covers async investigation with audit grade.
+</p>
+
+<h2>Value proposition</h2>
+<h4>Cognition → partner</h4>
+<p>
+  Closes the "CI failed, now what?" loop — turning every pipeline failure into a remediation event the platform's customers value. Differentiates the CI vendor as "AI-native pipelines that self-heal."
+</p>
+<h4>Partner → Cognition</h4>
+<p>
+  High-frequency trigger surface (every PR runs CI; every build that fails is a Devin opportunity). Direct line to dev teams already in the build loop. CI vendors have strong attach to engineering org budgets.
+</p>
+
+<h2>Deal shape</h2>
+<ul class="tier-list">
+  <li class="tier-1">
+    <div class="tier-label">Tier 1 — MCP + marketplace</div>
+    MCP integration + marketplace listing on CircleCI / Buildkite / etc.
+  </li>
+  <li class="tier-2">
+    <div class="tier-label">Tier 2 — Featured-agent placement</div>
+    "CircleCI's recommended remediation agent" + co-built reference pipeline + joint case study with flagship customer.
+  </li>
+  <li class="tier-3">
+    <div class="tier-label">Tier 3 — Native pipeline-editor integration</div>
+    CI platform's pipeline editor has a native "send to Devin" button on failures; bundled SKU; revenue share on co-sold accounts where pipeline-Devin is the wedge.
+  </li>
+</ul>
+
+<h2>Pipeline notes</h2>
+<h4>Inbound</h4>
+<p>
+  Devin users already trigger from CircleCI / Buildkite webhooks → identify high-usage accounts → use as proof point.
+</p>
+<h4>Outbound</h4>
+<p>
+  CircleCI first (Windsurf foot-in-door, Cognition portfolio already in their MCP list). Then Buildkite (Anthropic relationship suggests they're agent-friendly). Jenkins as the contrarian play.
+</p>
+<h4>Sales handoff</h4>
+<p>
+  CI/CD partnerships often translate to mid-market and enterprise wins. Partnership team owns CI-vendor relationship + featured-agent status; sales reps own customer revenue.
+</p>
+
+<h2>Recent signals (past 3 months)</h2>
+<ul>
+  <li>CircleCI MCP integration supports Cursor + Claude Desktop + Windsurf (Devin gap).<a class="citation-ref" data-cite="circleci-mcp-2026"></a></li>
+  <li>CircleCI Chunk AI agent for autonomous validation.</li>
+  <li>Buildkite LLM Proxy with managed Anthropic models.<a class="citation-ref" data-cite="buildkite-llm-proxy-2026"></a></li>
+  <li>Tegus expert at Ramp: "CI pipeline integration drives the most usage" of Devin.<a class="citation-ref" data-cite="tegus-alphasense-cognition-interviews"></a></li>
+  <li>Cloudflare internal AI code review system: 131K reviews in 30 days using OpenCode + GitLab CI.<a class="citation-ref" data-cite="cloudflare-ai-code-review-2026"></a></li>
+</ul>
+
+<div class="citations-footer" data-citations-footer></div>
+
+</main>
+
+<footer class="site">
+  <p>Cognition Partnership Strategy — Pitch by Tony Shi · 2026-05-18</p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

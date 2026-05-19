@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Observability — Cognition Partnership Strategy</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="site">
+  <div class="inner">
+    <div class="brand"><a href="../index.html">Cognition Partnership Strategy</a></div>
+    <div class="links">
+      <a href="../personas.html">Personas</a>
+      <a href="../competitive.html">Competitive</a>
+      <a href="../prioritization.html">Prioritization</a>
+      <a href="../pipeline.html">Pipeline</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<header class="page">
+  <div class="kicker">Persona · Rank 2 · Composite 8.0</div>
+  <h1>Observability &amp; Incident Response</h1>
+  <p class="subtitle">PagerDuty, Sentry, incident.io, Splunk, New Relic, Datadog, Grafana, Honeycomb</p>
+</header>
+
+<div class="callout">
+  <div class="label">Scoring</div>
+  <p style="margin-bottom: 0;">
+    <span class="score-chip high">Synergy 9</span>
+    <span class="score-chip mid">Ease 7</span>
+    <span class="score-chip mid">Market 8</span>
+    &nbsp;→&nbsp; <strong>8.0</strong> (sole #2)
+  </p>
+</div>
+
+<h2>Profile</h2>
+<p>
+  When a production incident fires (Datadog alert, Sentry error spike, PagerDuty page), an autonomous coding agent can investigate root cause, generate a fix PR, and run the loop to merge — all without a human in the loop until review. This is the canonical async use case for Devin (vs. Cursor's IDE-bound surface), and Cognition's audit / sandbox primitives are exactly what enterprise SRE teams require to trust an agent in this position.
+</p>
+<p>
+  Observability vendors are simultaneously building their own AI agents (Datadog Bits AI, Splunk AI Troubleshooting Agent) but explicitly partner with external coding agents to <em>execute</em> the fix — the vendor stays in the diagnosis seat, Cognition takes the remediation seat. This split is the partnership wedge.
+</p>
+
+<h2>Named target partners</h2>
+<div class="partners">
+
+  <div class="partner">
+    <div class="partner-priority">Highest priority — biggest open gap</div>
+    <div class="partner-name">PagerDuty</div>
+    <p class="partner-detail">
+      On March 12, 2026, PagerDuty announced 30+ AI partners across 11 categories; strategic partnerships named with Anthropic, Cursor, LangChain.<a class="citation-ref" data-cite="pagerduty-ai-ecosystem-march-2026"></a> Claude Code has an official PagerDuty plugin in Anthropic's marketplace; Cursor has an MCP plugin in their Marketplace. <strong>Devin has no official PagerDuty plugin.</strong> Clear gap. PagerDuty is the incident-paging incumbent — partnership unlocks alert-triggered Devin runs.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">High priority — upstream trigger surface</div>
+    <div class="partner-name">Sentry</div>
+    <p class="partner-detail">
+      Sentry MCP supports Claude Code, Cursor, GitHub Copilot. "Sentry for AI" plugin teaches coding agents how to use Sentry.<a class="citation-ref" data-cite="sentry-mcp-2026"></a> <strong>Devin not listed.</strong> Sentry's error-monitoring is upstream of incident-paging — a Sentry partnership is a faster trigger surface than PagerDuty for low-severity issues.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">High priority — Tegus-named</div>
+    <div class="partner-name">incident.io</div>
+    <p class="partner-detail">
+      Explicitly named by Ramp's senior engineer in the Tegus interviews as a Devin-relevant data source.<a class="citation-ref" data-cite="tegus-alphasense-cognition-interviews"></a> Modern incident-response platform expanding fast. AI agent partnership lane appears open; faster deal cycle than legacy observability vendors.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">High priority — enterprise scale</div>
+    <div class="partner-name">Splunk</div>
+    <p class="partner-detail">
+      Q1 2026 launched AI Troubleshooting Agent + unified MCP server.<a class="citation-ref" data-cite="splunk-ai-troubleshooting-q1-2026"></a> Pushing hard into AI-agent territory. Splunk customers are large enterprises with deep audit / compliance needs — Devin's strength.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">Mid priority</div>
+    <div class="partner-name">New Relic</div>
+    <p class="partner-detail">
+      Expanding AI agent observability per public roadmap. Open partner field.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">Lower priority — relationship exists, deepen</div>
+    <div class="partner-name">Datadog</div>
+    <p class="partner-detail">
+      Devin already in Datadog's AI Agent Directory.<a class="citation-ref" data-cite="datadog-ai-agent-directory"></a> Partnership angle is <em>deepen</em> the integration (featured-agent status, joint case studies, co-marketing on incident-response use case) — not entry.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">Opportunistic</div>
+    <div class="partner-name">Grafana, Honeycomb</div>
+    <p class="partner-detail">
+      Open; smaller deals but strategic for OSS-friendly and observability-first developer audiences.
+    </p>
+  </div>
+
+</div>
+
+<h2>Where Cognition wins (2×2)</h2>
+<div class="quadrant">
+  <svg viewBox="0 0 540 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Observability persona 2x2 quadrant">
+    <line class="axis-line" x1="270" y1="40" x2="270" y2="380"/>
+    <line class="axis-line" x1="60" y1="210" x2="480" y2="210"/>
+    <polygon points="270,40 264,52 276,52" fill="#c9c5b8"/>
+    <polygon points="480,210 468,204 468,216" fill="#c9c5b8"/>
+    <text class="axis-label" x="485" y="227">End-to-end remediation →</text>
+    <text class="axis-label" x="278" y="36">Enterprise primitives ↑</text>
+    <text class="axis-label" x="76" y="60" opacity="0.55">Audit-grade · No autonomy</text>
+    <text class="axis-label" x="295" y="60" opacity="0.55">Audit-grade · Autonomous</text>
+    <text class="axis-label" x="76" y="395" opacity="0.55">Low primitives · No autonomy</text>
+    <text class="axis-label" x="295" y="395" opacity="0.55">Low primitives · Autonomous</text>
+
+    <!-- Copilot: high primitives but supervised -->
+    <circle class="dot" cx="170" cy="115" r="6"/>
+    <text class="dot-label" x="180" y="119">Copilot (supervised)</text>
+
+    <!-- Claude Code: high autonomy but lighter enterprise primitives -->
+    <circle class="dot" cx="370" cy="245" r="6"/>
+    <text class="dot-label" x="305" y="260">Claude Code</text>
+
+    <!-- Cursor: lacks async remediation -->
+    <circle class="dot" cx="220" cy="310" r="6"/>
+    <text class="dot-label" x="155" y="315">Cursor</text>
+
+    <!-- Cognition top-right -->
+    <circle class="dot cognition" cx="410" cy="115" r="9"/>
+    <text class="dot-label cognition" x="295" y="105">Cognition (Devin + Windsurf)</text>
+  </svg>
+</div>
+<p style="font-size: 0.92rem; color: var(--text-muted);">
+  <strong>X-axis:</strong> End-to-end remediation capability (signal → root cause → PR → merge, all autonomous). <strong>Y-axis:</strong> Enterprise primitives (audit trail, sandboxed execution, compliance posture). Cognition portfolio top-right. Cursor lacks async / headless remediation; Claude Code has the remediation capability but lighter enterprise primitives; Copilot has enterprise primitives but supervised-only. Devin uniquely combines both.
+</p>
+
+<h2>Value proposition</h2>
+<h4>Cognition → partner</h4>
+<p>
+  Devin as the official "remediation agent" inside their workflow. Drives stickiness on the partner's platform (customers stay because remediation closes the loop). Co-branded case studies prove ROI for the partner's enterprise sales motion.
+</p>
+<h4>Partner → Cognition</h4>
+<p>
+  Trigger surface and customer distribution. PagerDuty alerts ~12K enterprise customers; Sentry has 100K+ orgs. Each integrated partner is a steady inbound lead source for Devin.
+</p>
+
+<h2>Deal shape</h2>
+<ul class="tier-list">
+  <li class="tier-1">
+    <div class="tier-label">Tier 1 — Marketplace listing</div>
+    Marketplace / directory listing + co-marketing campaign + joint case study. Low commitment, fast.
+  </li>
+  <li class="tier-2">
+    <div class="tier-label">Tier 2 — Featured agent</div>
+    Featured-agent status (exclusive in a category, e.g., "PagerDuty's recommended remediation agent") + revenue share on co-sold accounts.
+  </li>
+  <li class="tier-3">
+    <div class="tier-label">Tier 3 — Strategic co-engineered</div>
+    Strategic partnership with co-engineered features (e.g., a PagerDuty alert action that <em>natively</em> invokes Devin with one-click handoff) + joint enterprise sales motion.
+  </li>
+</ul>
+
+<h2>Pipeline notes</h2>
+<h4>Inbound</h4>
+<p>
+  Datadog / Sentry MCP user installs Devin → Devin team identifies high-usage accounts → partnership team co-sells with sales rep. Already happening implicitly; partnership formalizes the flow.
+</p>
+<h4>Outbound</h4>
+<p>
+  Target PagerDuty first (biggest gap, AI ecosystem just announced, easiest "we should be in the next batch" pitch). Warm-intro via Cognition investor network + customer overlap.
+</p>
+<h4>Sales handoff</h4>
+<p>
+  Partnership team owns relationship and joint product / integration; sales reps own the customer revenue when partner-sourced.
+</p>
+
+<h2>Recent signals (past 3 months)</h2>
+<ul>
+  <li>PagerDuty AI ecosystem expansion (March 12, 2026): 30+ partners, Anthropic + Cursor + LangChain strategic.<a class="citation-ref" data-cite="pagerduty-ai-ecosystem-march-2026"></a></li>
+  <li>Splunk AI Troubleshooting Agent shipped Q1 2026.<a class="citation-ref" data-cite="splunk-ai-troubleshooting-q1-2026"></a></li>
+  <li>Datadog AI Agent Directory now includes Devin.<a class="citation-ref" data-cite="datadog-ai-agent-directory"></a></li>
+  <li>Snyk-Claude partnership (May 8, 2026) shows security-adjacent vendors pairing with agents — observability is next.<a class="citation-ref" data-cite="snyk-claude-may-2026"></a></li>
+</ul>
+
+<div class="citations-footer" data-citations-footer></div>
+
+</main>
+
+<footer class="site">
+  <p>Cognition Partnership Strategy — Pitch by Tony Shi · 2026-05-18</p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

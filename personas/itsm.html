@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ITSM — Cognition Partnership Strategy</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="site">
+  <div class="inner">
+    <div class="brand"><a href="../index.html">Cognition Partnership Strategy</a></div>
+    <div class="links">
+      <a href="../personas.html">Personas</a>
+      <a href="../competitive.html">Competitive</a>
+      <a href="../prioritization.html">Prioritization</a>
+      <a href="../pipeline.html">Pipeline</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<header class="page">
+  <div class="kicker">Persona · Rank 1 · Composite 8.67</div>
+  <h1>ITSM</h1>
+  <p class="subtitle">ServiceNow primary; Atlassian JSM secondary; Freshservice / Zendesk tertiary</p>
+</header>
+
+<div class="callout">
+  <div class="label">Scoring</div>
+  <p style="margin-bottom: 0;">
+    <span class="score-chip high">Synergy 9</span>
+    <span class="score-chip high">Ease 9</span>
+    <span class="score-chip mid">Market 8</span>
+    &nbsp;→&nbsp; <strong>8.67</strong> (sole #1 in the ranking)
+  </p>
+</div>
+
+<h2>Profile</h2>
+<p>
+  Enterprise IT and service-management platforms are repositioning as the AI workforce orchestration layer — ServiceNow's Knowledge 2026 framing was an "autonomous workforce."<a class="citation-ref" data-cite="servicenow-build-agent-2026"></a> These platforms are where tickets live, where SLAs are tracked, and increasingly where AI agents are dispatched to do work.
+</p>
+<p>
+  They are building their own coordination agents (ServiceNow Build Agent, Atlassian Rovo) but those agents <em>orchestrate</em> and <em>respond</em> rather than <em>write code</em>. The partnership wedge: when an enterprise ticket implies real engineering work (build this integration, fix this internal tool, refactor this legacy report), the ITSM platform invokes Devin as the execution agent.
+</p>
+<p>
+  ServiceNow alone has 8,000+ enterprise customers — distribution at this scale changes the deal economics for Cognition versus most other personas.
+</p>
+
+<h2>Named target partners</h2>
+
+<div class="partners">
+
+  <div class="partner">
+    <div class="partner-priority">Highest priority — foot-in-door already exists</div>
+    <div class="partner-name">ServiceNow</div>
+    <p class="partner-detail">
+      ServiceNow Build Agent (GA at Knowledge 2026, May 6) integrates with <strong>Windsurf</strong> + Cursor + Claude Code + Copilot, <strong>but not Devin</strong>.<a class="citation-ref" data-cite="servicenow-build-agent-2026"></a> Cognition's Windsurf relationship is the lever — pitch is extending the integration to include Devin as the async surface (Build Agent inside Windsurf for IDE work; Devin invoked from ServiceNow tickets for async/long-horizon work). Anthropic models power Build Agent — competitive nuance to navigate. Formal Partner Program with MDF (100% reimbursement on select activities) + SIF + tier structure (Registered → Elite + Access tier for entry-stage).<a class="citation-ref" data-cite="servicenow-partner-program-jan-2026"></a>
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">High priority — clear gap</div>
+    <div class="partner-name">Atlassian Jira Service Management</div>
+    <p class="partner-detail">
+      "Agents in Jira" GA May 2026 with partner agents Figma, Canva, Replit, Lovable.<a class="citation-ref" data-cite="atlassian-agents-in-jira-may-2026"></a> <strong>No coding agents (Cursor, Claude Code, Copilot, Devin all absent).</strong> Greenfield for serious coding agents. Atlassian's marketplace and JSM developer audience overlap heavily with Devin's target user. Existing Cognition Jira MCP integration is the starting point.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">Mid priority — SMB / mid-market</div>
+    <div class="partner-name">Freshservice (Freshworks)</div>
+    <p class="partner-detail">
+      Smaller scale but moves faster than ServiceNow; good for an early flagship case study in the SMB/mid-market enterprise IT segment.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">Tertiary — CS-side, dev-ticketing entry</div>
+    <div class="partner-name">Zendesk</div>
+    <p class="partner-detail">
+      More customer-service than IT-internal, but their dev-ticketing flow (bug → engineering) is a credible Devin entry point.
+    </p>
+  </div>
+
+</div>
+
+<h2>Where Cognition wins (2×2)</h2>
+<div class="quadrant">
+  <svg viewBox="0 0 540 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ITSM persona 2x2 quadrant">
+    <!-- Axes -->
+    <line class="axis-line" x1="270" y1="40" x2="270" y2="380" />
+    <line class="axis-line" x1="60" y1="210" x2="480" y2="210" />
+    <!-- Arrows -->
+    <polygon points="270,40 264,52 276,52" fill="#c9c5b8" />
+    <polygon points="480,210 468,204 468,216" fill="#c9c5b8" />
+    <!-- Axis labels -->
+    <text class="axis-label" x="485" y="227">Code depth →</text>
+    <text class="axis-label" x="278" y="36">Surface integration ↑</text>
+    <!-- Quadrant labels -->
+    <text class="axis-label" x="76" y="60" opacity="0.55">Low code · Native surface</text>
+    <text class="axis-label" x="295" y="60" opacity="0.55">High code · Native surface</text>
+    <text class="axis-label" x="76" y="395" opacity="0.55">Low code · Bolt-on</text>
+    <text class="axis-label" x="295" y="395" opacity="0.55">High code · Bolt-on</text>
+
+    <!-- Dots -->
+    <!-- ServiceNow Build Agent: native surface (high Y), low code depth (low X) — top-left -->
+    <circle class="dot" cx="155" cy="105" r="6"/>
+    <text class="dot-label" x="165" y="109">ServiceNow Build Agent</text>
+
+    <!-- Copilot: medium code, medium surface -->
+    <circle class="dot" cx="320" cy="225" r="6"/>
+    <text class="dot-label" x="330" y="229">Copilot</text>
+
+    <!-- Cursor: high code, low surface (bolt-on) -->
+    <circle class="dot" cx="395" cy="310" r="6"/>
+    <text class="dot-label" x="335" y="315">Cursor</text>
+
+    <!-- Claude Code: high code, low surface -->
+    <circle class="dot" cx="410" cy="335" r="6"/>
+    <text class="dot-label" x="345" y="355">Claude Code</text>
+
+    <!-- Cognition portfolio: top-right (high code + native surface via Windsurf-in-Build-Agent + Devin async) -->
+    <circle class="dot cognition" cx="400" cy="105" r="9"/>
+    <text class="dot-label cognition" x="290" y="95">Cognition (Windsurf + Devin)</text>
+  </svg>
+</div>
+<p style="font-size: 0.92rem; color: var(--text-muted);">
+  <strong>X-axis:</strong> Code-engagement depth (does the agent actually write and merge production code, or only orchestrate / respond?). <strong>Y-axis:</strong> Enterprise workflow surface integration (lives natively in the ticket platform vs. requires switching tools). Cognition portfolio lands top-right via the Windsurf-in-ServiceNow foundation plus Devin async invocation. ServiceNow Build Agent has surface integration but limited code depth; Cursor + Claude have code depth but lack async ticket-triggered invocation.
+</p>
+
+<h2>Value proposition</h2>
+<h4>Cognition → ServiceNow</h4>
+<p>
+  Devin is the engineering execution layer their orchestrator agents need. ServiceNow Build Agent + Devin = first true ticket-to-merged-PR autonomous loop. Strengthens ServiceNow's "autonomous workforce" narrative with verifiable code output.
+</p>
+
+<h4>ServiceNow → Cognition</h4>
+<p>
+  Enterprise distribution at scale — ServiceNow alone serves 8,000+ enterprises. ServiceNow Store as the AI agent marketplace gives Devin a credentialed enterprise listing. MDF funding underwrites co-marketing costs.
+</p>
+
+<h2>Deal shape</h2>
+<ul class="tier-list">
+  <li class="tier-1">
+    <div class="tier-label">Tier 1 — Entry</div>
+    ServiceNow Store listing for Devin + Access tier partner enrollment. Entry-stage, fast, no commitments.
+  </li>
+  <li class="tier-2">
+    <div class="tier-label">Tier 2 — Premier</div>
+    Bidirectional integration (Devin invokable from ServiceNow ticket via Build Agent; Devin updates ServiceNow incident on completion) + MDF-funded co-marketing campaign + joint case study.
+  </li>
+  <li class="tier-3">
+    <div class="tier-label">Tier 3 — Elite (strategic)</div>
+    Devin as ServiceNow's <em>recommended</em> engineering agent for migration / modernization use cases + co-engineered workflow features + revenue share on co-sold accounts + joint enterprise sales motion.
+  </li>
+</ul>
+
+<h2>Pipeline notes</h2>
+<h4>Inbound</h4>
+<p>
+  ServiceNow customers already using Windsurf for IDE work → identify high-usage accounts → partnership team co-pitches Devin to those same accounts for async work.
+</p>
+
+<h4>Outbound</h4>
+<p>
+  Apply for ServiceNow Partner Program Access tier (lowest commitment, fastest entry). Use Windsurf relationship as the credibility lever in the application. Target Premier within 12 months. Parallel: Atlassian Marketplace listing for JSM partner agent slot (greenfield, faster close).
+</p>
+
+<h4>Sales handoff</h4>
+<p>
+  ServiceNow partner program has explicit funding pathways (MDF for marketing, SIF for strategic deals). Partnership team owns the ServiceNow / Atlassian relationship and joint engineering work; sales reps own the enterprise customer revenue when ServiceNow / Atlassian co-sources the lead.
+</p>
+
+<h2>Recent signals (past 3 months)</h2>
+<ul>
+  <li>ServiceNow Knowledge 2026 (May 6, 2026): Build Agent GA with Windsurf + Cursor + Claude + Copilot; Anthropic-model-powered.<a class="citation-ref" data-cite="servicenow-build-agent-2026"></a></li>
+  <li>ServiceNow Partner Program revamp (Jan 2026): formal tiers + MDF + SIF + Access tier.<a class="citation-ref" data-cite="servicenow-partner-program-jan-2026"></a></li>
+  <li>Atlassian "Agents in Jira" GA (May 2026): partner agents Figma, Canva, Replit, Lovable — coding agents absent.<a class="citation-ref" data-cite="atlassian-agents-in-jira-may-2026"></a></li>
+</ul>
+
+<div class="citations-footer" data-citations-footer></div>
+
+</main>
+
+<footer class="site">
+  <p>Cognition Partnership Strategy — Pitch by Tony Shi · 2026-05-18</p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Data Platforms — Cognition Partnership Strategy</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="site">
+  <div class="inner">
+    <div class="brand"><a href="../index.html">Cognition Partnership Strategy</a></div>
+    <div class="links">
+      <a href="../personas.html">Personas</a>
+      <a href="../competitive.html">Competitive</a>
+      <a href="../prioritization.html">Prioritization</a>
+      <a href="../pipeline.html">Pipeline</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<header class="page">
+  <div class="kicker">Persona · Rank 6 (tie) · Composite 7.33</div>
+  <h1>Data Platforms</h1>
+  <p class="subtitle">Snowflake, Databricks, MongoDB, dbt Labs, Confluent</p>
+</header>
+
+<div class="callout">
+  <div class="label">Scoring</div>
+  <p style="margin-bottom: 0;">
+    <span class="score-chip mid">Synergy 7</span>
+    <span class="score-chip mid">Ease 7</span>
+    <span class="score-chip mid">Market 8</span>
+    &nbsp;→&nbsp; <strong>7.33</strong> (half-partner / half-competitor dynamic)
+  </p>
+</div>
+
+<h2>Profile</h2>
+<p>
+  Data platforms are simultaneously building their own coding agents (Snowflake Cortex Code, Databricks AI Dev Kit) AND opening their data context to external coding agents via MCP / AI gateway integrations. The partnership shape is split-personality: Devin can be (a) the agent that calls into Snowflake / Databricks to pull data context for software work, or (b) the agent that builds data pipelines, schema migrations, and data apps <em>for</em> the data platform's customers. Half-partner / half-competitor dynamic is the operating reality.
+</p>
+<p>
+  The platforms have explicit AI partner programs (Snowflake Cortex Code's Claude Code plugin<a class="citation-ref" data-cite="snowflake-cortex-code-feb-2026"></a>; Databricks Unity AI Gateway supporting Cursor / Codex / Gemini CLI<a class="citation-ref" data-cite="databricks-coding-agent-integration-2026"></a>; Brickbuilder Partner Network) but <strong>Devin is not yet integrated with either</strong>.
+</p>
+
+<h2>Named target partners</h2>
+<div class="partners">
+
+  <div class="partner">
+    <div class="partner-priority">Highest priority — gap + active monetization</div>
+    <div class="partner-name">Snowflake</div>
+    <p class="partner-detail">
+      Cortex Code expanded April 2026 with Claude Code plugin + VS Code extension + MCP connectors for Slack / Jira / Salesforce coming. <strong>Devin not integrated.</strong> Standalone Cortex Code subscription launched — meaning Snowflake is monetizing the coding-agent surface directly.<a class="citation-ref" data-cite="snowflake-cortex-code-feb-2026"></a> Partnership angle: Devin as alternative coding agent in Cortex Code's external-environment ecosystem.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">High priority — formal partner program</div>
+    <div class="partner-name">Databricks</div>
+    <p class="partner-detail">
+      Unity AI Gateway coding-agent integration (beta) supports Cursor, Gemini CLI, Codex CLI — <strong>Devin absent</strong>.<a class="citation-ref" data-cite="databricks-coding-agent-integration-2026"></a> Brickbuilder Partner Network just launched for agentic AI era. Partner Well-Architected Framework (PWAF) provides the application pathway. Databricks-OpenAI GPT-5.5 deal signals deepening AI bets.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">Mid priority</div>
+    <div class="partner-name">MongoDB</div>
+    <p class="partner-detail">
+      Strong dev audience, less aggressive on coding-agent partner programs publicly but open white space.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">Mid priority</div>
+    <div class="partner-name">dbt Labs</div>
+    <p class="partner-detail">
+      Strong analytics-engineering audience. Devin for SQL / dbt model work is a clean use case but smaller per-partner ARR.
+    </p>
+  </div>
+
+  <div class="partner">
+    <div class="partner-priority">Lower priority</div>
+    <div class="partner-name">Confluent</div>
+    <p class="partner-detail">
+      Streaming / Kafka ecosystem, narrower use case for general-purpose coding agent.
+    </p>
+  </div>
+
+</div>
+
+<h2>Where Cognition wins (2×2)</h2>
+<div class="quadrant">
+  <svg viewBox="0 0 540 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Data platforms persona 2x2 quadrant">
+    <line class="axis-line" x1="270" y1="40" x2="270" y2="380"/>
+    <line class="axis-line" x1="60" y1="210" x2="480" y2="210"/>
+    <polygon points="270,40 264,52 276,52" fill="#c9c5b8"/>
+    <polygon points="480,210 468,204 468,216" fill="#c9c5b8"/>
+    <text class="axis-label" x="485" y="227">Data-context awareness →</text>
+    <text class="axis-label" x="278" y="36">Production code execution ↑</text>
+
+    <!-- Cortex Code alone: high data, limited autonomous execution -->
+    <circle class="dot" cx="380" cy="245" r="6"/>
+    <text class="dot-label" x="295" y="240">Cortex Code alone</text>
+
+    <!-- Cursor / Claude alone: execution, no data context -->
+    <circle class="dot" cx="155" cy="115" r="6"/>
+    <text class="dot-label" x="55" y="105">Cursor / Claude (no data ctx)</text>
+
+    <!-- Cognition + Snowflake/Databricks top-right -->
+    <circle class="dot cognition" cx="420" cy="115" r="9"/>
+    <text class="dot-label cognition" x="245" y="105">Cognition + Snowflake / Databricks</text>
+  </svg>
+</div>
+<p style="font-size: 0.92rem; color: var(--text-muted);">
+  <strong>X-axis:</strong> Native data-context awareness (does the agent know your schema, lineage, governance?). <strong>Y-axis:</strong> Production code execution capability. Cognition + data-platform-partner combo top-right. Cortex Code alone has data-context but limited autonomous execution; Cursor / Claude have execution but lack native data context unless integrated.
+</p>
+
+<h2>Value proposition</h2>
+<h4>Cognition → data platform</h4>
+<p>
+  Closes the "agent does the work AFTER the data context arrives" loop. Cortex Code can plan; Devin builds and ships. Strengthens the data platform's "control plane for agentic enterprise" narrative with verifiable engineering output.
+</p>
+<h4>Data platform → Cognition</h4>
+<p>
+  Enterprise distribution to data-engineering teams. Snowflake / Databricks have thousands of large-enterprise customers; data-engineering work is high-value (pipelines, migrations, schema work) and historically expensive.
+</p>
+
+<h2>Deal shape</h2>
+<ul class="tier-list">
+  <li class="tier-1">
+    <div class="tier-label">Tier 1 — External-environment plugin</div>
+    Snowflake Cortex Code external agent slot (like Claude Code's plugin); Databricks Unity AI Gateway coding-agent admission. Marketplace listings.
+  </li>
+  <li class="tier-2">
+    <div class="tier-label">Tier 2 — Joint reference architecture</div>
+    "Devin + Snowflake Cortex for legacy data warehouse migration" reference + co-marketed case study + Brickbuilder / Powered-by-Snowflake program tier.
+  </li>
+  <li class="tier-3">
+    <div class="tier-label">Tier 3 — Strategic co-sell</div>
+    Strategic co-sell at large data-platform customers; bundled SKU for data-engineering-specific Devin usage; revenue share on co-sourced enterprise deals.
+  </li>
+</ul>
+
+<h2>Pipeline notes</h2>
+<h4>Inbound</h4>
+<p>
+  Devin users with Snowflake / Databricks data contexts → identify where data-engineering work drives Devin usage → co-pitch to the platform's partnership team.
+</p>
+<h4>Outbound</h4>
+<p>
+  Apply for Snowflake Powered By / Cortex Code external-agent slot; Databricks Brickbuilder Partner Network. Use Cognition's existing FSI / healthcare references as proof of compliance-grade data work.
+</p>
+<h4>Sales handoff</h4>
+<p>
+  Data-platform partnerships are co-sell motions with platform-tier benefits. Partnership team owns platform relationship + program tier; sales reps own customer revenue.
+</p>
+
+<h2>Recent signals (past 3 months)</h2>
+<ul>
+  <li>Snowflake Cortex Code launched Feb 3, 2026; 50%+ of Snowflake customers actively using it.<a class="citation-ref" data-cite="snowflake-cortex-code-feb-2026"></a></li>
+  <li>Snowflake Cortex Code expanded April 2026: Claude Code plugin + VS Code extension + MCP connectors.</li>
+  <li>Databricks Unity AI Gateway coding agent integration (beta) — Cursor + Codex + Gemini CLI supported, Devin not listed.<a class="citation-ref" data-cite="databricks-coding-agent-integration-2026"></a></li>
+  <li>Databricks Brickbuilder Partner Network launch for agentic AI era.</li>
+</ul>
+
+<div class="citations-footer" data-citations-footer></div>
+
+</main>
+
+<footer class="site">
+  <p>Cognition Partnership Strategy — Pitch by Tony Shi · 2026-05-18</p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
