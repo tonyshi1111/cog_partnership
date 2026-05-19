@@ -1,0 +1,2716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cognition · Partnership Strategy — Tony Shi</title>
+<meta name="description" content="A proposed partnership strategy for Cognition, prepared by Tony Shi." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #f5f5f4;
+  --bg-elev: #ffffff;
+  --ink: #0f0f0f;
+  --ink-soft: #2a2a2a;
+  --ink-mute: #686868;
+  --ink-faint: #a8a8a8;
+  --rule: #0f0f0f1a;
+  --rule-soft: #0f0f0f0a;
+  --coral: #1f1fff;
+  --coral-deep: #0a0ad6;
+  --coral-bg: #e8e8ff;
+  --amber: #b87a1a;
+  --amber-bg: #f5ecd9;
+  --purple: #4a4ad6;
+  --purple-bg: #ebebfa;
+  --teal: #1a8a6a;
+  --teal-bg: #e0f0ea;
+  --serif: 'Newsreader', 'Iowan Old Style', 'Apple Garamond', Georgia, serif;
+  --sans: 'Instrument Sans', 'Söhne', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a0a0a;
+    --bg-elev: #161616;
+    --ink: #f0f0f0;
+    --ink-soft: #c8c8c8;
+    --ink-mute: #888888;
+    --ink-faint: #555555;
+    --rule: #f0f0f01a;
+    --rule-soft: #f0f0f00a;
+    --coral: #4a4aff;
+    --coral-deep: #1f1fff;
+    --coral-bg: #1a1a3d;
+    --amber: #d4a04a;
+    --amber-bg: #2d2410;
+    --purple: #7a7ae0;
+    --purple-bg: #1a1a3d;
+    --teal: #5dbf9a;
+    --teal-bg: #0a2820;
+  }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 48px 96px;
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 80px;
+  position: relative;
+}
+
+/* Access gate */
+.gate {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.gate.hidden { display: none; }
+.gate-card {
+  max-width: 480px;
+  width: 100%;
+  text-align: left;
+}
+.gate-mark {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink-mute);
+  margin-bottom: 32px;
+}
+.gate-title {
+  font-family: var(--serif);
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.gate-body {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+}
+.gate-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.gate-input {
+  flex: 1;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink);
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.gate-input:focus { border-color: var(--coral); }
+.gate-input::placeholder { color: var(--ink-faint); }
+.gate-submit {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--bg);
+  background: var(--ink);
+  border: none;
+  border-radius: 4px;
+  padding: 12px 22px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.gate-submit:hover { background: var(--coral-deep); }
+.gate-error {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--coral-deep);
+  letter-spacing: 0.02em;
+  min-height: 14px;
+  margin-bottom: 16px;
+}
+.gate-footnote {
+  margin-top: 40px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+@media (max-width: 600px) {
+  .gate-title { font-size: 28px; }
+  .gate-form { flex-direction: column; }
+  .gate-submit { width: 100%; }
+}
+@media (max-width: 900px) {
+  .page { grid-template-columns: 1fr; padding: 32px 24px 64px; gap: 32px; }
+}
+.content { min-width: 0; }
+.serif { font-family: var(--serif); }
+.mono { font-family: var(--mono); }
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 16px;
+}
+h1.headline {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(40px, 5.5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+h1.headline em { font-style: italic; color: var(--coral-deep); }
+h2.section-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(28px, 3.5vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+h2.section-title em { font-style: italic; color: var(--coral-deep); }
+h3.subsection {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.3;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+p.lede {
+  font-family: var(--serif);
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 680px;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+p.body {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 680px;
+  margin-bottom: 16px;
+}
+p.body em { color: var(--ink); font-style: italic; }
+p.body strong { color: var(--ink); font-weight: 500; }
+.section { padding-top: 96px; scroll-margin-top: 32px; }
+.section:first-of-type { padding-top: 0; }
+.divider { height: 1px; background: var(--rule); margin: 0; border: none; }
+.preamble {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 64px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.preamble-author { font-family: var(--mono); font-size: 12px; color: var(--ink-mute); letter-spacing: 0.04em; }
+.preamble-author strong { color: var(--ink); font-weight: 500; }
+.preamble-date { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); }
+.preamble-mark { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--ink); }
+nav.toc {
+  position: sticky;
+  top: 64px;
+  align-self: start;
+  padding-top: 24px;
+}
+.mobile-nav-toggle {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 200;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+}
+.mobile-nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--ink);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.mobile-nav-toggle.open span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+.mobile-nav-toggle.open span:nth-child(2) { opacity: 0; }
+.mobile-nav-toggle.open span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+.mobile-nav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 150;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.mobile-nav-backdrop.visible { display: block; opacity: 1; }
+@media (max-width: 900px) {
+  .mobile-nav-toggle { display: flex; }
+  nav.toc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    max-width: 80vw;
+    background: var(--bg-elev);
+    border-right: 1px solid var(--rule);
+    padding: 72px 24px 24px;
+    z-index: 180;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    border-top: none;
+  }
+  nav.toc.visible { transform: translateX(0); }
+}
+nav.toc .toc-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+nav.toc ol { list-style: none; counter-reset: tocnum; }
+nav.toc ol li { counter-increment: tocnum; margin-bottom: 4px; }
+nav.toc ol li a {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-mute);
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 0;
+  transition: color 0.2s ease, padding 0.2s ease;
+  line-height: 1.35;
+  border-left: 1px solid transparent;
+  padding-left: 12px;
+  margin-left: -12px;
+}
+nav.toc ol li a::before {
+  content: counter(tocnum, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+  min-width: 22px;
+}
+nav.toc ol li a:hover { color: var(--ink); }
+nav.toc ol li a.active {
+  color: var(--coral-deep);
+  border-left-color: var(--coral);
+}
+nav.toc ol li a.active::before { color: var(--coral-deep); }
+nav.toc ol.sub { margin-left: 32px; margin-top: 4px; counter-reset: subnum; }
+nav.toc ol.sub li { counter-increment: subnum; }
+nav.toc ol.sub li a { font-size: 12px; padding: 6px 0 6px 12px; }
+nav.toc ol.sub li a::before { content: '·'; font-family: var(--sans); min-width: 12px; }
+.callout {
+  border-left: 2px solid var(--coral);
+  padding: 4px 0 4px 20px;
+  margin: 24px 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 640px;
+}
+.chart-frame {
+  margin: 32px 0 48px;
+  padding: 0;
+}
+.chart-caption {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.chart-caption-num {
+  font-family: var(--mono);
+  color: var(--coral-deep);
+  font-weight: 500;
+}
+.chart-caption-rule { flex: 1; height: 1px; background: var(--rule-soft); }
+.thesis-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 28px 32px;
+  margin: 32px 0;
+  max-width: 720px;
+}
+.thesis-card .thesis-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--coral-deep);
+  margin-bottom: 10px;
+}
+.thesis-card .thesis-text {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.thesis-card .thesis-text em { font-style: italic; color: var(--coral-deep); }
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+  padding: 24px 0;
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.kpi-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 6px; }
+.kpi-value { font-family: var(--serif); font-size: 28px; line-height: 1; color: var(--ink); margin-bottom: 4px; font-weight: 400; }
+.kpi-sub { font-size: 12px; color: var(--ink-faint); }
+
+/* Chart 1: Competitive wedge */
+.wedge-wrap { padding: 24px 0; position: relative; }
+.wedge-svg { width: 100%; height: auto; display: block; }
+.wedge-svg text { font-family: var(--sans); }
+.wedge-svg .axis-label { font-size: 10px; fill: var(--ink-faint); font-family: var(--mono); letter-spacing: 0.06em; text-transform: uppercase; }
+.wedge-svg .quad-label { font-size: 9px; fill: var(--ink-faint); font-family: var(--mono); letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; }
+.wedge-svg .card-title { font-size: 13px; font-weight: 500; }
+.wedge-svg .card-sub { font-size: 11px; opacity: 0.85; }
+.wedge-svg .card-wedge { font-size: 10.5px; font-style: italic; opacity: 0.75; }
+.wedge-svg .grid-line { stroke: var(--rule); stroke-width: 0.5; }
+.wedge-svg .grid-dash { stroke: var(--rule); stroke-width: 0.5; stroke-dasharray: 3 3; opacity: 0.5; }
+.wedge-svg .footnote-text { font-size: 11px; fill: var(--ink-mute); }
+.wedge-card { transition: transform 0.2s ease; cursor: pointer; }
+.wedge-card:hover { transform: translateY(-2px); }
+.wedge-card:focus { outline: none; }
+.wedge-card:focus rect { stroke-width: 2.5; }
+.wedge-tooltip {
+  position: absolute;
+  width: 280px;
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 12px 14px;
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  pointer-events: none;
+  z-index: 50;
+  display: none;
+}
+.wedge-tooltip.visible { display: block; animation: fadeIn 0.15s ease; }
+.wedge-tooltip-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--coral-deep);
+  margin-bottom: 6px;
+}
+.wedge-tooltip-body strong { color: var(--ink); font-weight: 500; }
+.wedge-tooltip-body em { font-style: italic; color: var(--ink); }
+
+/* Chart 2: Priority map */
+.matrix-wrap { padding: 24px 0; }
+.matrix-grid {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  grid-template-rows: 1fr 1fr 28px;
+  gap: 8px;
+  height: 600px;
+  position: relative;
+}
+.matrix-y-axis {
+  grid-row: 1 / 3;
+  position: relative;
+  font-size: 11px;
+  font-family: var(--mono);
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+.matrix-y-axis span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  transform-origin: center center;
+  white-space: nowrap;
+}
+.matrix-quadrants {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  position: relative;
+}
+.matrix-quad-label {
+  position: absolute;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 1;
+}
+.matrix-quad-label.tl { top: 6px; left: 12px; }
+.matrix-quad-label.tr { top: 6px; right: 12px; }
+.matrix-quad {
+  border: 1px dashed var(--rule);
+  border-radius: 4px;
+  padding: 36px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.matrix-x-axis {
+  grid-column: 2;
+  grid-row: 3;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0 12px;
+}
+.archetype-card {
+  position: relative;
+  border-radius: 4px;
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  border: 1px solid;
+  text-align: left;
+  width: 100%;
+  font-family: var(--sans);
+  background: transparent;
+}
+.archetype-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  z-index: 10;
+}
+.archetype-card:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 2px;
+}
+.archetype-card.active { box-shadow: 0 0 0 2px var(--coral); }
+.archetype-title { font-size: 13px; font-weight: 500; margin: 0 0 3px; line-height: 1.3; }
+.archetype-meta { font-size: 10px; margin: 2px 0 0; line-height: 1.3; opacity: 0.72; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+.archetype-sub { font-size: 11px; margin: 0; line-height: 1.4; opacity: 0.88; }
+.archetype-wedge { font-size: 11px; font-style: italic; margin: 6px 0 0; line-height: 1.3; opacity: 0.78; }
+.archetype-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  max-width: calc(100vw - 32px);
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 12px 14px;
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 100;
+  text-align: left;
+}
+.archetype-tooltip strong { color: var(--ink); font-weight: 500; }
+.archetype-card:hover .archetype-tooltip,
+.archetype-card:focus-visible .archetype-tooltip { opacity: 1; }
+.archetype-card.bottom-row .archetype-tooltip { bottom: auto; top: calc(100% + 8px); }
+.click-hint {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--coral-deep);
+  margin-top: 8px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.click-hint::after { content: '→'; font-family: var(--sans); }
+.priority-coral { background: var(--coral-bg); border-color: var(--coral); }
+.priority-coral .archetype-title,
+.priority-coral .archetype-sub,
+.priority-coral .archetype-wedge,
+.priority-coral .archetype-meta { color: var(--coral-deep); }
+.priority-coral .archetype-title { color: #06066b; }
+.priority-amber { background: var(--amber-bg); border-color: var(--amber); }
+.priority-amber .archetype-title { color: #2a1c08; }
+.priority-amber .archetype-sub,
+.priority-amber .archetype-wedge,
+.priority-amber .archetype-meta { color: #5a3d10; }
+.priority-purple { background: var(--purple-bg); border-color: var(--purple); }
+.priority-purple .archetype-title { color: #1a1a4d; }
+.priority-purple .archetype-sub,
+.priority-purple .archetype-wedge,
+.priority-purple .archetype-meta { color: #2d2d8a; }
+.priority-teal { background: var(--teal-bg); border-color: var(--teal); }
+.priority-teal .archetype-title { color: #042820; }
+.priority-teal .archetype-sub,
+.priority-teal .archetype-wedge,
+.priority-teal .archetype-meta { color: #0a4a3a; }
+.priority-gray { background: #ececec; border-color: #999999; }
+.priority-gray .archetype-title { color: #1a1a1a; }
+.priority-gray .archetype-sub,
+.priority-gray .archetype-wedge,
+.priority-gray .archetype-meta { color: #555555; }
+@media (prefers-color-scheme: dark) {
+  .priority-coral .archetype-title { color: #e8e8ff; }
+  .priority-coral .archetype-sub,
+  .priority-coral .archetype-wedge,
+  .priority-coral .archetype-meta { color: #b8b8ff; }
+  .priority-amber .archetype-title { color: #f5ecd9; }
+  .priority-amber .archetype-sub,
+  .priority-amber .archetype-wedge,
+  .priority-amber .archetype-meta { color: #d4a04a; }
+  .priority-purple .archetype-title { color: #ebebfa; }
+  .priority-purple .archetype-sub,
+  .priority-purple .archetype-wedge,
+  .priority-purple .archetype-meta { color: #b8b8e8; }
+  .priority-teal .archetype-title { color: #e0f0ea; }
+  .priority-teal .archetype-sub,
+  .priority-teal .archetype-wedge,
+  .priority-teal .archetype-meta { color: #8acaa8; }
+  .priority-gray { background: #1a1a1a; border-color: #555555; }
+  .priority-gray .archetype-title { color: #f0f0f0; }
+  .priority-gray .archetype-sub,
+  .priority-gray .archetype-wedge,
+  .priority-gray .archetype-meta { color: #b8b8b8; }
+}
+
+/* Chart 3: Archetype deep-dive scatter */
+.deepdive {
+  margin: 48px 0;
+  padding: 32px;
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  display: none;
+}
+.deepdive.visible { display: block; animation: fadeIn 0.4s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.deepdive-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.deepdive-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.deepdive-sub {
+  font-size: 13px;
+  color: var(--ink-mute);
+  max-width: 480px;
+}
+.archetype-toggle {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.toggle-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-right: 8px;
+}
+.toggle-btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  color: var(--ink-mute);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.toggle-btn:hover { color: var(--ink); border-color: var(--ink-mute); }
+.toggle-btn.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.toggle-btn.locked { opacity: 0.4; cursor: not-allowed; }
+.toggle-btn.locked:hover { color: var(--ink-mute); border-color: var(--rule); }
+.scatter-wrap { width: 100%; position: relative; }
+.methodology-note {
+  margin: 0 0 16px 0;
+  padding: 10px 14px;
+  background: var(--bg);
+  border-left: 2px solid var(--ink-faint);
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-mute);
+  font-style: italic;
+}
+.methodology-note strong {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-style: normal;
+  font-weight: 500;
+  margin-right: 6px;
+}
+.scatter-tooltip {
+  position: absolute;
+  width: 260px;
+  background: var(--bg-elev);
+  border: 1px solid var(--coral);
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  pointer-events: none;
+  z-index: 50;
+  display: none;
+}
+.scatter-tooltip.visible { display: block; animation: fadeIn 0.12s ease; }
+.scatter-tooltip-name {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.scatter-tooltip-row { margin: 4px 0; }
+.scatter-tooltip-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--coral-deep);
+  text-transform: uppercase;
+}
+.scatter-tooltip-foot {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+}
+.scatter-svg { width: 100%; height: auto; display: block; }
+.scatter-svg text { font-family: var(--sans); fill: var(--ink-soft); }
+.scatter-svg .axis-title { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; fill: var(--ink-faint); }
+.scatter-svg .tick-label { font-family: var(--mono); font-size: 10px; fill: var(--ink-faint); }
+.scatter-svg .point-label { font-size: 12px; font-weight: 500; fill: var(--ink); }
+.scatter-svg .point-meta { font-size: 10px; fill: var(--ink-mute); }
+.scatter-svg .axis-line { stroke: var(--rule); stroke-width: 0.5; }
+.scatter-svg .grid { stroke: var(--rule-soft); stroke-width: 0.5; stroke-dasharray: 2 3; }
+.scatter-point {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.scatter-point:hover { opacity: 0.85; }
+.scatter-legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.bubble-scale { display: flex; align-items: center; gap: 10px; }
+.bubble-scale-circles { display: flex; align-items: center; gap: 8px; }
+.bubble-scale-circles span {
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--coral);
+  opacity: 0.5;
+}
+.scatter-stub {
+  text-align: center;
+  padding: 64px 32px;
+  border: 1px dashed var(--rule);
+  border-radius: 4px;
+  color: var(--ink-mute);
+}
+.scatter-stub-title {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.scatter-stub p { font-size: 14px; max-width: 440px; margin: 0 auto; line-height: 1.6; }
+.point-detail {
+  margin-top: 24px;
+  padding: 20px 24px;
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  display: none;
+}
+.point-detail.visible { display: block; animation: fadeIn 0.3s ease; }
+.point-detail-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.point-detail-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--coral-deep);
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+.point-detail-body { font-size: 13.5px; line-height: 1.65; color: var(--ink-soft); }
+.point-detail-body strong { color: var(--ink); font-weight: 500; }
+
+/* Section 3: Why me */
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 32px 0;
+}
+@media (max-width: 700px) { .why-grid { grid-template-columns: 1fr; } }
+.why-card {
+  padding: 24px;
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+.why-card-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--coral-deep);
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.why-card-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.why-card-body { font-size: 13.5px; line-height: 1.65; color: var(--ink-soft); }
+.why-card-body strong { color: var(--ink); font-weight: 500; }
+.credential-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  padding: 24px 0;
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+  margin: 32px 0;
+}
+.credential {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.04em;
+}
+.credential strong { color: var(--ink); font-weight: 500; }
+
+.roadmap {
+  margin: 24px 0 48px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--bg-elev);
+  overflow: hidden;
+}
+.roadmap-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
+  flex-wrap: wrap;
+}
+.roadmap-tab {
+  flex: 1;
+  min-width: 140px;
+  padding: 14px 16px;
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--rule-soft);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+.roadmap-tab:last-child { border-right: none; }
+.roadmap-tab:hover { color: var(--ink); background: var(--bg-elev); }
+.roadmap-tab.active { color: var(--coral-deep); background: var(--bg-elev); border-bottom: 2px solid var(--coral); margin-bottom: -1px; }
+.roadmap-panel { display: none; padding: 28px 32px; }
+.roadmap-panel.active { display: block; animation: fadeIn 0.3s ease; }
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+}
+@media (max-width: 700px) { .roadmap-grid { grid-template-columns: 1fr; gap: 24px; } }
+.roadmap-col-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.roadmap-list { list-style: none; padding: 0; }
+.roadmap-list li {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  padding: 6px 0 6px 18px;
+  position: relative;
+}
+.roadmap-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--coral);
+  opacity: 0.7;
+}
+.roadmap-list li strong { color: var(--ink); font-weight: 500; }
+.roadmap-list li em { font-style: italic; color: var(--coral-deep); }
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.kpi-target {
+  padding: 14px 16px;
+  background: var(--bg);
+  border: 1px solid var(--rule-soft);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.kpi-target-num {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--coral-deep);
+  line-height: 1;
+}
+.kpi-target-label {
+  font-size: 12px;
+  color: var(--ink-mute);
+  line-height: 1.4;
+}
+
+.event-cal {
+  margin: 24px 0 48px;
+  border-top: 1px solid var(--rule);
+}
+.event-row {
+  display: grid;
+  grid-template-columns: 100px 220px 1fr;
+  gap: 24px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule-soft);
+  align-items: baseline;
+}
+@media (max-width: 700px) {
+  .event-row { grid-template-columns: 1fr; gap: 4px; padding: 16px 0; }
+}
+.event-date {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.event-name {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.event-name strong { color: var(--coral-deep); }
+.event-rationale {
+  font-size: 13px;
+  color: var(--ink-mute);
+  line-height: 1.5;
+}
+.event-anchor {
+  background: var(--coral-bg);
+  padding: 18px 16px;
+  border-radius: 4px;
+  border-bottom: 1px solid var(--coral);
+  margin-top: 12px;
+}
+.event-anchor .event-date { color: var(--coral-deep); font-weight: 500; }
+
+.cta {
+  margin-top: 64px;
+  padding: 40px 32px;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.cta-text { font-family: var(--serif); font-size: 22px; line-height: 1.3; max-width: 520px; }
+.cta-text em { color: #8a8aff; font-style: italic; }
+.cta-meta { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); letter-spacing: 0.04em; }
+.cta-meta a { color: var(--bg); text-decoration: underline; text-decoration-color: #8a8aff; text-underline-offset: 3px; }
+.footer-note {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+.archetype-card { font-family: var(--sans); }
+.scatter-y-tick { font-family: var(--mono); font-size: 10px; fill: var(--ink-faint); }
+
+/* Smaller scatter labels on mobile */
+@media (max-width: 600px) {
+  .matrix-grid { height: 720px; }
+  .archetype-tooltip { width: 240px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Access gate -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+  <div class="gate-card">
+    <div class="gate-mark">cognition × ts.</div>
+    <h1 class="gate-title" id="gate-title">A partnership strategy proposal.</h1>
+    <p class="gate-body">This document was prepared for a specific reader at Cognition. Enter the email this was sent to.</p>
+    <form id="gate-form" class="gate-form" autocomplete="off">
+      <input type="email" id="gate-input" class="gate-input" placeholder="your@email.com" autocomplete="off" spellcheck="false" autocapitalize="off" required>
+      <button type="submit" class="gate-submit">Enter</button>
+    </form>
+    <div class="gate-error" id="gate-error" aria-live="polite"></div>
+    <div class="gate-footnote">— Tony Shi · May 2026</div>
+  </div>
+</div>
+
+<button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Open navigation" aria-controls="toc-nav" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
+<div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
+<div class="page" id="page-content" style="display:none;">
+<main class="content">
+
+<header class="preamble">
+  <div class="preamble-mark">cognition × ts.</div>
+  <div>
+    <div class="preamble-author">A partnership strategy proposal · <strong>Tony Shi</strong></div>
+    <div class="preamble-date">May 2026 · prepared for the Cognition leadership team</div>
+  </div>
+</header>
+
+<section class="section" id="section-1">
+  <p class="eyebrow">01 · The wedge</p>
+  <h1 class="headline">Cognition owns a quadrant <em>no one else can reach.</em></h1>
+  <p class="lede">The marketing copy for every AI coding agent rhymes. Cursor, Claude Code, Replit, Manus, Cognition — all promise an "autonomous teammate." Once you look at <em>who's paying, for what job, in what environment</em>, the products diverge sharply. The partnership strategy that follows assumes we own one quadrant of that market — and that owning it means doubling down on the partner motion that put us there.</p>
+
+  <div class="thesis-card">
+    <div class="thesis-label">Thesis</div>
+    <div class="thesis-text">Our wedge isn't "autonomous coding" — that's table stakes. It's <em>async work, sold to enterprises, distributed through services channels.</em> Three things compounding. None replicable inside six months by a model-layer competitor. The partnership strategy is how we lengthen that lead.</div>
+  </div>
+
+  <div class="chart-frame">
+    <div class="chart-caption">
+      <span class="chart-caption-num">Fig. 01</span>
+      <span>Where each agent sits</span>
+      <span class="chart-caption-rule"></span>
+      <span>Hover any card</span>
+    </div>
+    <div class="wedge-wrap">
+      <svg class="wedge-svg" viewBox="0 0 720 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Competitive positioning of AI coding agents: Cognition occupies the asynchronous and enterprise quadrant alone, with Windsurf bridging into the synchronous side. Cursor and Claude Code sit in the synchronous individual developer quadrant. Replit and Manus serve non-engineers.">
+        <defs>
+          <marker id="wedge-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="var(--coral-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+
+        <line class="grid-line" x1="100" y1="120" x2="100" y2="540"/>
+        <line class="grid-line" x1="100" y1="540" x2="680" y2="540"/>
+        <line class="grid-dash" x1="100" y1="330" x2="680" y2="330"/>
+        <line class="grid-dash" x1="390" y1="120" x2="390" y2="540"/>
+
+        <text class="axis-label" x="60" y="130">Async</text>
+        <text class="axis-label" x="60" y="144">agentic</text>
+        <text class="axis-label" x="60" y="530">Sync</text>
+        <text class="axis-label" x="60" y="544">inline</text>
+        <text class="axis-label" x="245" y="568" text-anchor="middle">Individual dev</text>
+        <text class="axis-label" x="535" y="568" text-anchor="middle">Enterprise buyer</text>
+
+        <g class="wedge-card" data-tip="cognition" tabindex="0" role="button" aria-label="Cognition Devin: why us">
+          <rect x="430" y="150" width="230" height="156" rx="6" fill="var(--coral-bg)" stroke="var(--coral)" stroke-width="1.5"/>
+          <text class="card-title" x="545" y="180" text-anchor="middle" fill="#06066b">Cognition · Devin</text>
+          <text class="card-sub" x="545" y="200" text-anchor="middle" fill="#0a0ad6">Ticket in, PR out</text>
+          <text class="card-sub" x="545" y="218" text-anchor="middle" fill="#0a0ad6">Goldman · Dell · Cisco</text>
+          <text class="card-sub" x="545" y="236" text-anchor="middle" fill="#0a0ad6">Cognizant · Infosys SI deals</text>
+          <text class="card-wedge" x="545" y="266" text-anchor="middle" fill="#1f1fff">Wedge: async work +</text>
+          <text class="card-wedge" x="545" y="282" text-anchor="middle" fill="#1f1fff">services channel</text>
+        </g>
+
+        <g class="wedge-card" data-tip="windsurf" tabindex="0" role="button" aria-label="Windsurf: why us">
+          <rect x="430" y="380" width="230" height="112" rx="6" fill="var(--amber-bg)" stroke="var(--amber)" stroke-width="1"/>
+          <text class="card-title" x="545" y="408" text-anchor="middle" fill="#2a1c08">Windsurf</text>
+          <text class="card-sub" x="545" y="428" text-anchor="middle" fill="#5a3d10">The IDE we acquired</text>
+          <text class="card-sub" x="545" y="446" text-anchor="middle" fill="#5a3d10">Bridges into sync side</text>
+          <text class="card-wedge" x="545" y="474" text-anchor="middle" fill="#b87a1a">Buys distribution + ARR</text>
+        </g>
+
+        <g class="wedge-card" data-tip="cursor" tabindex="0" role="button" aria-label="Cursor: what they can't reach">
+          <rect x="120" y="380" width="125" height="112" rx="6" fill="var(--purple-bg)" stroke="var(--purple)" stroke-width="1"/>
+          <text class="card-title" x="182" y="408" text-anchor="middle" fill="#1a1a4d">Cursor</text>
+          <text class="card-sub" x="182" y="428" text-anchor="middle" fill="#2d2d8a">VS Code fork</text>
+          <text class="card-sub" x="182" y="446" text-anchor="middle" fill="#2d2d8a">Bottoms-up viral</text>
+          <text class="card-wedge" x="182" y="474" text-anchor="middle" fill="#4a4ad6">$20/mo prosumer</text>
+        </g>
+
+        <g class="wedge-card" data-tip="claudecode" tabindex="0" role="button" aria-label="Claude Code: what they can't reach">
+          <rect x="260" y="380" width="125" height="112" rx="6" fill="var(--teal-bg)" stroke="var(--teal)" stroke-width="1"/>
+          <text class="card-title" x="322" y="408" text-anchor="middle" fill="#042820">Claude Code</text>
+          <text class="card-sub" x="322" y="428" text-anchor="middle" fill="#0a4a3a">Terminal native</text>
+          <text class="card-sub" x="322" y="446" text-anchor="middle" fill="#0a4a3a">Model owner play</text>
+          <text class="card-wedge" x="322" y="474" text-anchor="middle" fill="#1a8a6a">Hedge + wedge</text>
+        </g>
+
+        <g class="wedge-card" data-tip="replit" tabindex="0" role="button" aria-label="Replit: what they can't reach">
+          <rect x="120" y="240" width="125" height="100" rx="6" fill="#ececec" stroke="#999999" stroke-width="1"/>
+          <text class="card-title" x="182" y="266" text-anchor="middle" fill="#1a1a1a">Replit</text>
+          <text class="card-sub" x="182" y="284" text-anchor="middle" fill="#555555">Zero-setup browser</text>
+          <text class="card-sub" x="182" y="302" text-anchor="middle" fill="#555555">PMs, founders</text>
+          <text class="card-wedge" x="182" y="326" text-anchor="middle" fill="#686868">Non-devs wedge</text>
+        </g>
+
+        <g class="wedge-card" data-tip="manus" tabindex="0" role="button" aria-label="Manus: what they can't reach">
+          <rect x="260" y="240" width="125" height="100" rx="6" fill="#ececec" stroke="#999999" stroke-width="1"/>
+          <text class="card-title" x="322" y="266" text-anchor="middle" fill="#1a1a1a">Manus</text>
+          <text class="card-sub" x="322" y="284" text-anchor="middle" fill="#555555">Horizontal agent</text>
+          <text class="card-sub" x="322" y="302" text-anchor="middle" fill="#555555">Not coding-first</text>
+          <text class="card-wedge" x="322" y="326" text-anchor="middle" fill="#686868">Knowledge worker</text>
+        </g>
+
+        <path d="M545 380 L545 312" stroke="var(--coral-deep)" stroke-width="1.2" stroke-dasharray="4 3" fill="none" marker-end="url(#wedge-arrow)" opacity="0.75"/>
+        <text class="card-wedge" x="565" y="352" fill="var(--coral-deep)">Bundle play</text>
+
+        <text class="footnote-text" x="390" y="615" text-anchor="middle">Same pitch, different doors. The empty quadrant is ours.</text>
+      </svg>
+      <div class="wedge-tooltip" id="wedge-tooltip" aria-live="polite">
+        <div class="wedge-tooltip-label" id="wedge-tooltip-label"></div>
+        <div class="wedge-tooltip-body" id="wedge-tooltip-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="body">The Windsurf acquisition is the proof point. We didn't <em>just</em> buy technology — we bought distribution, ARR, and the right to live in the engineer's IDE alongside the engineer's Jira board. That's a bundle no competitor can replicate without the same kind of move, and Cursor has neither the capital position nor the enterprise muscle to execute it.</p>
+</section>
+
+<hr class="divider" />
+
+<section class="section" id="section-2">
+  <p class="eyebrow">02 · The map</p>
+  <h2 class="section-title">Seven partnership archetypes, <em>sequenced by impact.</em></h2>
+  <p class="lede">Most partnership functions get built reactively — chase the inbound logo, close what's loudest. Cognition's needs to be the opposite: a portfolio sequenced around which archetypes compound, which create moats, and which unlock the next. Below is that architecture, plotted on the two dimensions that matter — <em>strategic value</em> and <em>execution difficulty</em>.</p>
+
+  <div class="callout">"Strategic value vs ease to land" is the framework. The diagonal from top-left to bottom-right is the BD roadmap.</div>
+
+  <div class="chart-frame">
+    <div class="chart-caption">
+      <span class="chart-caption-num">Fig. 02</span>
+      <span>Partnership priority map</span>
+      <span class="chart-caption-rule"></span>
+      <span>Click any archetype to drill in</span>
+    </div>
+    <div class="matrix-wrap">
+      <div class="matrix-grid">
+        <div class="matrix-y-axis">
+          <span>High strategic value &nbsp;·&nbsp; Low strategic value</span>
+        </div>
+        <div class="matrix-quadrants">
+          <div class="matrix-quad">
+            <span class="matrix-quad-label tl">Do these first</span>
+
+            <button class="archetype-card priority-coral" data-archetype="si" aria-describedby="tip-si">
+              <p class="archetype-title">Global systems integrators</p>
+              <p class="archetype-meta">Signed: Infosys, Cognizant</p>
+              <p class="archetype-sub">Prospects: Accenture, TCS, Wipro, Deloitte, Synechron</p>
+              <p class="archetype-wedge">Decades-long lock-in by proxy</p>
+              <p class="click-hint">See prospects</p>
+              <div class="archetype-tooltip" id="tip-si" role="tooltip">
+                <strong>Why this is a strong partner archetype:</strong>
+                <p>Each SI bills tens of thousands of devs at $150–300/hr to Fortune 500 backlogs. Devin makes every consultant 3–5x more productive — they capture the margin, we capture the volume. SI relationships are measured in decades; once Devin is embedded in a delivery pod, switching means reorganizing how that SI delivers to its largest accounts.</p>
+              </div>
+            </button>
+
+            <button class="archetype-card priority-amber" data-archetype="workflow" aria-describedby="tip-workflow">
+              <p class="archetype-title">Workflow systems of record</p>
+              <p class="archetype-sub">ServiceNow, SAP, Atlassian, Linear, Slack</p>
+              <p class="archetype-wedge">Native ticket-to-PR loop</p>
+              <p class="click-hint">See prospects</p>
+              <div class="archetype-tooltip" id="tip-workflow" role="tooltip">
+                <strong>Why this is a strong partner archetype:</strong>
+                <p>Our pitch is "give me a ticket, get a PR" — so wherever enterprise work lives, Devin needs to live too. ServiceNow owns IT/ops tickets, SAP owns ERP, Atlassian owns engineering, Slack is where teams interact with us. Each platform is hungry for credible agentic capabilities. Slack's Salesforce ownership is a tension worth managing — table stakes integration, limited upside.</p>
+              </div>
+            </button>
+          </div>
+
+          <div class="matrix-quad">
+            <span class="matrix-quad-label tr">Big bets</span>
+
+            <button class="archetype-card priority-coral" data-archetype="hyperscaler" aria-describedby="tip-hyper">
+              <p class="archetype-title">Hyperscalers</p>
+              <p class="archetype-sub">AWS, Azure, GCP marketplaces</p>
+              <p class="archetype-wedge">Procurement friction killer</p>
+              <p class="click-hint">See prospects</p>
+              <div class="archetype-tooltip" id="tip-hyper" role="tooltip">
+                <strong>Why this is a strong partner archetype:</strong>
+                <p>Every Fortune 500 already has committed AWS or Azure spend. Landing in marketplace means Devin is bought against existing budget — collapses six-month procurement to weeks. AWS is the cleanest partner (no competing first-party async agent). Microsoft is the highest-value-highest-risk: deepest channel, but they own GitHub Copilot.</p>
+              </div>
+            </button>
+
+            <button class="archetype-card priority-purple" data-archetype="vertical" aria-describedby="tip-vert">
+              <p class="archetype-title">Regulated vertical specialists</p>
+              <p class="archetype-sub">Palantir, Snowflake, Bloomberg, Veeva, Booz Allen</p>
+              <p class="archetype-wedge">Contrarian: $5K/seat unlocks</p>
+              <p class="click-hint">See prospects</p>
+              <div class="archetype-tooltip" id="tip-vert" role="tooltip">
+                <strong>Why this is a strong partner archetype:</strong>
+                <p>The contrarian bet. Healthcare, defense, financial services, government — each needs HIPAA, FedRAMP, FINRA-aware deployment scaffolding that takes years to build. Palantir-style specialists already have it. Embedding Devin in their certified footprint unlocks 5–10x price per seat and a moat the SIs can't replicate.</p>
+              </div>
+            </button>
+          </div>
+
+          <div class="matrix-quad">
+            <button class="archetype-card priority-teal bottom-row" data-archetype="alert" aria-describedby="tip-alert">
+              <p class="archetype-title">Alert-to-fix loop</p>
+              <p class="archetype-sub">Datadog, Sentry, PagerDuty, Snyk, SonarQube</p>
+              <p class="archetype-wedge">Auto-fix what the scanner flags</p>
+              <p class="click-hint">See prospects</p>
+              <div class="archetype-tooltip" id="tip-alert" role="tooltip">
+                <strong>Why this is a strong partner archetype:</strong>
+                <p>Closes a loop no one's closed yet: Sentry catches the exception, PagerDuty pages on-call, Snyk flags the CVE, SonarQube surfaces tech debt — Devin opens the PR before the engineer reaches their laptop. Security and code-quality backlogs are chronically under-resourced — exactly the kind of work async agents are perfect for.</p>
+              </div>
+            </button>
+
+            <button class="archetype-card priority-gray bottom-row" data-archetype="ide" aria-describedby="tip-ide">
+              <p class="archetype-title">IDE ecosystem</p>
+              <p class="archetype-sub">JetBrains, GitHub</p>
+              <p class="archetype-wedge">Windsurf extends reach</p>
+              <p class="click-hint">See prospects</p>
+              <div class="archetype-tooltip" id="tip-ide" role="tooltip">
+                <strong>Why this is a strong partner archetype:</strong>
+                <p>JetBrains owns the Java/Kotlin/Python crowd that Cursor and Windsurf undersell. "Devin inside IntelliJ" would be a coup. GitHub is trickier — Microsoft owns it and ships Copilot Workspace — but GitHub's neutrality muscle creates space even with a competing first-party product.</p>
+              </div>
+            </button>
+          </div>
+
+          <div class="matrix-quad">
+            <button class="archetype-card priority-teal bottom-row" data-archetype="model" aria-describedby="tip-model">
+              <p class="archetype-title">Frontier model labs</p>
+              <p class="archetype-sub">Anthropic preferred, OpenAI hedge</p>
+              <p class="archetype-wedge">Frenemy: deep but delicate</p>
+              <p class="click-hint">See prospects</p>
+              <div class="archetype-tooltip" id="tip-model" role="tooltip">
+                <strong>Why this is a strong partner archetype:</strong>
+                <p>We're already a massive token buyer. Converting that into priority capacity, custom fine-tunes, or co-marketing in regulated verticals is real value. But leverage flows mostly the other way (the labs benefit more from us validating agentic coding). Stay publicly model-neutral; have a quiet preferred-partner deal with Anthropic privately.</p>
+              </div>
+            </button>
+
+            <button class="archetype-card priority-gray bottom-row" data-archetype="silicon" aria-describedby="tip-silicon">
+              <p class="archetype-title">Silicon / inference</p>
+              <p class="archetype-sub">NVIDIA (incl. Groq), AMD, SambaNova</p>
+              <p class="archetype-wedge">Path to $100/seat TAM</p>
+              <p class="click-hint">See prospects</p>
+              <div class="archetype-tooltip" id="tip-silicon" role="tooltip">
+                <strong>Why this is a strong partner archetype:</strong>
+                <p>Agentic workloads have very different inference profiles than chat — long-horizon, lots of tool calls, lots of small fast steps. Inference-optimization partnerships with Groq or Cerebras could collapse per-task cost enough to serve the mid-market. At $500/seat we only pencil for senior eng salaries; at $100/seat the TAM expands 10x.</p>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div class="matrix-x-axis">
+          <span>Easy to land</span>
+          <span>Hard to land</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="deepdive" id="deepdive" aria-live="polite">
+    <div class="deepdive-header">
+      <div>
+        <div class="deepdive-title serif" id="dd-title">Global systems integrators</div>
+        <div class="deepdive-sub" id="dd-sub">Plotting each SI by deal accessibility and strategic fit with the Cognition motion. Bubble size = annual ARR opportunity through that partner.</div>
+      </div>
+      <div class="archetype-toggle" role="tablist" aria-label="Switch archetype view">
+        <span class="toggle-label">View</span>
+        <button class="toggle-btn active" data-view="si" role="tab">SIs</button>
+        <button class="toggle-btn" data-view="workflow" role="tab">Workflow</button>
+        <button class="toggle-btn" data-view="hyperscaler" role="tab">Hyperscalers</button>
+        <button class="toggle-btn" data-view="vertical" role="tab">Verticals</button>
+        <button class="toggle-btn" data-view="alert" role="tab">Alert-to-fix</button>
+        <button class="toggle-btn" data-view="ide" role="tab">IDEs</button>
+        <button class="toggle-btn" data-view="model" role="tab">Model labs</button>
+        <button class="toggle-btn" data-view="silicon" role="tab">Silicon</button>
+      </div>
+    </div>
+
+    <div class="methodology-note">
+      <strong>Methodology:</strong> ARR sizing uses per-seat pricing as a proxy for market opportunity — actual deal economics likely scale with labor hours captured, services-margin uplift, or usage tiers depending on partner. Per-seat is the cleanest unit for cross-archetype comparison; treat the absolute numbers as directional, the relative magnitudes as defensible.
+    </div>
+
+    <div class="scatter-outer" style="position:relative;">
+      <div class="scatter-wrap" id="scatter-wrap">
+        <!-- scatter renders here -->
+      </div>
+      <div class="scatter-tooltip" id="scatter-tooltip" aria-live="polite">
+        <div class="scatter-tooltip-name" id="st-name"></div>
+        <div class="scatter-tooltip-row"><span class="scatter-tooltip-label">X:</span> <span id="st-x"></span></div>
+        <div class="scatter-tooltip-row"><span class="scatter-tooltip-label">Y:</span> <span id="st-y"></span></div>
+        <div class="scatter-tooltip-foot">Click for full rationale →</div>
+      </div>
+    </div>
+
+    <div class="scatter-legend">
+      <div id="scatter-axis-legend"><strong style="color:var(--ink)">X:</strong> Strategic fit with Cognition motion &nbsp;·&nbsp; <strong style="color:var(--ink)">Y:</strong> Deal accessibility</div>
+      <div class="bubble-scale">
+        <span>ARR potential</span>
+        <div class="bubble-scale-circles">
+          <span style="width:8px;height:8px"></span>
+          <span style="width:14px;height:14px"></span>
+          <span style="width:22px;height:22px"></span>
+        </div>
+        <span id="scatter-arr-legend">$10M → $100M+</span>
+      </div>
+    </div>
+
+    <div class="point-detail" id="point-detail" aria-live="polite">
+      <div class="point-detail-title" id="pd-title"></div>
+      <div class="point-detail-meta" id="pd-meta"></div>
+      <div class="point-detail-body" id="pd-body"></div>
+    </div>
+  </div>
+
+  <h3 class="subsection">Sequencing matters more than selection</h3>
+  <p class="body">SIs first — they bring volume and validate enterprise-grade. Then hyperscalers (procurement velocity, global reach). Then workflow systems of record (sticky integration that locks in the SI deals). Then regulated verticals (the moat play). Done in a different order — say, chasing verticals before SI volume — burns capital faster.</p>
+</section>
+
+<hr class="divider" />
+
+<section class="section" id="section-3">
+  <p class="eyebrow">03 · Why me</p>
+  <h2 class="section-title">The async wedge needs <em>an architect.</em></h2>
+  <p class="lede">A Head of Partnerships role at a $25B AI infrastructure company doesn't get filled by a fifteen-year quota-carrier from Snowflake. It gets filled by someone who can <em>architect</em> the function — sequence the archetypes, run the deals, build the team, and turn each signed partnership into a compounding asset that makes the next one easier. I've spent a decade in retail vendor negotiations, two years inside an SI's AI org, and the last year at Pear modeling exactly the kind of architecture this role calls for. The pieces fit.</p>
+
+  <div class="credential-strip">
+    <div class="credential"><strong>Accenture · 2022–2024</strong> · Top 5% Performer, North America</div>
+    <div class="credential"><strong>Global GenAI GTM</strong> · Reported into Lan Guan, CAIO</div>
+    <div class="credential"><strong>$15M DTC · 2008–2018</strong> · Top vendor, Home Depot · Lowe's · Costco · Walmart · Wayfair</div>
+    <div class="credential"><strong>Pear VC · DRF</strong> · Early-stage AI investor</div>
+    <div class="credential"><strong>Stanford GSB</strong> · '26 · President, VC Club + Entrepreneurship Club</div>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-card-num">01</div>
+      <div class="why-card-title">Inside the SI buying organization</div>
+      <div class="why-card-body">I spent two years inside Accenture's GenAI GTM organization, reporting into <strong>Lan Guan</strong> (now Chief AI & Data Officer, Global Management Committee, $3B in 2024 GenAI bookings, $5.1B in FY25). I worked alongside <strong>Benny Du</strong> in Cloud First AI & Data. That gives Cognition something no external candidate can buy: a playbook for how Accenture-class SIs <em>actually</em> evaluate, contract, and deploy AI partners — applicable directly to TCS, Wipro, Deloitte, Capgemini, and the rest of the top-left quadrant.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">02</div>
+      <div class="why-card-title">Operator scar tissue from the world's hardest retailers</div>
+      <div class="why-card-body">For a decade I bootstrapped a $15M consumer business into top-vendor status across <strong>Home Depot, Lowe's, Costco, Walmart, and Wayfair</strong>. Procurement, multi-stakeholder buying committees, channel conflict, twelve-month sales cycles, line-review politics. Selling Devin into Goldman, Dell, or Cisco looks more like that than it looks like a typical SaaS deal. The retailer-to-Fortune-500 motion is the same motion, run on a different product.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">03</div>
+      <div class="why-card-title">Investor framing applied to BD</div>
+      <div class="why-card-body">At Pear and DRF I've spent the last year analyzing Cognition's competitive position and partnership architecture (you're reading the artifact). Most BD leaders think transactionally: close this deal, then the next. I think portfolio-style: which archetypes compound, which create moats, which sequence unlocks the next. The framework in Section 02 is how I'd run this function from day one — not as a hire-and-pray motion, but as a sequenced investment thesis with measurable returns per archetype.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">04</div>
+      <div class="why-card-title">Network across every archetype</div>
+      <div class="why-card-body">Pear's portfolio puts me close to workflow founders (Linear-stage). DRF extends my reach across Stanford and Berkeley engineering talent. The GSB VC Club fireside chats I host — with <strong>Sara Ittelson (Accel), Konstantine Buhler (Sequoia), Michele Catasta (Replit)</strong> — keep me wired into the firms backing Cognition's next 100 enterprise customers. Lan Guan herself is a founding member of Stanford HAI; she runs the Accenture Stanford Foundation Model Scholar Program on my current campus.</div>
+    </div>
+  </div>
+
+  <h3 class="subsection" id="roadmap">First-year roadmap</h3>
+  <p class="body">Below is what I'd execute in the first twelve months. Built bottom-up from the priority map in Section 02, sequenced to compound, and measured against concrete partnership KPIs that scale with the function.</p>
+
+  <div class="roadmap">
+    <div class="roadmap-tabs" role="tablist">
+      <button class="roadmap-tab active" data-quarter="q1" role="tab">Q1 · Foundation</button>
+      <button class="roadmap-tab" data-quarter="q2" role="tab">Q2 · Pipeline</button>
+      <button class="roadmap-tab" data-quarter="q3" role="tab">Q3 · Closure + flagship</button>
+      <button class="roadmap-tab" data-quarter="q4" role="tab">Q4 · Compounding</button>
+    </div>
+
+    <div class="roadmap-panel active" data-panel="q1">
+      <div class="roadmap-grid">
+        <div class="roadmap-col">
+          <div class="roadmap-col-label">Initiatives</div>
+          <ul class="roadmap-list">
+            <li>Reactivate Lan Guan and Benny Du through Stanford HAI and a GSB VC Club fireside chat invitation — non-sales pretext, real conversation.</li>
+            <li>Build the partnership scorecard (value × accessibility × ARR) and present to leadership by week 4.</li>
+            <li>Open formal conversations with Accenture, TCS, Synechron, and ServiceNow in parallel — different decision-makers, zero channel conflict.</li>
+            <li>Lock keynote or panel slots at AWS re:Invent and KubeCon NA in December.</li>
+            <li>Hire a BD Associate to run relationship hygiene and pipeline tracking.</li>
+          </ul>
+        </div>
+        <div class="roadmap-col">
+          <div class="roadmap-col-label">KPI targets · Q1</div>
+          <div class="kpi-row">
+            <div class="kpi-target"><span class="kpi-target-num">25+</span><span class="kpi-target-label">First conversations opened</span></div>
+            <div class="kpi-target"><span class="kpi-target-num">5</span><span class="kpi-target-label">Panel / speaker slots booked</span></div>
+            <div class="kpi-target"><span class="kpi-target-num">2</span><span class="kpi-target-label">Conferences with Cognition presence</span></div>
+            <div class="kpi-target"><span class="kpi-target-num">1</span><span class="kpi-target-label">SI MOU drafted (Accenture)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap-panel" data-panel="q2">
+      <div class="roadmap-grid">
+        <div class="roadmap-col">
+          <div class="roadmap-col-label">Initiatives</div>
+          <ul class="roadmap-list">
+            <li>Close Accenture pilot scope — defined deployment, named accounts, 60-day SLA, services-margin economics agreed.</li>
+            <li>Parallel TCS and Wipro engagement: sandbox-scale technical pilots prove the productivity story before commercial terms.</li>
+            <li>First workflow partner MOU signed (ServiceNow or Atlassian) with joint go-to-market and named co-sell accounts.</li>
+            <li>AWS and Azure Marketplace listings live; GCP in process. Procurement friction drops measurably.</li>
+            <li>Speaker slots at Atlassian Team '27, ServiceNow Knowledge, GitHub Universe.</li>
+          </ul>
+        </div>
+        <div class="roadmap-col">
+          <div class="roadmap-col-label">KPI targets · Q2</div>
+          <div class="kpi-row">
+            <div class="kpi-target"><span class="kpi-target-num">50+</span><span class="kpi-target-label">Cumulative first conversations</span></div>
+            <div class="kpi-target"><span class="kpi-target-num">12</span><span class="kpi-target-label">Cumulative panel / speaker slots</span></div>
+            <div class="kpi-target"><span class="kpi-target-num">3</span><span class="kpi-target-label">Signed MOUs or pilots</span></div>
+            <div class="kpi-target"><span class="kpi-target-num">3</span><span class="kpi-target-label">Marketplace listings live</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap-panel" data-panel="q3">
+      <div class="roadmap-grid">
+        <div class="roadmap-col">
+          <div class="roadmap-col-label">Initiatives</div>
+          <ul class="roadmap-list">
+            <li>Accenture full deployment contract signed — Cognition's first global SI signing of 2027.</li>
+            <li>First regulated vertical MOU: a Palantir FedStart deployment or Snowflake co-sell motion goes live.</li>
+            <li><strong>Launch <em>Async '27</em></strong> — Cognition's first annual conference. Modeled on Code with Claude and DevDay. Target: ~2,000 attendees, partner showcase track, customer keynote from Goldman or Cisco, product roadmap reveal, at least 5 partnership announcements timed to the event.</li>
+            <li>Expand the partnerships team to 4–5 — one BD lead per archetype (SI, hyperscaler, workflow, vertical).</li>
+          </ul>
+        </div>
+        <div class="roadmap-col">
+          <div class="roadmap-col-label">KPI targets · Q3</div>
+          <div class="kpi-row">
+            <div class="kpi-target"><span class="kpi-target-num">75+</span><span class="kpi-target-label">Cumulative first conversations</span></div>
+            <div class="kpi-target"><span class="kpi-target-num">20</span><span class="kpi-target-label">Cumulative speaker slots</span></div>
+            <div class="kpi-target"><span class="kpi-target-num">5</span><span class="kpi-target-label">Signed partnerships</span></div>
+            <div class="kpi-target"><span class="kpi-target-num">1</span><span class="kpi-target-label">Flagship conference launched</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap-panel" data-panel="q4">
+      <div class="roadmap-grid">
+        <div class="roadmap-col">
+          <div class="roadmap-col-label">Initiatives</div>
+          <ul class="roadmap-list">
+            <li>Second and third major SI signings closed (TCS or Synechron, plus Deloitte or Capgemini).</li>
+            <li>First regulated vertical deployment live and generating revenue — Palantir-hosted defense pilot or Snowflake-native financial services rollout.</li>
+            <li>Hyperscaler co-sell pipeline is measurable. Track sourced ARR through AWS, Azure, and GCP joint accounts.</li>
+            <li>Partnerships team fully built — 6–8 people, clear archetype ownership, revenue-tied OKRs.</li>
+            <li>Year-two planning begins: open the second flagship, expand into Capgemini Europe and Mitsubishi/Fujitsu in APAC.</li>
+          </ul>
+        </div>
+        <div class="roadmap-col">
+          <div class="roadmap-col-label">KPI targets · Q4 (full year)</div>
+          <div class="kpi-row">
+            <div class="kpi-target"><span class="kpi-target-num">100+</span><span class="kpi-target-label">First conversations opened</span></div>
+            <div class="kpi-target"><span class="kpi-target-num">30+</span><span class="kpi-target-label">Speaker slots / events attended</span></div>
+            <div class="kpi-target"><span class="kpi-target-num">8</span><span class="kpi-target-label">Signed partnerships</span></div>
+            <div class="kpi-target"><span class="kpi-target-num">6–8</span><span class="kpi-target-label">Partnerships team built</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="subsection" id="events">Where Cognition shows up: the event calendar</h3>
+  <p class="body">A partnership lead is measured by signed deals, but the signed deals are built at the conferences. Below is the Sept 2026 – Sept 2027 calendar I'd target for speaking slots, sponsorship, and informal SI relationship-building. The signature anchor at the end is our own.</p>
+
+  <div class="event-cal">
+    <div class="event-row">
+      <div class="event-date">Sep 2026</div>
+      <div class="event-name">Salesforce Dreamforce</div>
+      <div class="event-rationale">Slack tension management; Agentforce competitive intelligence.</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Oct 2026</div>
+      <div class="event-name">GitHub Universe · Money 20/20</div>
+      <div class="event-rationale">IDE ecosystem positioning; financial services vertical entry.</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Nov 2026</div>
+      <div class="event-name">KubeCon + CloudNativeCon NA · Web Summit</div>
+      <div class="event-rationale">DevOps ecosystem; European enterprise + SI introductions.</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Dec 2026</div>
+      <div class="event-name">AWS re:Invent</div>
+      <div class="event-rationale">Hyperscaler marketplace anchor event. Leadership keynote target.</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Jan 2027</div>
+      <div class="event-name">JPMorgan Healthcare · World Economic Forum</div>
+      <div class="event-rationale">Pharma / biotech vertical buyers convene; F500 CEO-level relationships.</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Feb 2027</div>
+      <div class="event-name">Accenture Technology Vision · HIMSS</div>
+      <div class="event-rationale">SI co-marketing moment; healthcare vertical depth.</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Mar 2027</div>
+      <div class="event-name">NVIDIA GTC · Mobile World Congress</div>
+      <div class="event-rationale">Silicon partnership stage; telco SI introductions.</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Apr 2027</div>
+      <div class="event-name">Atlassian Team '27 · Google Cloud Next</div>
+      <div class="event-rationale">Workflow partner showcase; hyperscaler depth.</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">May 2027</div>
+      <div class="event-name">ServiceNow Knowledge · Microsoft Build</div>
+      <div class="event-rationale">Workflow flagship; navigate the Microsoft / Copilot dynamic.</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Jun 2027</div>
+      <div class="event-name">AI Engineer World's Fair · Snowflake Summit</div>
+      <div class="event-rationale">Developer thought-leadership; regulated data partner.</div>
+    </div>
+    <div class="event-row">
+      <div class="event-date">Jul 2027</div>
+      <div class="event-name">Inspect, listen tour, partner offsites</div>
+      <div class="event-rationale">Pre-flagship: SI partner advisory boards, customer councils.</div>
+    </div>
+    <div class="event-row event-anchor">
+      <div class="event-date">Sep 2027</div>
+      <div class="event-name"><strong>Async '27 — Cognition's flagship</strong></div>
+      <div class="event-rationale">Our annual conference. Partner announcements anchored to the moment. The year's signature.</div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div class="cta-text">The async wedge needs an architect. <em>Let me build the function with you.</em></div>
+    <div class="cta-meta">
+      <div>tonyshi@stanford.edu</div>
+      <div>(415) 465-9597</div>
+      <div><a href="https://linkedin.com/in/t-shi">linkedin.com/in/t-shi</a></div>
+    </div>
+  </div>
+
+  <div class="footer-note">Prepared by Tony Shi · GSB '26 · Pear VC · Dorm Room Fund · May 2026</div>
+</section>
+
+</main>
+
+<nav class="toc" id="toc-nav" aria-label="Section navigation">
+  <div class="toc-label">Contents</div>
+  <ol>
+    <li><a href="#section-1" data-nav="1">The wedge</a></li>
+    <li><a href="#section-2" data-nav="2">The map</a>
+      <ol class="sub">
+        <li><a href="#deepdive" data-nav="2.1">Archetype deep-dive</a></li>
+      </ol>
+    </li>
+    <li><a href="#section-3" data-nav="3">Why me</a>
+      <ol class="sub">
+        <li><a href="#roadmap" data-nav="3.1">First-year roadmap</a></li>
+        <li><a href="#events" data-nav="3.2">Event calendar</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+</div>
+
+<script>
+// Access gate — speed-bump security, not real auth
+// Stores SHA-256 of authorized email; sessionStorage persists unlock for the tab session
+(function() {
+  'use strict';
+  const VALID_HASH = '541ac5b077890eafe9f207fbeb42697b5ff8caf74a248fc272dbc9868d7a9b00';
+  const SESSION_KEY = 'cog-ts-unlock';
+
+  const gate = document.getElementById('gate');
+  const form = document.getElementById('gate-form');
+  const input = document.getElementById('gate-input');
+  const errorEl = document.getElementById('gate-error');
+  const pageContent = document.getElementById('page-content');
+  const mobileToggle = document.getElementById('mobile-nav-toggle');
+
+  async function sha256(text) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(text.trim().toLowerCase());
+    const buf = await crypto.subtle.digest('SHA-256', data);
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  function unlock() {
+    gate.classList.add('hidden');
+    pageContent.style.display = '';
+    if (mobileToggle) mobileToggle.style.display = '';
+    try { sessionStorage.setItem(SESSION_KEY, '1'); } catch (e) {}
+  }
+
+  // Hide mobile toggle until unlocked
+  if (mobileToggle) mobileToggle.style.display = 'none';
+
+  // Check if already unlocked this session
+  try {
+    if (sessionStorage.getItem(SESSION_KEY) === '1') {
+      unlock();
+      return;
+    }
+  } catch (e) {}
+
+  // Focus input on load
+  setTimeout(() => input.focus(), 100);
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorEl.textContent = '';
+    const val = input.value.trim();
+    if (!val) return;
+    try {
+      const hash = await sha256(val);
+      if (hash === VALID_HASH) {
+        unlock();
+      } else {
+        errorEl.textContent = 'Not the right address. Check the email this was sent to.';
+        input.select();
+      }
+    } catch (err) {
+      errorEl.textContent = 'Something went wrong. Try again.';
+    }
+  });
+})();
+</script>
+
+<script>
+(function() {
+  'use strict';
+
+  const siData = [
+    {
+      name: 'Accenture',
+      strategicFit: 0.78,
+      dealAccess: 0.92,
+      arrPotential: 120,
+      revenue: '$65B',
+      aiBookings: '$5.1B GenAI in FY25',
+      labelPos: 'right',
+      xRationale: 'Native fit. Accenture sells transformation, not staff-aug — Devin margin flows straight to the P&L.',
+      yRationale: 'Hot. Lan Guan + Benny Du relationships are warm; competitive pressure from Cognizant/Infosys deployments forces a move.',
+      detail: 'My direct path. Reported into Lan Guan (now Chief AI & Data Officer, $3B in GenAI bookings 2024) for two years. Benny Du in Cloud First AI & Data remains a working relationship. Accenture has signed AI partnerships with AWS, Google, Microsoft, Nvidia, Oracle, Salesforce — Cognition is conspicuously absent while Cognizant and Infosys are already deployed. Competitive pressure makes this the most urgent next deal.'
+    },
+    {
+      name: 'TCS',
+      strategicFit: 0.62,
+      dealAccess: 0.55,
+      arrPotential: 85,
+      revenue: '$30B',
+      aiBookings: '$100M+ AI deals 2025',
+      labelPos: 'right',
+      xRationale: 'Medium fit. TCS still defends heavy legacy outsourcing book — Devin both helps and threatens their margin.',
+      yRationale: 'Warm. Building 200+ in-house AI agents shows appetite, but NIH bias and Mumbai-led decisions slow cycles.',
+      detail: 'Largest Indian IT services firm. Building AI agent portfolio in-house (200+ agents per their public filings) — which is both opportunity (proven appetite) and risk (NIH bias). Mumbai-led decision making means longer cycles than Accenture but bigger seat counts once signed. Strategic fit is medium because TCS still has heavy legacy outsourcing book to defend.'
+    },
+    {
+      name: 'Wipro',
+      strategicFit: 0.55,
+      dealAccess: 0.50,
+      arrPotential: 55,
+      revenue: '$11B',
+      aiBookings: '$5B bookings Q2 2025',
+      labelPos: 'left',
+      xRationale: 'Medium fit. Partnership-dependent model — they buy rather than build.',
+      yRationale: 'Warm. Faster conversion velocity than TCS once internal champions are activated.',
+      detail: 'Heaviest partnership-dependent of the Indian SIs — built portfolio around external tech relationships rather than in-house. That makes them structurally easier to partner with than TCS. Smaller revenue base than TCS or Accenture caps the ARR upside, but conversion velocity is faster.'
+    },
+    {
+      name: 'Deloitte',
+      strategicFit: 0.70,
+      dealAccess: 0.40,
+      arrPotential: 75,
+      revenue: '$67B (incl. audit)',
+      aiBookings: 'Tech & Cyber: ~$15B',
+      labelPos: 'right',
+      xRationale: 'High fit. Deloitte sells management consulting + tech delivery — exactly the bundle Devin amplifies.',
+      yRationale: 'Cool. Partner-led decision-making, conservative technology bets, long cycles.',
+      detail: 'Big Four consultancy with strong management consulting muscle that complements technical delivery. Strategic fit is high (they sell transformation, not staff augmentation). Deal access is harder because Deloitte is partner-led with diffuse decision-making and conservative on technology bets. Long cycle, big landing.'
+    },
+    {
+      name: 'Capgemini',
+      strategicFit: 0.60,
+      dealAccess: 0.45,
+      arrPotential: 45,
+      revenue: '$25B',
+      aiBookings: 'AI-Activated, Mistral partner',
+      labelPos: 'bottom',
+      xRationale: 'Medium fit. European banking/manufacturing book, strong but bounded use cases.',
+      yRationale: 'Cool-warm. Mistral partnership shows openness to model-layer-adjacent players like Cognition.',
+      detail: 'European-headquartered global SI. Strong in financial services and manufacturing verticals. Capgemini has gone hard on a Mistral partnership for local-first AI — interesting precedent for partnering with a model-layer adjacent player like Cognition. Worth a 2026 conversation.'
+    },
+    {
+      name: 'HCLTech',
+      strategicFit: 0.48,
+      dealAccess: 0.42,
+      arrPotential: 35,
+      revenue: '$13B',
+      aiBookings: 'AI Force platform',
+      labelPos: 'left',
+      xRationale: 'Lower fit. Infrastructure / ops book — less greenfield engineering for Devin to amplify.',
+      yRationale: 'Cool. Second-wave landing target.',
+      detail: 'Smaller Indian SI with strong infrastructure services book. Lower strategic fit because their work skews toward operations/infrastructure rather than greenfield application engineering. Worth landing in second wave after Accenture and TCS.'
+    },
+    {
+      name: 'Synechron',
+      strategicFit: 0.85,
+      dealAccess: 0.72,
+      arrPotential: 22,
+      revenue: '$1B',
+      aiBookings: 'Financial services AI focus',
+      labelPos: 'top',
+      xRationale: 'Native fit. Entirely financial services dev-heavy engagements — Devin sweet spot.',
+      yRationale: 'Warm-hot. Hungry for differentiation against the megas. Decisions move fast at this scale.',
+      detail: 'Mid-tier financial-services-focused SI. Smaller revenue caps the ARR ceiling, but strategic fit is exceptional — their entire delivery model is dev-heavy financial services work, which is exactly where Devin shines. Hungrier than the megas, faster to sign, deeper vertical credibility. The right second-wave bet.'
+    },
+    {
+      name: 'EPAM',
+      strategicFit: 0.74,
+      dealAccess: 0.62,
+      arrPotential: 30,
+      revenue: '$4.7B',
+      aiBookings: 'EPAM AI/RUN platform',
+      labelPos: 'right',
+      xRationale: 'High fit. Engineering-first SI — consultants paid as software engineers, not body shops.',
+      yRationale: 'Warm. Mid-size hunger, exemplary partnership culture.',
+      detail: 'Engineering-first SI (vs operations-first like TCS). Strong product engineering practice. Strategic fit is high because EPAM consultants are already paid as software engineers, not staff-aug bodies — Devin productivity gains flow more directly to margin. Mid-size but exemplary archetype.'
+    },
+    {
+      name: 'LTIMindtree',
+      strategicFit: 0.50,
+      dealAccess: 0.38,
+      arrPotential: 25,
+      revenue: '$4.5B',
+      aiBookings: 'BlueVerse AI suite',
+      labelPos: 'bottom',
+      xRationale: 'Lower fit. Post-merger integration still consuming GTM bandwidth.',
+      yRationale: 'Cool. Wait until consolidated GTM before opening formal conversations.',
+      detail: 'L&T Group\'s IT services arm formed by 2022 merger. Building AI capabilities but still finding identity post-merger. Lower priority — wait until they have consolidated GTM before opening formal partnership conversations.'
+    }
+  ];
+
+  const verticalData = [
+    {
+      name: 'Palantir',
+      strategicFit: 0.95,
+      dealAccess: 0.88,
+      arrPotential: 95,
+      revenue: '$3.4B FY25, 70% YoY',
+      aiBookings: 'IL5/IL6, FedStart program',
+      labelPos: 'right',
+      xRationale: 'Years-deep moat. IL5+IL6 accreditation hosting AI in production today.',
+      yRationale: 'Unlocks $5K+/seat in defense/intel — the highest in regulated software.',
+      detail: '<strong>The highest-conviction vertical partner.</strong> Palantir is the only company with FedRAMP High + IL5 + IL6 accreditation hosting third-party AI in production today. The Anthropic precedent is direct: Anthropic deploys Claude via Palantir AIP and the FedStart program into IL6 environments — exactly the deal structure Cognition needs. Palantir already partnered with Cognizant in February 2026 for healthcare AI modernization, signaling openness to coding-agent partners. <strong>ARR math:</strong> ~50K addressable defense/intel engineers × $5K/seat uplift × 35% attach = ~$87M plausible; rounded to $95M including Foundry commercial verticals (energy, banks already on Foundry per Q4 2025).'
+    },
+    {
+      name: 'Snowflake',
+      strategicFit: 0.82,
+      dealAccess: 0.78,
+      arrPotential: 75,
+      revenue: '$3.6B FY25',
+      aiBookings: 'Cortex AI, HIPAA + FedRAMP variants',
+      labelPos: 'right',
+      xRationale: 'Real moat. HIPAA + FedRAMP Moderate + SOC 2 across all major regulated verticals.',
+      yRationale: 'Unlocks $2-3K/seat for engineers building data products in regulated environments.',
+      detail: 'The data-layer partner for regulated industries. Snowflake hosts the data Devin needs to operate against in healthcare, financial services, and government — and they have HIPAA, FedRAMP Moderate, and SOC 2 deployments. Cortex AI gives them native LLM hooks; Devin slots in as the agent layer that operates on the data. <strong>ARR math:</strong> ~30K engineers building data products on Snowflake in regulated verticals × $2.5K/seat × 40% attach = ~$30M direct; ~$45M additional via co-sell into Snowflake-native shops where Devin handles pipelines + app code. Total ~$75M.'
+    },
+    {
+      name: 'Veeva',
+      strategicFit: 0.78,
+      dealAccess: 0.68,
+      arrPotential: 60,
+      revenue: '$3.2B FY25',
+      aiBookings: 'Vault AI Agents on Anthropic via Bedrock',
+      labelPos: 'top',
+      xRationale: 'Real moat. 80% of pharma CRM, 1,550 customers, 13 of top 20 biopharma standardized.',
+      yRationale: 'Unlocks $2.5K/seat for Vault developers — pharma pays heavily for compliant tooling.',
+      detail: 'Veeva owns 80% global share in life sciences CRM with 1,550+ customers including 13 of the top 20 pharma. <strong>The connecting-tissue argument:</strong> Veeva\'s AI Agents already run on Anthropic via Amazon Bedrock — they\'ve made the architectural choice to embed external AI. The next layer is the engineering work that maintains custom Vault implementations (every top-20 pharma has dozens of custom apps on the Vault platform via the Java SDK). <strong>ARR math:</strong> ~15K Vault developers across pharma + Veeva partners × $2.5K/seat × 50% attach = ~$19M direct; ~$40M via co-sell into pharma IT for regulated codebase maintenance. Total ~$60M.'
+    },
+    {
+      name: 'Bloomberg',
+      strategicFit: 0.72,
+      dealAccess: 0.55,
+      arrPotential: 55,
+      revenue: '$13B private est.',
+      aiBookings: 'ASKB Feb 2026, BQuant Desktop',
+      labelPos: 'bottom',
+      xRationale: 'Real moat. Terminal on every desk at every major bank — irreplaceable distribution.',
+      yRationale: 'Unlocks $1.5K/seat for quants in BQuant — financial services tolerates premium pricing.',
+      detail: 'Bloomberg Terminal sits on the desk of every quant at every major bank — ~350K paid users. BQuant Desktop is a Python coding environment inside the Terminal. <strong>Tension:</strong> Bloomberg launched ASKB in February 2026 — their own agentic AI on multiple LLMs — so they have competing first-party ambition. <strong>Opportunity:</strong> ASKB is research-focused, not code-generation. Devin partners as the code-execution layer for BQuant workflows. <strong>ARR math:</strong> ~80K quants writing Python in BQuant × $1.5K/seat × 25% attach = ~$30M; ~$25M via Bloomberg Enterprise Solutions co-sell into bank IT. Total ~$55M.'
+    },
+    {
+      name: 'Booz Allen',
+      strategicFit: 0.68,
+      dealAccess: 0.65,
+      arrPotential: 50,
+      revenue: '$11.4B FY25',
+      aiBookings: 'Defense AI prime, Anduril alliance',
+      labelPos: 'left',
+      xRationale: 'Real moat. 75% federal revenue, deep IL5/IL6 muscle, prime contractor relationships.',
+      yRationale: 'Unlocks $4K/seat for cleared engineers — clearance scarcity drives premium.',
+      detail: 'Booz Allen is the largest US defense-and-intel-focused services firm — 75% federal revenue, deep IL5/IL6 deployment muscle, recently expanded AI alliance with Anduril. <strong>Different archetype than Palantir:</strong> Palantir provides the certified hosting environment; Booz Allen provides cleared engineers and prime-contractor relationships. Complementary, not competitive. <strong>ARR math:</strong> ~25K cleared engineers across Booz Allen + sub-primes × $4K/seat × 30% attach = ~$30M; ~$20M via Booz Allen-led prime contracts where Devin is the embedded AI capability. Total ~$50M.'
+    },
+    {
+      name: 'Epic Systems',
+      strategicFit: 0.55,
+      dealAccess: 0.32,
+      arrPotential: 35,
+      revenue: '$5.5B private est.',
+      aiBookings: 'Cosmos, Art, Penny — Microsoft alliance',
+      labelPos: 'bottom',
+      xRationale: 'Real moat — 40%+ of US hospital beds. But the moat is closed to outside partners.',
+      yRationale: 'Marginal pricing unlock. Cache/MUMPS stack limits Devin utility; Microsoft owns AI layer.',
+      detail: 'Epic is in 40%+ of US hospital beds. <strong>But it is notoriously closed</strong> to third-party developers, partners primarily with Microsoft on the AI layer (Dragon DAX, Cosmos AI), and is building its own AI agents (Art, Emmie, Penny). <strong>Strategic fit is medium</strong> because Epic\'s engineering work (Cache/MUMPS) is its own specialized stack. <strong>Deal accessibility is low</strong> because Epic\'s Microsoft alliance is exclusive in spirit if not contract. <strong>Approach:</strong> don\'t target Epic directly — target the 4,000+ healthcare orgs that build Epic-adjacent applications on more open stacks. ARR ~$35M, mostly indirect.'
+    },
+    {
+      name: 'Carahsoft',
+      strategicFit: 0.45,
+      dealAccess: 0.85,
+      arrPotential: 30,
+      revenue: '$15B+ gov contract value',
+      aiBookings: '89 FedRAMP milestones, AI portfolio',
+      labelPos: 'right',
+      xRationale: 'Thin moat. Procurement aggregator, no technical platform. Easy to replicate via direct contracts.',
+      yRationale: 'Unlocks $1.5K/seat — pure pass-through, but compresses 12-month gov cycles to 60 days.',
+      detail: '<strong>Thinnest moat but fastest revenue.</strong> Carahsoft is a Master Government Aggregator — they don\'t certify Devin, they provide contract vehicles (SEWP V, ITES-SW2, NASPO ValuePoint) that let federal agencies actually buy it. <strong>Why it still matters:</strong> federal procurement velocity is the bottleneck, not technical capability. Carahsoft compresses 12-month gov cycles to 60 days. <strong>How to use:</strong> sign Carahsoft FIRST as the procurement layer, THEN sign Palantir/Booz Allen as the technical layers. <strong>ARR math:</strong> ~20K federal civilian engineers × $1.5K/seat × 50% attach = ~$15M direct; ~$15M via partner pull-through. Total ~$30M. Easy first deal in this archetype.'
+    }
+  ];
+
+  const workflowData = [
+    {
+      name: 'ServiceNow',
+      strategicFit: 0.92,
+      dealAccess: 0.55,
+      arrPotential: 105,
+      revenue: '$15B ARR, 98%+ renewal',
+      aiBookings: 'Action Fabric May 2026 — agent tax launched',
+      labelPos: 'right',
+      xRationale: 'Highest fit — every enterprise IT ticket flows through Now. Devin closing those tickets is the wedge.',
+      yRationale: 'Action Fabric forces metered pricing. Negotiate rate card, not naive integration.',
+      detail: 'ServiceNow is the system of record for IT operations across the Global 2000 — 98%+ renewal rate, $15B ARR. <strong>The Action Fabric move (May 2026) changes everything:</strong> ServiceNow now charges metered access for external AI agents, and Anthropic\'s Claude is the launch partner via Claude Cowork. Cognition needs to be the second connector live, not the third. <strong>ARR math:</strong> ~150K ServiceNow developers + ~500K enterprise IT users with engineering-adjacent tickets × $1.5K blended uplift × 35% attach = ~$78M direct; ~$27M via co-sell into joint Fortune 500 accounts where Devin runs the ticket-to-PR loop. Total ~$105M. <strong>Deal accessibility is medium because</strong> ServiceNow under Bill McDermott is competing on first-party agentic AI (Autonomous Workforce, Apriel models) — they want Cognition as a partner only if Cognition pays the toll.'
+    },
+    {
+      name: 'Atlassian (Jira)',
+      strategicFit: 0.88,
+      dealAccess: 0.78,
+      arrPotential: 85,
+      revenue: '$4.8B FY25',
+      aiBookings: 'Atlassian Intelligence, Rovo agents',
+      labelPos: 'right',
+      xRationale: 'Native ticket-to-PR loop. Devin running Jira tickets is the most literal version of the wedge.',
+      yRationale: 'Atlassian needs partners more than ServiceNow does. Lighter agent-tax posture.',
+      detail: 'Jira is where the engineering tickets live for the rest of the world that isn\'t on ServiceNow. Atlassian\'s Rovo agents are still nascent — they\'re a partner-friendly platform, not a competitor. <strong>The pitch writes itself:</strong> "the engineer files a Jira ticket. Devin closes it." That\'s the literal core demo. <strong>ARR math:</strong> ~250K Jira-using enterprise engineering orgs × ~80 seats/org × $1.5K/seat uplift × 28% attach = ~$84M plausible. Atlassian Team \'27 in April is the natural announcement stage.'
+    },
+    {
+      name: 'Linear',
+      strategicFit: 0.85,
+      dealAccess: 0.92,
+      arrPotential: 25,
+      revenue: '~$100M ARR est.',
+      aiBookings: 'Native AI roadmap, dev-focused',
+      labelPos: 'top',
+      xRationale: 'Cleanest fit. Linear users are exactly the engineers Devin serves.',
+      yRationale: 'Easiest deal of the bunch. Linear is partner-hungry and exec team is small.',
+      detail: 'Linear is the engineering-team-of-record at every modern startup and a growing share of mid-market. Smaller ARR than the others — and that\'s the point. <strong>Linear is the lowest-friction workflow partner</strong> because their entire customer base is the exact developer Devin serves, and the Linear exec team is two warm intros away. Use Linear as the proof-of-concept partnership BEFORE the ServiceNow Action Fabric negotiation. <strong>ARR math:</strong> ~12K Linear customer orgs × ~30 seats × $1.2K/seat × 60% attach = ~$26M. Modest but symbolic.'
+    },
+    {
+      name: 'SAP',
+      strategicFit: 0.62,
+      dealAccess: 0.42,
+      arrPotential: 65,
+      revenue: '$38B ARR',
+      aiBookings: 'Business Accelerator Hub, Joule + NVIDIA NeMo',
+      labelPos: 'bottom',
+      xRationale: 'Lower fit. SAP is ERP/finance plumbing — most engineering work doesn\'t touch it.',
+      yRationale: 'SAP follows ServiceNow\'s lead on metered agent access. Expect similar tax.',
+      detail: 'SAP runs the financial and operational plumbing of most Global 2000 companies — $38B ARR, biggest enterprise software footprint in the world. <strong>The hard part:</strong> SAP\'s buyer is CFO-adjacent, not engineering. Most Devin use cases don\'t touch SAP. But the Business Accelerator Hub agent-tax model (parallel to ServiceNow\'s Action Fabric) means SAP-shop engineers building customizations on Joule Studio + Business Technology Platform are addressable. <strong>ARR math:</strong> ~80K SAP-shop developers × $1.2K/seat × 18% attach = ~$17M direct; ~$48M via SAP\'s prime SI partners (Accenture, Deloitte SAP practices). Total ~$65M.'
+    },
+    {
+      name: 'Slack',
+      strategicFit: 0.58,
+      dealAccess: 0.48,
+      arrPotential: 22,
+      revenue: 'Salesforce-owned, ~$1.5B est.',
+      aiBookings: 'Salesforce Agentforce + Slack as command interface',
+      labelPos: 'bottom',
+      xRationale: 'Medium fit — Slack is the surface, not the system. Devin notifies into Slack, doesn\'t live there.',
+      yRationale: 'Salesforce ownership creates Agentforce conflict. Limited per-seat upside.',
+      detail: 'Slack is where the engineering conversations happen. The NVIDIA-Salesforce-Slack reference architecture (March 2026) positions Slack as the command interface for Agentforce. <strong>Tension:</strong> Salesforce is a competitor through Agentforce. Slack integration is real but the strategic depth is limited. <strong>ARR math:</strong> ~40K Slack-using enterprise orgs × incidental $700/seat uplift × 15% attach = ~$22M. Low-priority lift; integrate as a notification surface, don\'t make Slack a flagship partnership.'
+    },
+    {
+      name: 'Workday',
+      strategicFit: 0.35,
+      dealAccess: 0.38,
+      arrPotential: 12,
+      revenue: '$8B+ ARR',
+      aiBookings: 'Agent Gateway + Agent System of Record',
+      labelPos: 'top',
+      xRationale: 'Low fit. Workday is HR/finance — almost no engineering surface area.',
+      yRationale: 'Same agent-tax model as ServiceNow/SAP, with even less Devin-relevance.',
+      detail: 'Workday\'s Agent Gateway opens the platform to external agents on a per-call basis — parallel to ServiceNow\'s Action Fabric. <strong>But:</strong> Workday is HR + finance. The engineer use case is almost nil. <strong>Why include it on the map at all:</strong> some Workday-shop companies have engineers customizing the platform via the Extend SDK, and the Agent System of Record framing matters for completeness of the workflow story. <strong>ARR math:</strong> ~15K Workday Extend developers × $1K/seat × 20% attach = ~$3M direct; ~$9M via prime SI customizations. Total ~$12M. Low priority, but the agent-gateway pattern is worth tracking.'
+    }
+  ];
+
+  const hyperscalerData = [
+    {
+      name: 'AWS',
+      strategicFit: 0.92,
+      dealAccess: 0.75,
+      arrPotential: 130,
+      revenue: '$110B+ AWS revenue, $364B backlog',
+      aiBookings: 'Bedrock + OpenAI April 2026 deal',
+      labelPos: 'left',
+      xRationale: 'Cleanest path. Bedrock multi-model, Marketplace 3% take rate, committed-spend procurement.',
+      yRationale: 'Highest co-sell incentive. AWS now hosts OpenAI + Anthropic + every model — they want every coding agent on Bedrock.',
+      detail: '<strong>The most strategically critical hyperscaler partnership.</strong> AWS just landed the OpenAI Bedrock deal in April 2026 ($38B 7-year compute commitment), ending Azure exclusivity. AWS now hosts every major model — they\'re multi-model, multi-vendor, and aggressively co-selling. <strong>Marketplace mechanics:</strong> 3% transaction fee, but customer purchases count against committed cloud spend — eliminating the budget battle in procurement. <strong>ARR math:</strong> ~200K AWS-anchored engineering orgs × $1.2K blended seat uplift × 40% attach = ~$96M direct; ~$34M via co-sell pipeline through AWS reps with revenue-tied incentives. Total ~$130M. <strong>The signing here cascades:</strong> AWS listing makes the SI partnerships (Accenture, TCS) actually deployable.'
+    },
+    {
+      name: 'GCP',
+      strategicFit: 0.82,
+      dealAccess: 0.82,
+      arrPotential: 75,
+      revenue: '~$50B GCP revenue, $462B backlog',
+      aiBookings: 'Vertex AI, 9x partner ecosystem growth Q1 2026',
+      labelPos: 'right',
+      xRationale: 'High fit. GCP Marketplace 3% take rate, smaller base but data/AI-skewed buyer.',
+      yRationale: 'Most partner-eager of the three. GCP needs ISVs more than AWS does.',
+      detail: 'GCP is the smaller hyperscaler but the most partner-hungry — 9x partner ecosystem growth in Q1 2026, $462B backlog, and a buyer base skewed toward data/AI/developer tooling. <strong>The pitch:</strong> GCP Marketplace + Vertex AI + Cognition becomes the multi-cloud alternative to "everything Anthropic does on Bedrock." <strong>ARR math:</strong> ~80K GCP-anchored eng orgs × $1.3K/seat × 35% attach = ~$36M direct; ~$39M via Google Cloud co-sell with quota-carrying reps and data/AI ISV credits. Total ~$75M. Easier to land than AWS, smaller ceiling.'
+    },
+    {
+      name: 'Azure',
+      strategicFit: 0.55,
+      dealAccess: 0.32,
+      arrPotential: 45,
+      revenue: '$430B+ commitments est.',
+      aiBookings: 'Copilot ubiquity, Foundry, OpenAI relationship',
+      labelPos: 'bottom',
+      xRationale: 'Lower fit despite scale. Microsoft\'s GitHub Copilot is a direct competitor — channel conflict at every level.',
+      yRationale: 'Hard deal. Microsoft sells Copilot Studio + Agent 365 as the agent control plane.',
+      detail: 'Azure is the largest hyperscaler by AI workload (Microsoft\'s $190B FY26 guide), and the hardest deal. <strong>The structural problem:</strong> GitHub Copilot is Microsoft\'s coding-agent flagship — 4.7M paid subs, 90% Fortune 100 footprint. Microsoft\'s field reps don\'t neutrally co-sell with Cognition; they have a quota on Copilot. <strong>What\'s still possible:</strong> Azure Marketplace listing (table-stakes, easy), plus Foundry + Agent 365 governance integration. <strong>ARR math:</strong> ~120K Azure-anchored eng orgs × $0.6K/seat (lower because Copilot competes) × 25% attach = ~$18M direct; ~$27M via marketplace transactions where customers actively prefer non-Microsoft agents. Total ~$45M. Necessary but politically constrained.'
+    },
+    {
+      name: 'Oracle Cloud',
+      strategicFit: 0.42,
+      dealAccess: 0.55,
+      arrPotential: 18,
+      revenue: '$24B+ Cloud revenue',
+      aiBookings: 'OCI Generative AI, vertical workloads',
+      labelPos: 'top',
+      xRationale: 'Medium fit. Strong in regulated workloads, weak in general-purpose engineering teams.',
+      yRationale: 'Underrated partner channel. Oracle is hungry, less crowded, fewer competing first-party agents.',
+      detail: 'Oracle Cloud is the contrarian hyperscaler — smaller than the big three, but $24B+ in cloud revenue, heavy in regulated verticals (healthcare, government, finance), and crucially less crowded with competing AI partnerships. <strong>ARR math:</strong> ~25K Oracle-anchored eng orgs × $1K/seat × 30% attach = ~$7.5M direct; ~$10.5M via co-sell into Oracle ERP/healthcare customer base where regulated deployment matters. Total ~$18M. Small but high-margin and low-competition.'
+    }
+  ];
+
+  const alertData = [
+    {
+      name: 'Datadog',
+      strategicFit: 0.88,
+      dealAccess: 0.75,
+      arrPotential: 65,
+      revenue: '$2.8B ARR',
+      aiBookings: 'Bits AI SRE GA Dec 2025',
+      labelPos: 'right',
+      xRationale: 'Highest fit. Bits AI detects; Devin fixes. Datadog has no autonomous remediation layer.',
+      yRationale: 'Datadog wants the loop closed. Customers ask "now what?" after every Bits alert.',
+      detail: '<strong>The cleanest fit in this archetype.</strong> Datadog\'s Bits AI SRE Agent (GA Dec 2025) detects the incident, opens a PR, and stops there. Every observability vendor has the same gap: <em>detection without remediation</em>. Devin is the remediation layer. Datadog has 30K+ enterprise customers and Bits AI is now the default upsell. <strong>ARR math:</strong> ~25K orgs running Bits AI × ~50 SREs/devs per org × $1.2K seat uplift (Devin handles the auto-fix) × 35% attach = ~$53M direct; ~$12M via Datadog co-sell into joint accounts. Total ~$65M.'
+    },
+    {
+      name: 'Sentry',
+      strategicFit: 0.85,
+      dealAccess: 0.82,
+      arrPotential: 35,
+      revenue: '$200M+ ARR est.',
+      aiBookings: 'Seer launched at $40/contributor/mo',
+      labelPos: 'right',
+      xRationale: 'High fit. Seer opens PRs but cannot execute. Devin completes the loop.',
+      yRationale: 'Sentry charges $40/contributor for Seer alone. They\'ve already proven the willingness to pay.',
+      detail: 'Sentry built the error-monitoring category, and Seer (their AI fix-suggester) is now priced at $40 per active contributor per month — *on top of* base Sentry. <strong>That pricing data is the most important point in this whole archetype:</strong> SREs and engineering managers are already paying $480/year per contributor for AI suggestions that can\'t execute. Devin closing the loop is worth multiples of that. <strong>ARR math:</strong> ~50K Sentry Seer contributors × $1.5K/seat incremental for execution × 45% attach = ~$34M direct + co-sell uplift. Total ~$35M.'
+    },
+    {
+      name: 'PagerDuty',
+      strategicFit: 0.72,
+      dealAccess: 0.78,
+      arrPotential: 28,
+      revenue: '$470M ARR',
+      aiBookings: 'AI-powered incident workflows, automation rules',
+      labelPos: 'top',
+      xRationale: 'High fit on alert side. Less code-level than Datadog or Sentry.',
+      yRationale: 'PagerDuty is partner-friendly. Less competing first-party agent ambition.',
+      detail: 'PagerDuty owns the alert-to-human handoff in incident response. Their AI workflows route, summarize, and triage — they don\'t fix code. <strong>Strategic fit is high</strong> because the natural next step after a PagerDuty escalation is "Devin, do the rollback." <strong>ARR math:</strong> ~12K PagerDuty enterprise orgs × ~25 SREs × $1.2K seat × 30% attach = ~$11M direct; ~$17M via co-sell where Devin is the response capability behind the page. Total ~$28M.'
+    },
+    {
+      name: 'Snyk',
+      strategicFit: 0.78,
+      dealAccess: 0.72,
+      arrPotential: 38,
+      revenue: '$300M+ ARR est.',
+      aiBookings: 'DeepCode AI, Snyk Code remediation suggestions',
+      labelPos: 'bottom',
+      xRationale: 'High fit. Snyk finds the security vulns; Devin patches them.',
+      yRationale: 'Security teams pay premium for autonomous patching. CISO line item.',
+      detail: 'Snyk finds the security and supply-chain vulnerabilities; their AI suggests fixes; the fix still has to be implemented by a human. <strong>Devin auto-patching Snyk findings is one of the cleanest pitches in the whole partnership map</strong> — security ops teams have CISO budget that isn\'t engineering budget. <strong>ARR math:</strong> ~30K Snyk enterprise orgs × ~40 eng/security users × $1.2K/seat × 30% attach = ~$43M arithmetically; conservative ~$38M after accounting for Microsoft Defender for DevOps competitive overlap.'
+    },
+    {
+      name: 'SonarQube',
+      strategicFit: 0.65,
+      dealAccess: 0.65,
+      arrPotential: 18,
+      revenue: '$200M+ ARR est.',
+      aiBookings: 'AI Code Assurance, dev-focused linting',
+      labelPos: 'top',
+      xRationale: 'Medium fit. Code quality tool — slower production-incident urgency than Datadog/Sentry.',
+      yRationale: 'Quality-focused buyer. Devin fixing SonarQube issues is value but not pricing-power leverage.',
+      detail: 'SonarQube finds code-quality issues in CI. Devin can resolve them automatically and reopen the PR — the loop is clean but less urgent than production-incident remediation. <strong>ARR math:</strong> ~15K SonarQube orgs × ~80 devs × $0.6K/seat (lower urgency, lower price tolerance) × 25% attach = ~$18M.'
+    },
+    {
+      name: 'Splunk',
+      strategicFit: 0.45,
+      dealAccess: 0.32,
+      arrPotential: 12,
+      revenue: '$4B ARR (Cisco-owned)',
+      aiBookings: 'AI assistant for SPL, security operations',
+      labelPos: 'bottom',
+      xRationale: 'Lower fit. Splunk is security-ops surface, not eng-team surface.',
+      yRationale: 'Cisco owns Splunk — channel conflict with Cisco\'s Outshift agentic AI investments.',
+      detail: 'Splunk is the security-ops system of record at most large enterprises. Cisco acquired them and is building Outshift agentic capabilities. <strong>The fit is real but constrained:</strong> Splunk\'s buyer is SecOps, not Eng. And Cisco\'s competing agent strategy creates channel friction. <strong>ARR math:</strong> ~30K Splunk enterprise orgs × small SRE-overlap subset × $0.8K/seat × 12% attach = ~$12M. Low priority.'
+    }
+  ];
+
+  const ideData = [
+    {
+      name: 'JetBrains',
+      strategicFit: 0.85,
+      dealAccess: 0.78,
+      arrPotential: 55,
+      revenue: '$500M+ ARR est.',
+      aiBookings: 'JetBrains AI Assistant, Junie agent',
+      labelPos: 'right',
+      xRationale: 'High fit. JetBrains owns the Java/Kotlin/JVM developer — exactly where enterprise async coding lives.',
+      yRationale: 'JetBrains is partner-friendly. Independent of Microsoft, no Copilot conflict.',
+      detail: 'JetBrains owns the IDE for ~16M developers, particularly in JVM languages (Java is the highest-Copilot-acceptance language at 61%) — that\'s precisely the enterprise codebase where Devin async work runs. <strong>JetBrains is the most strategically open IDE partner</strong> — independent of Microsoft, partner-hungry, already integrating multiple AI providers. <strong>ARR math:</strong> ~3M JetBrains paid users in enterprise × $0.4K incremental seat × 4% attach (selective, code-quality-conscious base) = ~$48M; ~$7M via JetBrains co-marketing channel. Total ~$55M.'
+    },
+    {
+      name: 'GitHub',
+      strategicFit: 0.32,
+      dealAccess: 0.15,
+      arrPotential: 18,
+      revenue: '$2B+ ARR Copilot',
+      aiBookings: 'Copilot 4.7M paid, 90% Fortune 100',
+      labelPos: 'bottom',
+      xRationale: 'Low fit. GitHub IS the IDE-layer competitor. Copilot occupies the seat Devin wants.',
+      yRationale: 'Microsoft channel conflict at every level. Marketplace listing only.',
+      detail: '<strong>GitHub is the structural problem, not the partner.</strong> Copilot has 4.7M paid subscribers and 90% Fortune 100 penetration — Microsoft\'s flagship developer-AI product. Cognition cannot partner with GitHub in any deep sense without Microsoft\'s blessing, which would require Microsoft choosing Cognition over Copilot. <strong>Why include on the map:</strong> GitHub Marketplace listing for Devin (transparent, table-stakes) is still worth doing. And the Cognition+Windsurf product can <em>integrate with</em> GitHub repos without partnering with GitHub itself. <strong>ARR math:</strong> ~$18M, almost entirely marketplace transactions, no co-sell. Low ceiling.'
+    },
+    {
+      name: 'Visual Studio',
+      strategicFit: 0.28,
+      dealAccess: 0.12,
+      arrPotential: 8,
+      revenue: 'Microsoft-owned',
+      aiBookings: 'Copilot integration, MS-native',
+      labelPos: 'top',
+      xRationale: 'Low fit. Same structural problem as GitHub — Microsoft owns the surface.',
+      yRationale: 'Cannot deepen beyond marketplace extension distribution.',
+      detail: 'VS / VS Code is Microsoft. Cognition\'s Windsurf is a VS Code fork — that\'s the relationship. <strong>ARR math:</strong> Marketplace listing for visibility, ~$8M in incidental enterprise pull-through. Mostly defensive presence, not a deal.'
+    },
+    {
+      name: 'Xcode (Apple)',
+      strategicFit: 0.35,
+      dealAccess: 0.18,
+      arrPotential: 6,
+      revenue: 'Apple-owned',
+      aiBookings: 'Swift Assist, native Apple Intelligence',
+      labelPos: 'top',
+      xRationale: 'Low fit. iOS/Mac codebases are valuable but Apple controls the surface tightly.',
+      yRationale: 'Apple partnerships are years-long and rarely revenue-share-friendly.',
+      detail: 'Apple\'s Xcode is the IDE for every iOS and Mac developer. Apple is famously closed to ecosystem partnerships at this level. <strong>ARR math:</strong> ~$6M from Devin-handles-Swift selective enterprise rollouts (large iOS shops like banking apps), realistically with no formal Apple partnership.'
+    },
+    {
+      name: 'Vim/Emacs/Neovim',
+      strategicFit: 0.42,
+      dealAccess: 0.95,
+      arrPotential: 4,
+      revenue: 'Open source',
+      aiBookings: 'Community plugins, ecosystem agnostic',
+      labelPos: 'top',
+      xRationale: 'Senior IC user base — Devin\'s most opinionated users live here.',
+      yRationale: 'No deal to sign. Plugin ecosystem is open by definition.',
+      detail: 'The terminal-editor ecosystem is where Devin\'s most senior users actually code. <strong>There\'s no deal here</strong> — but a well-maintained Devin plugin for Neovim costs ~one engineer-month and creates outsized advocacy among the senior ICs whose blogs and Hacker News posts drive enterprise adoption. <strong>ARR math:</strong> ~$4M direct, but the brand halo is the real value.'
+    }
+  ];
+
+  const modelLabData = [
+    {
+      name: 'Anthropic',
+      strategicFit: 0.78,
+      dealAccess: 0.55,
+      arrPotential: 0,
+      revenue: '$30B ARR, $380B valuation',
+      aiBookings: 'Claude Code competes, but we run on Claude',
+      labelPos: 'right',
+      special: true,
+      xRationale: 'Highest fit (we depend on them) AND highest tension (Claude Code competes).',
+      yRationale: 'Frenemy. Deep, technical, delicate. Not a revenue partner — a survival partner.',
+      detail: '<strong>Anthropic isn\'t a revenue partner — it\'s a supply relationship.</strong> Cognition\'s Devin and Windsurf both run on Claude models (Opus 4.7 at $5/$25 per MTok is the current flagship). At the same time, Anthropic ships Claude Code, which competes directly with Cognition\'s offering on senior IC seats. <strong>The actual partnership work:</strong> negotiate enterprise inference pricing, secure preferential rate-limit / preview-access terms, and stay close on roadmap so a Cognition pivot isn\'t blindsided by an Anthropic move. <strong>Why ARR is $0:</strong> this is cost-out, not revenue-in. The right KPI is "Anthropic inference cost as % of Devin gross margin," not bookings. Cognition\'s SWE-1.5 model is the strategic hedge.'
+    },
+    {
+      name: 'OpenAI',
+      strategicFit: 0.52,
+      dealAccess: 0.42,
+      arrPotential: 0,
+      revenue: '$852B valuation',
+      aiBookings: 'Codex competes; GPT-5.5 on AWS as of April',
+      labelPos: 'left',
+      special: true,
+      xRationale: 'Lower fit. Codex is a direct competitor and OpenAI/Microsoft alignment runs deep.',
+      yRationale: 'Hedge supply only. Available on AWS Bedrock as of April 2026 — keep the option live.',
+      detail: 'OpenAI is the model-supply hedge. Now that GPT-5.5 is available on AWS Bedrock (April 2026), Cognition can route inference through OpenAI without going through Azure. <strong>The strategic constraint:</strong> OpenAI ships Codex as a direct competitor to Devin and is partnered with Microsoft (who owns GitHub Copilot). Anthropic is the primary model partner; OpenAI is the contingency. <strong>Why ARR is $0:</strong> same as Anthropic — supply, not revenue.'
+    },
+    {
+      name: 'Google DeepMind',
+      strategicFit: 0.38,
+      dealAccess: 0.55,
+      arrPotential: 0,
+      revenue: 'Alphabet-owned',
+      aiBookings: 'Gemini 2.5 Pro, Jules coding agent',
+      labelPos: 'top',
+      special: true,
+      xRationale: 'Lower fit. Gemini quality is real but Google ships Jules as a competing coding agent.',
+      yRationale: 'Through GCP partnership, not direct. Use as third-leg supply diversification.',
+      detail: 'Gemini 2.5 Pro is competitive on coding benchmarks and free-tier-accessible. <strong>But:</strong> Google ships its own coding agent (Jules) and Gemini Code Assist. The right entry point is *through GCP / Vertex AI*, where Cognition becomes an ISV — not directly through DeepMind. <strong>Why ARR is $0:</strong> supply, not revenue. Use to maintain three-vendor pricing leverage with Anthropic and OpenAI.'
+    },
+    {
+      name: 'Open-source frontier',
+      strategicFit: 0.45,
+      dealAccess: 0.88,
+      arrPotential: 0,
+      revenue: 'Mistral, DeepSeek, Meta — varies',
+      aiBookings: 'Llama 4 / DeepSeek V3.2 / Mistral Large',
+      labelPos: 'top',
+      special: true,
+      xRationale: 'Medium fit. Quality is improving rapidly; cost structure is decisive for high-volume async work.',
+      yRationale: 'Easy "partnerships" — these are licenses, not negotiations. Sign all of them.',
+      detail: 'Open-weight frontier models (DeepSeek V3.2, Mistral Large, Llama 4, Qwen3) are improving fast and dramatically cheaper to run on Cognition\'s own infrastructure (or via NIM / Cerebras / Together). <strong>For high-volume async background work where latency matters less than cost-per-token, open-source is increasingly the right choice.</strong> No partnership to negotiate — this is procurement strategy, not BD. <strong>Why ARR is $0:</strong> cost-out leverage that improves Devin gross margin by 30-50% on suitable workloads.'
+    }
+  ];
+
+  const siliconData = [
+    {
+      name: 'NVIDIA (incl. Groq)',
+      strategicFit: 0.85,
+      dealAccess: 0.62,
+      arrPotential: 38,
+      revenue: '$130B+ datacenter revenue',
+      aiBookings: 'Groq acquired Dec 2025, $20B; NIM platform',
+      labelPos: 'right',
+      xRationale: 'High fit. NIM + Groq inference = the fastest path for async Devin background work.',
+      yRationale: 'NVIDIA is everyone\'s partner. Genuine co-sell muscle but limited differentiation play.',
+      detail: 'NVIDIA absorbed Groq in December 2025 ($20B) — they now own both training (GPU) and high-speed inference (LPU). <strong>For async coding agents where TTFT matters (engineer fires a Devin task before lunch, expects results by 1pm), Groq-on-NVIDIA inference is uniquely fast.</strong> NIM containers run anywhere — cloud, on-prem, regulated environments. <strong>ARR math:</strong> ~$22M via NVIDIA AI Enterprise / Cognition bundle in enterprise NIM deployments; ~$16M via Inception program co-marketing into NVIDIA\'s ISV ecosystem. Total ~$38M.'
+    },
+    {
+      name: 'AMD',
+      strategicFit: 0.62,
+      dealAccess: 0.72,
+      arrPotential: 18,
+      revenue: '$25B+ datacenter revenue',
+      aiBookings: 'MI400 Helios 2026, $90B OpenAI partnership',
+      labelPos: 'right',
+      xRationale: 'Medium fit. AMD is the OpenAI hedge — pairing with Cognition reinforces multi-vendor inference story.',
+      yRationale: 'AMD is hungry for partners that aren\'t already in NVIDIA\'s orbit.',
+      detail: 'AMD is the silicon hedge for any AI company worried about NVIDIA pricing power — they just signed a $90B partnership with OpenAI for MI450 GPUs. <strong>AMD\'s MI400 Helios series is competitive on price/performance for inference workloads.</strong> Cognition partnering with AMD is a "we don\'t depend on one chip vendor either" signal that resonates with enterprise procurement. <strong>ARR math:</strong> ~$11M via AMD enterprise co-marketing; ~$7M via reduced inference cost passed through as competitive gross margin into Cognition\'s enterprise tier. Total ~$18M.'
+    },
+    {
+      name: 'Cerebras',
+      strategicFit: 0.42,
+      dealAccess: 0.22,
+      arrPotential: 0,
+      revenue: '$24.6B backlog, IPO filed',
+      aiBookings: '$10B OpenAI exclusive deal Jan 2026',
+      labelPos: 'bottom',
+      special: true,
+      xRationale: 'Medium fit on tech (wafer-scale inference is fast for decode).',
+      yRationale: 'OpenAI captive. $10B contract makes Cerebras structurally unavailable for Cognition.',
+      detail: 'Cerebras\' wafer-scale inference is fast — 2,700 tokens/sec on GPT-OSS-120B, 4x typical GPU. <strong>But the strategic problem:</strong> OpenAI committed $10B over 3 years (signed Jan 2026, valued near $20B with warrants for up to 10% equity). Cerebras is now structurally an OpenAI inference partner. For Cognition, this is a "track but don\'t pursue" node. <strong>Why ARR is $0:</strong> not actionable as a partnership while the OpenAI relationship dominates capacity.'
+    },
+    {
+      name: 'SambaNova',
+      strategicFit: 0.55,
+      dealAccess: 0.78,
+      arrPotential: 12,
+      revenue: 'Private est.',
+      aiBookings: 'RDU architecture, sovereign AI deployments',
+      labelPos: 'top',
+      xRationale: 'Medium fit. SambaNova specializes in regulated / sovereign deployments — overlaps with the verticals archetype.',
+      yRationale: 'Smaller, more partner-eager. Good complement to Palantir on the regulated side.',
+      detail: 'SambaNova\'s reconfigurable dataflow architecture (RDU) targets sovereign-AI and regulated deployments — exactly the customer set Palantir+Cognition would jointly pursue. <strong>The combination is interesting:</strong> Palantir provides certified hosting, SambaNova provides on-prem inference, Devin provides the agent. <strong>ARR math:</strong> ~$12M via Cognition-on-SambaNova as a sovereign-deployment SKU for federal/regulated customers; small but high-margin.'
+    }
+  ];
+
+  const scatterData = {
+    si: {
+      data: siData,
+      xLabel: 'Strategic fit with Cognition motion',
+      yLabel: 'Deal accessibility',
+      xTickLabels: { 0: 'Misaligned', 0.5: 'Neutral', 1: 'Native fit' },
+      yTickLabels: { 0: 'Cold', 0.5: 'Warm', 1: 'Hot' },
+      subtitle: 'Plotting each SI by deal accessibility and strategic fit with the Cognition motion. Bubble size = annual ARR opportunity through that partner.',
+      arrLegend: '$25M → $120M+',
+      ariaLabel: 'Scatter plot of global systems integrators'
+    },
+    workflow: {
+      data: workflowData,
+      xLabel: 'Strategic fit with Devin async loop',
+      yLabel: 'Deal accessibility (lower = harder)',
+      xTickLabels: { 0: 'Adjacent', 0.5: 'Real', 1: 'Native ticket loop' },
+      yTickLabels: { 0: 'Agent-tax', 0.5: 'Negotiable', 1: 'Partner-hungry' },
+      subtitle: 'The systems where engineering work begins and ends. Critical context: ServiceNow, SAP, and Workday all rolled out "agent tax" pricing in May 2026 — Cognition needs rate-card negotiations, not naive integrations.',
+      arrLegend: '$12M → $105M+',
+      ariaLabel: 'Scatter plot of workflow systems of record'
+    },
+    hyperscaler: {
+      data: hyperscalerData,
+      xLabel: 'Strategic fit + marketplace openness',
+      yLabel: 'Channel conflict (lower = harder)',
+      xTickLabels: { 0: 'Conflicted', 0.5: 'Neutral', 1: 'Clean co-sell' },
+      yTickLabels: { 0: 'Hostile', 0.5: 'Workable', 1: 'Aligned' },
+      subtitle: 'Where committed cloud spend gets unlocked. The OpenAI-on-AWS deal in April 2026 reshaped this map — AWS is now multi-model and the cleanest path. Microsoft remains structurally hostile because of Copilot.',
+      arrLegend: '$18M → $130M+',
+      ariaLabel: 'Scatter plot of hyperscaler partnerships'
+    },
+    vertical: {
+      data: verticalData,
+      xLabel: 'Deployment-moat depth',
+      yLabel: 'Per-seat pricing unlock',
+      xTickLabels: { 0: 'Thin', 0.5: 'Real', 1: 'Years deep' },
+      yTickLabels: { 0: 'Marginal', 0.5: '$1-2K/seat', 1: '$5K+/seat' },
+      subtitle: 'The contrarian archetype. Plotting each vertical specialist by the depth of their deployment moat and how much per-seat pricing power their partnership unlocks for Cognition. Bubble size = annual ARR opportunity.',
+      arrLegend: '$30M → $95M+',
+      ariaLabel: 'Scatter plot of regulated vertical specialists'
+    },
+    alert: {
+      data: alertData,
+      xLabel: 'Detection-to-fix gap (Devin closes the loop)',
+      yLabel: 'Partner openness',
+      xTickLabels: { 0: 'Adjacent', 0.5: 'Real gap', 1: 'Native pair' },
+      yTickLabels: { 0: 'Constrained', 0.5: 'Workable', 1: 'Partner-eager' },
+      subtitle: 'Every observability vendor now ships an AI agent that detects the problem and stops there. Devin is the autonomous remediation layer they don\'t have. Sentry\'s $40/contributor pricing for Seer (suggestions only) proves the willingness-to-pay.',
+      arrLegend: '$12M → $65M+',
+      ariaLabel: 'Scatter plot of alert-to-fix partnerships'
+    },
+    ide: {
+      data: ideData,
+      xLabel: 'IDE strategic fit',
+      yLabel: 'Partner openness (Microsoft tension = low)',
+      xTickLabels: { 0: 'Misaligned', 0.5: 'Neutral', 1: 'Native fit' },
+      yTickLabels: { 0: 'MSFT-blocked', 0.5: 'Workable', 1: 'Fully open' },
+      subtitle: 'The most structurally constrained archetype. GitHub Copilot owns 42% of the AI coding market and 90% of Fortune 100. JetBrains is the one IDE partner that\'s genuinely open. Everything else is a marketplace listing.',
+      arrLegend: '$4M → $55M+',
+      ariaLabel: 'Scatter plot of IDE ecosystem partnerships'
+    },
+    model: {
+      data: modelLabData,
+      xLabel: 'Strategic fit as supplier',
+      yLabel: 'Relationship depth available',
+      xTickLabels: { 0: 'Hedge', 0.5: 'Real', 1: 'Primary' },
+      yTickLabels: { 0: 'Transactional', 0.5: 'Co-roadmap', 1: 'Deep partner' },
+      subtitle: 'Frontier model labs are supply relationships, not revenue partnerships. The right KPI is inference cost as percent of gross margin, not ARR. Bubble sizes shown as fixed because dollars flow the other direction here.',
+      arrLegend: 'Supply, not revenue',
+      ariaLabel: 'Scatter plot of frontier model lab relationships'
+    },
+    silicon: {
+      data: siliconData,
+      xLabel: 'Inference strategic fit',
+      yLabel: 'Partner availability',
+      xTickLabels: { 0: 'Limited', 0.5: 'Real', 1: 'Native' },
+      yTickLabels: { 0: 'Captive', 0.5: 'Workable', 1: 'Hungry' },
+      subtitle: 'Inference economics are the long-term moat. NVIDIA absorbed Groq in December 2025 ($20B). Cerebras went captive to OpenAI in January ($10B contract). The remaining pure-play silicon partners are AMD and SambaNova.',
+      arrLegend: '$0 → $38M+',
+      ariaLabel: 'Scatter plot of silicon and inference partnerships'
+    }
+  };
+
+  function renderScatter(archetype) {
+    const wrap = document.getElementById('scatter-wrap');
+    const config = scatterData[archetype];
+
+    if (!config) {
+      wrap.innerHTML = `
+        <div class="scatter-stub">
+          <div class="scatter-stub-title">${archetype} deep-dive · coming soon</div>
+          <p>Opportunity sizing for this archetype is still in research.</p>
+        </div>
+      `;
+      document.getElementById('scatter-axis-legend').innerHTML = '<strong style="color:var(--ink)">Each archetype uses its own axes.</strong>';
+      document.getElementById('scatter-arr-legend').textContent = '';
+      document.getElementById('dd-sub').textContent = '';
+      return;
+    }
+
+    const data = config.data;
+
+    document.getElementById('scatter-axis-legend').innerHTML =
+      `<strong style="color:var(--ink)">X:</strong> ${config.xLabel} &nbsp;·&nbsp; <strong style="color:var(--ink)">Y:</strong> ${config.yLabel}`;
+    document.getElementById('scatter-arr-legend').textContent = config.arrLegend;
+    document.getElementById('dd-sub').textContent = config.subtitle;
+
+    const W = 720, H = 460;
+    const margin = { top: 30, right: 40, bottom: 60, left: 80 };
+    const innerW = W - margin.left - margin.right;
+    const innerH = H - margin.top - margin.bottom;
+
+    const minR = 8, maxR = 36;
+    // Determine if this archetype has meaningful ARR (special archetypes use fixed size)
+    const hasARR = data.some(d => (d.arrPotential || 0) > 0);
+    const arrMax = hasARR ? Math.max(...data.map(d => d.arrPotential || 0)) : 1;
+    const arrMin = hasARR ? Math.min(...data.filter(d => (d.arrPotential || 0) > 0).map(d => d.arrPotential)) : 1;
+
+    function radius(arr, special) {
+      if (special || !arr) return 14; // Fixed mid-size for special bubbles (zero ARR)
+      if (arrMax === arrMin) return (minR + maxR) / 2;
+      const t = (arr - arrMin) / (arrMax - arrMin);
+      return minR + Math.sqrt(t) * (maxR - minR);
+    }
+
+    function x(fit) { return margin.left + fit * innerW; }
+    function y(access) { return margin.top + (1 - access) * innerH; }
+
+    // Build SVG bubbles with collision-aware label positions
+    let svgPoints = '';
+    data.forEach((d, i) => {
+      const cx = x(d.strategicFit);
+      const cy = y(d.dealAccess);
+      const r = radius(d.arrPotential, d.special);
+      const labelPos = d.labelPos || 'bottom';
+
+      let labelX = cx, labelY = cy, labelAnchor = 'middle';
+      let metaX = cx, metaY = cy, metaAnchor = 'middle';
+      const pad = r + 14;
+
+      if (labelPos === 'bottom') {
+        labelY = cy + pad;
+        metaY = cy + pad + 14;
+      } else if (labelPos === 'top') {
+        labelY = cy - pad - 4;
+        metaY = cy - pad - 18;
+      } else if (labelPos === 'right') {
+        labelX = cx + pad;
+        labelY = cy + 4;
+        labelAnchor = 'start';
+        metaX = cx + pad;
+        metaY = cy + 18;
+        metaAnchor = 'start';
+      } else if (labelPos === 'left') {
+        labelX = cx - pad;
+        labelY = cy + 4;
+        labelAnchor = 'end';
+        metaX = cx - pad;
+        metaY = cy + 18;
+        metaAnchor = 'end';
+      }
+
+      const metaText = (d.special || !d.arrPotential) ? '' : `$${d.arrPotential}M ARR`;
+      const ariaLabel = d.special
+        ? `${d.name}, supply relationship`
+        : `${d.name}, ARR potential ${d.arrPotential} million dollars`;
+
+      svgPoints += `
+        <g class="scatter-point" data-idx="${i}" tabindex="0" role="button" aria-label="${ariaLabel}">
+          <circle cx="${cx}" cy="${cy}" r="${r}" fill="var(--coral)" fill-opacity="0.18" stroke="var(--coral)" stroke-width="1.5"/>
+          <circle cx="${cx}" cy="${cy}" r="2.5" fill="var(--coral-deep)"/>
+          <text class="point-label" x="${labelX}" y="${labelY}" text-anchor="${labelAnchor}">${d.name}</text>
+          ${metaText ? `<text class="point-meta" x="${metaX}" y="${metaY}" text-anchor="${metaAnchor}">${metaText}</text>` : ''}
+        </g>
+      `;
+    });
+
+    let gridLines = '';
+    [0.25, 0.5, 0.75].forEach(t => {
+      gridLines += `<line class="grid" x1="${x(t)}" y1="${margin.top}" x2="${x(t)}" y2="${margin.top + innerH}"/>`;
+      gridLines += `<line class="grid" x1="${margin.left}" y1="${y(t)}" x2="${margin.left + innerW}" y2="${y(t)}"/>`;
+    });
+
+    let xTicks = '', yTicks = '';
+    Object.keys(config.xTickLabels).forEach(t => {
+      const tNum = parseFloat(t);
+      xTicks += `<text class="tick-label" x="${x(tNum)}" y="${margin.top + innerH + 20}" text-anchor="middle">${config.xTickLabels[t]}</text>`;
+    });
+    Object.keys(config.yTickLabels).forEach(t => {
+      const tNum = parseFloat(t);
+      yTicks += `<text class="tick-label" x="${margin.left - 12}" y="${y(tNum) + 4}" text-anchor="end">${config.yTickLabels[t]}</text>`;
+    });
+
+    wrap.innerHTML = `
+      <svg class="scatter-svg" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${config.ariaLabel}">
+        <line class="axis-line" x1="${margin.left}" y1="${margin.top + innerH}" x2="${margin.left + innerW}" y2="${margin.top + innerH}"/>
+        <line class="axis-line" x1="${margin.left}" y1="${margin.top}" x2="${margin.left}" y2="${margin.top + innerH}"/>
+        ${gridLines}
+        ${xTicks}
+        ${yTicks}
+        <text class="axis-title" x="${margin.left + innerW / 2}" y="${H - 8}" text-anchor="middle">${config.xLabel} →</text>
+        <text class="axis-title" x="-${margin.top + innerH / 2}" y="18" text-anchor="middle" transform="rotate(-90)">${config.yLabel} →</text>
+        ${svgPoints}
+      </svg>
+    `;
+
+    // Wire up point interactions: click for full detail, hover for x/y rationale
+    const points = wrap.querySelectorAll('.scatter-point');
+    const scatterTooltip = document.getElementById('scatter-tooltip');
+    const stName = document.getElementById('st-name');
+    const stX = document.getElementById('st-x');
+    const stY = document.getElementById('st-y');
+    let stTimeout;
+
+    function showScatterTip(point) {
+      const idx = parseInt(point.dataset.idx);
+      const d = data[idx];
+      if (!d.xRationale && !d.yRationale) return; // Skip if no rationale
+      stName.textContent = d.name;
+      stX.textContent = d.xRationale || '—';
+      stY.textContent = d.yRationale || '—';
+
+      const wrapRect = wrap.parentElement.getBoundingClientRect();
+      const ptRect = point.getBoundingClientRect();
+      const tipWidth = 260;
+      let left = ptRect.left - wrapRect.left + (ptRect.width / 2) - (tipWidth / 2);
+      let top = ptRect.bottom - wrapRect.top + 6;
+      left = Math.max(8, Math.min(left, wrap.parentElement.offsetWidth - tipWidth - 8));
+      scatterTooltip.style.left = left + 'px';
+      scatterTooltip.style.top = top + 'px';
+      scatterTooltip.classList.add('visible');
+    }
+    function hideScatterTip() {
+      clearTimeout(stTimeout);
+      stTimeout = setTimeout(() => scatterTooltip.classList.remove('visible'), 80);
+    }
+
+    points.forEach(p => {
+      const clickHandler = () => {
+        const idx = parseInt(p.dataset.idx);
+        const d = data[idx];
+        const detail = document.getElementById('point-detail');
+        document.getElementById('pd-title').textContent = d.name;
+        const arrText = (d.special || !d.arrPotential) ? 'Supply relationship' : `~$${d.arrPotential}M ARR opportunity`;
+        document.getElementById('pd-meta').textContent = `${d.revenue} · ${d.aiBookings} · ${arrText}`;
+        document.getElementById('pd-body').innerHTML = d.detail;
+        detail.classList.add('visible');
+        detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      };
+      p.addEventListener('click', clickHandler);
+      p.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); clickHandler(); }
+      });
+      p.addEventListener('mouseenter', () => {
+        clearTimeout(stTimeout);
+        showScatterTip(p);
+      });
+      p.addEventListener('mouseleave', hideScatterTip);
+      p.addEventListener('focus', () => showScatterTip(p));
+      p.addEventListener('blur', hideScatterTip);
+    });
+  }
+
+  // Archetype card click → reveal scatter + scroll
+  document.querySelectorAll('.archetype-card').forEach(card => {
+    card.addEventListener('click', e => {
+      const archetype = card.dataset.archetype;
+      document.querySelectorAll('.archetype-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      const dd = document.getElementById('deepdive');
+      dd.classList.add('visible');
+      const archetypeNames = {
+        si: 'Global systems integrators',
+        workflow: 'Workflow systems of record',
+        hyperscaler: 'Hyperscalers',
+        vertical: 'Regulated vertical specialists',
+        alert: 'Alert-to-fix loop',
+        ide: 'IDE ecosystem',
+        model: 'Frontier model labs',
+        silicon: 'Silicon / inference'
+      };
+      document.getElementById('dd-title').textContent = archetypeNames[archetype];
+      document.querySelectorAll('.toggle-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.view === archetype);
+      });
+      document.getElementById('point-detail').classList.remove('visible');
+      renderScatter(archetype);
+      setTimeout(() => dd.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+    });
+  });
+
+  // Toggle buttons in deep-dive
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.classList.contains('locked')) return;
+      const view = btn.dataset.view;
+      document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('point-detail').classList.remove('visible');
+      renderScatter(view);
+    });
+  });
+
+  // Wedge card hover tooltips
+  const wedgeTooltipContent = {
+    cognition: {
+      label: 'Why us — the aha',
+      body: 'No competitor can simultaneously <strong>sell async to enterprises</strong> AND distribute through SI channels. Cursor lacks the enterprise muscle. Claude Code is Anthropic\'s hedge, not a primary product. Replit and Manus sell to non-engineers. <em>The upper-right quadrant is structurally ours alone</em> — and every partnership archetype in Section 2 is built to compound that position.'
+    },
+    windsurf: {
+      label: 'Why we bought it',
+      body: 'We didn\'t <em>just</em> buy an IDE. We bought the right to live alongside the engineer in synchronous flow, while Devin runs async in the background. The bundle no one else can replicate: same engineer, same codebase, sync + async in one license. Cursor has the IDE but no async; Devin had the async but no IDE. <strong>Together we own both halves of the engineer\'s day.</strong>'
+    },
+    cursor: {
+      label: 'What Cursor can\'t reach',
+      body: 'Cursor wins the keystroke. They lose <em>everything that happens when the engineer closes the laptop</em>. No PR while you sleep, no Jira ticket auto-resolved overnight, no Goldman compliance audit run on the long weekend. Bottoms-up viral motion gets stuck at "expense it on a credit card" — wrong pricing model and wrong buyer for the $500/seat enterprise contract.'
+    },
+    claudecode: {
+      label: 'What Claude Code can\'t reach',
+      body: 'Anthropic\'s reference implementation, not their flagship play. The terminal is dev-native but it\'s a tool, not a product line — Anthropic captures value at the <em>model layer</em>, not the agent layer. They have no incentive to build SI partnerships, enterprise procurement motion, or async UX depth. We <strong>buy inference from them and beat them at the application layer</strong>.'
+    },
+    replit: {
+      label: 'What Replit can\'t reach',
+      body: 'Different user entirely. PMs, founders, designers with an idea and a browser. Replit assumes you have <em>nothing</em>. We assume you have a GitHub, a Jira board, and a Goldman codebase to maintain. The wedges don\'t overlap — and Replit can\'t move up-market because the prosumer pricing model can\'t support enterprise SLAs.'
+    },
+    manus: {
+      label: 'What Manus can\'t reach',
+      body: 'Horizontal computer-use agent that <em>happens</em> to code — closer to OpenAI Operator than to Devin. Knowledge worker buyer, not engineer buyer. They sell into ops and admin, not engineering orgs. The Goldman CTO who signs the Devin contract has never heard of Manus and never will.'
+    }
+  };
+
+  const wedgeTooltip = document.getElementById('wedge-tooltip');
+  const wedgeTooltipLabel = document.getElementById('wedge-tooltip-label');
+  const wedgeTooltipBody = document.getElementById('wedge-tooltip-body');
+  let wedgeTooltipTimeout;
+
+  function showWedgeTooltip(card) {
+    const tipKey = card.getAttribute('data-tip');
+    const content = wedgeTooltipContent[tipKey];
+    if (!content) return;
+    wedgeTooltipLabel.textContent = content.label;
+    wedgeTooltipBody.innerHTML = content.body;
+    // Position tooltip near the card
+    const wrap = document.querySelector('.wedge-wrap');
+    const wrapRect = wrap.getBoundingClientRect();
+    const cardRect = card.getBoundingClientRect();
+    const tipWidth = 280;
+    let left = cardRect.left - wrapRect.left + (cardRect.width / 2) - (tipWidth / 2);
+    let top = cardRect.bottom - wrapRect.top + 8;
+    // Clamp left to wrap bounds
+    left = Math.max(8, Math.min(left, wrap.offsetWidth - tipWidth - 8));
+    wedgeTooltip.style.left = left + 'px';
+    wedgeTooltip.style.top = top + 'px';
+    wedgeTooltip.classList.add('visible');
+  }
+  function hideWedgeTooltip() {
+    clearTimeout(wedgeTooltipTimeout);
+    wedgeTooltipTimeout = setTimeout(() => wedgeTooltip.classList.remove('visible'), 100);
+  }
+  document.querySelectorAll('.wedge-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      clearTimeout(wedgeTooltipTimeout);
+      showWedgeTooltip(card);
+    });
+    card.addEventListener('mouseleave', hideWedgeTooltip);
+    card.addEventListener('focus', () => showWedgeTooltip(card));
+    card.addEventListener('blur', hideWedgeTooltip);
+  });
+
+  // Roadmap quarter tabs
+  document.querySelectorAll('.roadmap-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const q = tab.dataset.quarter;
+      document.querySelectorAll('.roadmap-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.roadmap-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      const panel = document.querySelector(`.roadmap-panel[data-panel="${q}"]`);
+      if (panel) panel.classList.add('active');
+    });
+  });
+
+  // Mobile nav toggle
+  const mobileToggle = document.getElementById('mobile-nav-toggle');
+  const mobileBackdrop = document.getElementById('mobile-nav-backdrop');
+  const tocNav = document.getElementById('toc-nav');
+  function closeMobileNav() {
+    mobileToggle.classList.remove('open');
+    mobileToggle.setAttribute('aria-expanded', 'false');
+    tocNav.classList.remove('visible');
+    mobileBackdrop.classList.remove('visible');
+  }
+  function openMobileNav() {
+    mobileToggle.classList.add('open');
+    mobileToggle.setAttribute('aria-expanded', 'true');
+    tocNav.classList.add('visible');
+    mobileBackdrop.classList.add('visible');
+  }
+  mobileToggle.addEventListener('click', () => {
+    if (tocNav.classList.contains('visible')) closeMobileNav();
+    else openMobileNav();
+  });
+  mobileBackdrop.addEventListener('click', closeMobileNav);
+  tocNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.innerWidth <= 900) closeMobileNav();
+    });
+  });
+
+  // Active TOC link based on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const tocLinks = document.querySelectorAll('nav.toc a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tocLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+
+  // Initial render (if user comes back to deep-dive already open via hash)
+  if (window.location.hash === '#deepdive') {
+    document.querySelector('.archetype-card[data-archetype="si"]').click();
+  }
+})();
+</script>
+</body>
+</html>
